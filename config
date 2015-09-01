@@ -152,5 +152,5 @@ bar {
         status_command i3status
 }
 # begin added files
-exec --no-startup-id nm-applet
+# exec --no-startup-id nm-applet
 
