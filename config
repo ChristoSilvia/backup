@@ -153,3 +153,4 @@ bar {
 }
 # begin added files
 exec --no-startup-id nm-applet
+
