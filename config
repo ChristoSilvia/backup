@@ -152,7 +152,7 @@ bindsym $mod+r mode "resize"
 bar {
 	i3bar_command /usr/bin/i3bar
 	status_command i3status
-	position top
+	position bottom
 }
 # begin added files
 # exec --no-startup-id nm-applet
