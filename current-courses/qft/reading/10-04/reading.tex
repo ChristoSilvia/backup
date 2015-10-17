@@ -1,0 +1,83 @@
+\documentclass{article}
+
+\begin{document}
+
+\section{Creation and annihilation operators}
+
+We saw that a scalar field coupled to a spin-1 field with a gauge symmetry
+	must be complex, because it needs to somehow change with that gauge
+	symmetry in order for there to be any interactions.
+So, we need the field to be complex.
+Therefore the field needs to be different from its conjugate, and the creation
+	and annihilation operators in the two fields, $\phi$ and $\phi^*$, cannot
+	be the same.
+
+The fields in 9.8 and 9.9 need to be conjugates of each other, and for the non-conjugate
+	field, by convention, the creation operator is daggered and the annihilation
+	operator isn't.
+This convention forces $b_p^\dagger$ to be daggered.
+
+\section{Key Insights}
+
+\begin{enumerate}
+
+\item
+In the discussion after (9.40), why are the amplitudes only allowed to depend
+	on the momenta of the photons and not their polarizations?
+
+\item
+Since amplitudes have to be lorentz-covariant, they must necessarily be 
+	tensors.
+Arbitrary amplitudes can be represented as lorentz tensors when proving
+	statements about qft.
+This is from the discussion of gauge invariance.
+
+\item
+Why is $\Pi_{\mu \alpha}$ replaced by $\xi q_\alpha q_\mu$ and not
+	$\Pi_{\mu \alpha} - \xi \frac{q_\mu q_\alpha}{p^4 + i \epsilon}$?
+I get this from the expression for the photon progagtor, (9.33):
+
+\[ i \Pi_{\mu \nu} = \frac{- i \left[ g_{\mu \nu} - (1 - \xi) \frac{p_\mu p_\nu}{p^2} \right]}
+	{p^2 + i \epsilon} \]
+
+I think they only put in the change, and show that it vanishes,
+	rather than putting in the full new propagator under the gauge transformation
+	and showing that it's the same.
+Other than that, I'm surprised that schwartz omits the factor of $p^4$ in the denominator
+	of the amplitude.
+Since the factor doesn't make a difference to the integral, and the integrand
+	ends up vanishing, it doesn't make a difference for the proof.
+
+\item
+I take away that we need to do more work than this to show things ``in general''
+	in perturbation theory.
+
+\item
+There is no 4-point vertex in QED.  
+This makes me somewhat sad.
+I like the 4-point vertex.
+
+\end{enumerate}
+
+\section{More Discussion}
+
+Near the end of section 9.5, Schwartz discusses how conservation of 
+	charge is implied by massless spin-1 particles.
+He discusses how the approach, which only requires that there be an interaction,
+	implies conservation of charge by itself.
+It derives it with the feynmann rules.
+I think this statement means, ``if we assume the feynmann rules and nothing
+	else, we can derive conservation of charge''?
+I eventually figured this out.
+
+Schwartz also doesn't mention where the extra constraint which leads to eq. 9.65
+	comes from.  
+
+Schwartz also glosses over why massless particles of spin higher
+	than two aren't interacting.
+I think Schwartz only shows that massless particles of spin higher than
+	two cannot interact with scalar fields.
+He hasn't shown, and I don't know how we would show, that massless particles
+	of spin higher than two cannot interact with particles of nonzero spin.
+
+\end{document}

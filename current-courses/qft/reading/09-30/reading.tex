@@ -1,0 +1,121 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+
+\begin{document}
+
+\paragraph{Going from spin-0 to spin-1}
+\begin{enumerate}
+\item To make a relativistic quantum field theory, the field operator
+	needs to be lorentz invariant.
+If we want our theory to have a single field with multiple degrees of 	
+	freedom, it cannot be a lorentz scalar.
+The next lorentz-covariant object is a lorentz vector or one-form.
+If our space is of dimension $n$, then lorentz-invariant objects
+	can only have $n^i$ degrees of freedom, for some $i$, because
+	each ``index'' needs four degrees of freedom.
+Therefore, if we want objects with a certain number of degrees of freedom,
+	we will have to impose additional constraints.
+\item A lagrangian must be a lorentz scalar.
+How many lorentz scalars can we make with a single vector field $A^\mu$?
+	\begin{enumerate}
+	\item $A_\mu A^\mu$
+	\item $\partial_\mu A^\mu$
+	\item $A_\mu \partial_\nu \partial^\nu A^\mu$
+	\item $A_\mu \partial_\nu \partial^\mu A^\nu$
+	\item Terms with more than two derivatives.
+	\end{enumerate}
+To see this, we see that any zero-derivative lorentz-invariant quantity
+	must only be a function of $A_\mu A^\mu$.
+Any one-derivative lorentz-invariant quantity must have the derivative
+	contract with something.
+Since there's only one field, it has to contract with that.
+
+Any two derivative quantity can have the two derivatives contracted
+	with the same index or bearing different indices.
+If they bear different indices, then eventually integration by parts
+	will push one of the fields contracting one of the indices to the
+	left of the derivatives.
+The same thing will happen with the same-index case.
+Therefore, the following quantities are the only things that lorentz
+	scalars can be built from.
+This is restrictive.
+
+\item Lagrangians do not necessarily describe physical theories with 
+	positive energy densities.
+Even lagrangians which containt non-scalars as their fields don't
+	necessarily produce theories which behave as non-scalar theories.
+
+Consider the following lagrangian:
+
+\[ \mathcal{L} = \frac{1}{2} A_\mu \partial_\nu \partial^\nu A^\mu 
+	+ \frac{1}{2} m^2 A_\mu A^\mu \]
+
+When varied, its equations of motion are:
+
+\[ \left( m^2 + \partial_\nu \partial^\nu \right) A_\mu = 0 \]
+
+A derivative fixes the constraint to be:
+
+\[ \left( m^2 + (a - b) \partial_nu \partial^\nu \right) (\partial_\mu A^\mu) = 0 \]
+
+Therefore, if we choose $a = b$, then this constraint says
+	$\partial_\mu A^\mu = 0$ \emph{because $m \neq 0$}.
+This constraint is lorentz-invariant and removes one of the four
+	degrees of freedom.
+Therefore our field has three degrees of freedom as desired.
+
+%	
+%	The components of the four-vector are each their own, independant
+%		fields.
+%	They don't interact, and they should be treated as four seperate
+%		fields which each satisfy a seperate klein-gordon equation.
+%	The fields transform together, but other than that, they don't
+%		interact.
+%	
+%	We can do some more analysis on this theory to show that it may not
+%		even have a positive energy density.
+%	This is shown in Schwartz 8.19.
+%	
+%	We need to chose lagrangians which do not have negative energy densities.
+%	
+%	\[ \mathcal{L} = \frac{a}{2} A_\mu \partial_\nu \partial^\nu A^\mu
+%		+ \frac{b}{2} A_\mu \partial_\mu \partial^\nu A^\nu
+%		+ \frac{1}{2} m^2 A_\mu A^\mu \]
+%	
+%	which is the most general lagrangian with terms of only two or
+%		zero derivatives.
+%	The equations of motion are (Schwartz 8.21):
+%	
+%	\[ a \partial_\nu \partial^\nu A_\mu + b \partial_\mu \partial_\nu A^\nu
+%		+ m^2 A_\mu = 0 \]
+%	
+
+\item We need to determine what the possible polarizations are.
+For massive scalar field theories, there are three polarizations.
+From the quantum perspective, they correspond to the spin-0,
+	spin-1, and spin-(-1) states for a spin-1 particle, which 
+	we expect.
+\end{enumerate}
+
+\paragraph{From Massive to Massless}
+\begin{enumerate}
+\item We need to fix a gauge.
+Removing the mass term adds an extra symmetry to the lagrangian:
+
+\[ A_\mu(x) \to A_\mu(x) + \partial_\mu \alpha(x) \]
+
+where $\alpha(x)$ is a scalar.
+
+We need to chose a specific gauge for $A_\mu$, which means
+	imposing an additional constraint.
+One such constraint is the Coulumb gauge.
+This constraint removes a degree of freedom from the previously
+	mentioned three, so now there are only two.
+\item There are only two polarizations.
+
+The interpretation of this is that massless vector fields cannot
+	have spin zero, they must have spin -1 or 1.
+\end{enumerate}
+
+\end{document}

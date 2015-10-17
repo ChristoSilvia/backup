@@ -1,0 +1,386 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+
+\section{Why does the Dirac Field need left and right handed components?}
+
+%	Suppose we want to describe a massive, charged particle of spin $\frac12$.
+%	Since the particle is charged, we will need the fields to have a gauge
+%		transformation.
+%	The only two degree of freedom object which represents the Lorentz
+%		group is a weyl spinor.
+%	A single left or right handed Weyl spinor is already a complex object,
+%		and all of its degrees of freedom are spoken for in being a representation
+%		of the lorentz group.
+%	So, if we want the Weyl spinor to have a nontrivial gauge transformation,
+%		and therefore interact with the electromagnetic field,
+%		we need to introduce an additional degree of freedom.
+%	
+%	Since we still want the particle to have spin $\frac12$, the second degree
+%		of freedom needs to be another Weyl spinor.
+%	So far, we have only determined that the lagrangian must have at least two
+%		Weyl spinors.  We haven't determined whether it can have two left-handed
+%		Weyl spinors, two right-handed Weyl spinors, or one of each.
+%	
+%	Suppose we try to write down a kinetic term for a theory with two left-handed
+%		Weyl spinors as fields.
+%	
+%	\begin{align}
+%	\mathcal{L}_\text{kinetic} & = i \psi_{L1}^\dagger \bar{\sigma}_\mu 
+%			\partial_\mu \psi_{L1}
+%		+ i \psi_{L2}^\dagger \bar{\sigma}_\mu \partial_\mu \psi_{L2}
+%	\end{align}
+%	
+%	Therefore, the only kind of gauge invariance that each field could have is:
+%	
+%	\begin{align}
+%	\psi_{L1} & \to e^{i \alpha(x)} \psi_{L1} \\
+%	\psi_{L2} & \to e^{i \alpha(x)} \psi_{L2} 
+%	\end{align}
+%	
+%	with the interacting lagrangian being:
+%	
+%	\begin{align}
+%	\mathcal{L}_\text{kinetic} 
+%		& = i \psi_{L1}^\dagger \bar{\sigma}_\mu (\partial_\mu + i e A_\mu)\psi_{L1}
+%		+ i \psi_{L2}^\dagger \bar{\sigma}_\mu (\partial_\mu + i e A_\mu) \psi_{L2}
+%	\end{align}
+%	
+%	Consider an interaction term between $\psi_L$ and $\psi_R$ of the form
+%		$\psi_{L1}^\dagger \psi_{L2}$.
+%	
+%	Under infinitesimal transformations, the fields $\psi_L$ and $\psi_R$ transform
+%		with the following properties:
+%	
+%	\begin{align}
+%	\delta \psi_R & = \frac12(i \theta_j + \beta_j) \sigma_j \psi_R \\
+%	\delta \psi_L & = \frac12(i \theta_j - \beta_j) \sigma_j \psi_L \\
+%	\delta \psi_R^\dagger & = \frac12( - i \theta_j + \beta_j) \psi_R^\dagger \sigma_j \\
+%	\delta \psi_l^\dagger & = \frac12( - i \theta_j - \beta_j) \psi_L^\dagger \sigma_j 
+%	\end{align}
+%	
+%	So let's try $\psi_L^\dagger \psi_L$.
+%	
+%	\begin{align}
+%	\delta( \psi_{L1}^\dagger \psi_{L2}) & =
+%		\psi_{L1}^\dagger \frac12 (i \theta_j - \beta_j) \sigma_j \psi_{L2}
+%		+ \frac12(-i \theta_j - \beta_j) \psi_{L1}^\dagger \sigma_j \psi_{L2} \nonumber \\
+%	& = - \beta_j \psi_{L1}^\dagger \sigma_j \psi_{L2}
+%	\end{align}
+%	
+%	Therefore, $\psi_{L1}^\dagger \psi_{L2}$ is not lorentz-invariant.
+%	
+%	Since the derivatives happen spatially, with vector indices and not spinor
+%		indices, inserting any derivatives into $\psi_{L1}^\dagger \psi_{L2}$
+%		will not yield a lorentz-invariant quantity.
+%	Therefore, we seem to be stuck.
+%	If we chose two fields of the same handedness, for this generalizes to right-handed
+%		spinors, then there can be no lorentz invariant interactions.
+%	In summary, to have an interacting theory, we need our fields to have gauge
+%		transformations.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Suppose we want to describe a massive particle with spin $\frac12$.
+We need a mass term, which will have no derivatives.
+
+Let's assume that our theory has one field, $\psi_L$.
+The handedness is irrelevant.
+Then, one candidate mass term is $\psi_L^\dagger \psi$.
+However, this is not lorentz invariant, which I will now show:
+
+Under infinitesimal transformations, the fields $\psi_L$ and $\psi_R$ transform
+	with the following properties:
+
+\begin{align}
+\delta \psi_R & = \frac12(i \theta_j + \beta_j) \sigma_j \psi_R \\
+\delta \psi_L & = \frac12(i \theta_j - \beta_j) \sigma_j \psi_L \\
+\delta \psi_R^\dagger & = \frac12( - i \theta_j + \beta_j) \psi_R^\dagger \sigma_j \\
+\delta \psi_L^\dagger & = \frac12( - i \theta_j - \beta_j) \psi_L^\dagger \sigma_j 
+\end{align}
+
+So let's try $\psi_L^\dagger \psi_L$.
+
+\begin{align}
+\delta( \psi_{L}^\dagger \psi_{L}) & =
+	\psi_{L}^\dagger \frac12 (i \theta_j - \beta_j) \sigma_j \psi_{L}
+	+ \frac12(-i \theta_j - \beta_j) \psi_{L}^\dagger \sigma_j \psi_{L} \nonumber \\
+& = - \beta_j \psi_{L}^\dagger \sigma_j \psi_{L}
+\end{align}
+
+Therefore, $\psi_L^\dagger \psi_L$ is not lorentz-invariant, and it cannot
+	be used as a mass term.
+
+Let's write $\psi_L 
+	= \left( \begin{matrix} \psi_1(x) \\ \psi_2(x) \end{matrix} \right)$.
+
+Mass terms are bilinear in the fields  so therefore, for $A$ an unknown
+	matrix with complex entries, a mass term might be $\psi_L^\dagger A \psi_L$.
+Then: 
+\begin{align}
+\delta ( \psi_L^\dagger A \psi_L)
+	& = 
+	\psi_{L}^\dagger \frac12 (i \theta_j - \beta_j) \sigma_j A \psi_{L}
+	+ \frac12(-i \theta_j - \beta_j) \psi_{L}^\dagger A \sigma_j \psi_{L} \nonumber \\
+& = \frac i2 \theta_j \psi_L^\dagger [ \sigma_j, A ] \psi_L
+- \frac12 \beta_j \psi_{L}^\dagger \{ \sigma_j, A \} \psi_{L}
+\end{align}
+
+Therefore, for $\psi_L^\dagger A \psi_L$ is only generically lorentz-invariant
+	if $[ \sigma_j, A ] = 0$ and $\{ \sigma_j, A \} = 0$, for each $j$ from 1 to 3.
+Let's see what conditions this puts on $A$:
+
+\begin{align*}
+[ \sigma_1 , A ] 
+	& = \left( \begin{matrix} 0 & 1 \\ 1 & 0 \end{matrix} \right)
+	\left( \begin{matrix} a & b \\ c & d \end{matrix} \right)
+	- 
+	\left( \begin{matrix} a & b \\ c & d \end{matrix} \right)
+	\left( \begin{matrix} 0 & 1 \\ 1 & 0 \end{matrix} \right)\\
+& = \left( \begin{matrix} c - a & d - b \\ a - c & b - d\end{matrix} \right)\\
+[ \sigma_2 , A ]
+	& = \left( \begin{matrix} 0 & -i \\ i & 0 \end{matrix} \right)
+	\left( \begin{matrix} a & b \\ c & d \end{matrix} \right)
+	- 
+	\left( \begin{matrix} a & b \\ c & d \end{matrix} \right)
+	\left( \begin{matrix} 0 & -i \\ i & 0 \end{matrix} \right)\\
+& = i \left( \begin{matrix} - c - b & a - d \\ a - c & b + c \end{matrix} \right)\\
+[ \sigma_3, A ]
+	& = \left( \begin{matrix} 1 & 0 \\ 0 & -1 \end{matrix} \right)
+	\left( \begin{matrix} a & b \\ c & d \end{matrix} \right)
+	- 
+	\left( \begin{matrix} a & b \\ c & d \end{matrix} \right)
+	\left( \begin{matrix} 1 & 0 \\ 0 & -1 \end{matrix} \right)\\
+& = \left( \begin{matrix} 0 & b + b \\ - c - c & 0 \end{matrix} \right)\\
+\end{align*}
+
+Therefore, since each of these commutators must be zero, $b = c = 0$.
+Then, the first relation reduces to:
+
+\begin{align*}
+[ \sigma_1 , A ] 
+& = \left( \begin{matrix} - a & d  \\ a & - d\end{matrix} \right)\\
+\end{align*}
+
+Therefore, lorentz invariance of $\psi_L^\dagger A \psi_L$ implies that $A = 0$.
+
+The only other scalar quantity (up to a multiple) that we can make out of $\psi_L$ is
+	$\psi_L^T A \psi_L$.
+This transforms as:
+
+\begin{align}
+\delta \psi_L^T & = \frac12 (i \theta_j - \beta_j) \psi_L^T \sigma_j^T\\
+\delta \psi_R^T & = \frac12 (i \theta_j + \beta_j) \psi_R^T \sigma_j^T
+\end{align}
+
+Therefore,
+
+\begin{align}
+\delta (\psi_L^T A \psi_L)
+	& = \frac12 (i \theta_j - \beta_j) \psi_L^T \sigma_j^T A \psi_L
+	+ \psi_L^T A \frac12 ( i \theta_j - \beta_j) \sigma_j \psi_L \nonumber \\
+	& = \frac12(i \theta_j - \beta_j) \psi_L^T (\sigma_j^T A + A \sigma_j) \psi_L
+\end{align}
+
+If $\psi_L^T A \psi_L$ is lorentz-invariant, then for $j$ ranging from 1 to 3,
+	$\sigma_j^T A + A \sigma_j$ should be zero.
+
+\begin{align*}
+\sigma_1^T A + A \sigma_1 & = 
+	\left( \begin{matrix} 0 & 1 \\ 1 & 0 \end{matrix} \right)
+	\left( \begin{matrix} a & b \\ c & d \end{matrix} \right)
+	+ 
+	\left( \begin{matrix} a & b \\ c & d \end{matrix} \right)
+	\left( \begin{matrix} 0 & 1 \\ 1 & 0 \end{matrix} \right)\\
+& = \left( \begin{matrix} c + b & d + a \\ a + d & b + c \end{matrix} \right)\\
+\sigma_2^T A - A \sigma_2 & = 
+	\left( \begin{matrix} 0 & i \\ -i & 0 \end{matrix} \right)
+	\left( \begin{matrix} a & b \\ c & d \end{matrix} \right)
+	+ 
+	\left( \begin{matrix} a & b \\ c & d \end{matrix} \right)
+	\left( \begin{matrix} 0 & -i \\ i & 0 \end{matrix} \right)\\
+& = i \left( \begin{matrix} c + b & d - a \\ -a + d & - b - c \end{matrix} \right)\\
+\sigma_3^T A - A \sigma_3 & = 
+	\left( \begin{matrix} 1 & 0 \\ 0 & -1 \end{matrix} \right)
+	\left( \begin{matrix} a & b \\ c & d \end{matrix} \right)
+	+ 
+	\left( \begin{matrix} a & b \\ c & d \end{matrix} \right)
+	\left( \begin{matrix} 1 & 0 \\ 0 & -1 \end{matrix} \right)\\
+& = \left( \begin{matrix} 2 a & 0 \\ 0 & 2 d \end{matrix} \right)\\
+\end{align*}
+
+From the third equation, $a = d = 0$.
+From the first equation, $c + b = 0$, so therefore $c = -b$.
+The second equation adds no new constraints.
+Therefore, if $\psi_L^T A \psi_L$ is lorentz-invariant, then for some
+	arbitrary complex $\alpha$, $A$ is of the form:
+
+\begin{align}
+A & = \alpha \left( \begin{matrix} 0 & -1 \\1 & 0 \end{matrix} \right)
+\end{align}
+
+This is the form of $\sigma_2$, so therefore, any mass term of $\psi_L$
+	is proportional to $\psi_L^T \sigma_2 \psi_L$.
+This is known as the \emph{Majorana Mass}.
+
+This is not a triumph: we need to remember that the spinor
+	is a two-component vector.
+If we write $\psi_L = \left( \begin{matrix} \psi_1 \\ \psi_2 \end{matrix} \right)$,
+	then $\psi_L^T \sigma_2 \psi_L$ is just $i(\psi_2 \psi_1 - \psi_1 \psi_2)$.
+If $\psi_1$ and $\psi_2$ are regular numbers, then we cannot
+	use the majorana mass.
+If, however, they anticommute for some reason, or have some other
+	more complicated commutation relation, then we can still use the
+	majorana mass.
+Therefore a massive particle which does not couple to the electromagnetic
+	field can freely use only one component.
+
+\subsection{Coupling to the Photon Field}
+
+Suppose we want to describe a massive spin-$\frac12$ particle which	
+	couples nontrivially to the electromagnetic field.
+Since the coupling could only happen through a term such as:
+$A_\mu \psi_L^\dagger \bar{\sigma}_\mu \psi_L$, or perhaps
+	$A_\mu \psi_L^\dagger \partial_\mu \psi_L$,
+Then, the field needs to have a nontrivial gauge transformation to cotransform
+	with the field.
+It doesn't have any additional degrees of freedom, and it is already
+	complex.
+Therefore, a single Weyl spinor cannot couple to the electromagnetic field.
+
+A single Weyl spinor can describe a massless particle through the kinetic
+	term $i \psi_L^\dagger \bar{\sigma}_\mu \partial_\mu \psi_L$, 
+	or a massive particle through the additional mass term
+	$\psi_L^T \sigma_2 \psi_L$.
+A single Weyl spinor cannot describe a particle which interacts with
+	the electromagnetic field.
+
+\subsection{Two-Component Particle}
+
+Now that we've shown that a single Weyl spinor cannot descibe a massive
+	spin-$\frac12$ particle which couples to the electromagnetic field,
+Multiple spinors are thus required.
+I still need to show that a left-handed spinor and a right-handed spinor
+	are the required ones.
+
+\section{Components}
+
+$\psi_L$ has two independant components, because it's the $(\frac12,0)$
+	representation of $so(1,3)$.
+Therefore it has $2J + 1 = 2 \frac12 + 1 = 2$ independent components.
+
+$\psi$ is in $(\frac12,0) \oplus (0,\frac12)$.
+Each one has two independant components, so therefore $\psi$ has four 
+	independant components.
+
+Finally, $\bar{\psi} \gamma_5 \psi$ has one component, because $\bar\psi$
+	is a row matrix(as a spinor), $\gamma_5$ is a square matrix (as a spinor),
+	and $\psi$ is a column matrix(as a spinor).
+Therefore their product has one component.
+
+\section{Spinor Transformations}
+
+\begin{align*}
+\bar\psi & \to \psi^\dagger \Lambda_s^\dagger\\
+\psi & \to \Lambda_s \psi \\
+\end{align*}
+
+Note that in 10.86 of schwartz, it is shown that:
+
+\begin{align}
+(\gamma^0 \Lambda_s \gamma^0)^\dagger
+	& = \Lambda_s^{-1}
+\end{align}
+
+Therefore, 
+
+\begin{align*}
+\psi^\dagger \gamma^0 \psi 
+	& \to \psi^\dagger \Lambda_s^\dagger \gamma^0 \psi
+\end{align*}
+
+Since $\gamma^0 \gamma^0 = 2 g^{00} = 1$, and ${\gamma^0}^\dagger = \gamma^0$, 
+\begin{align*}
+& \to \psi^\dagger \gamma^0 \gamma^0 \Lambda_s^\dagger \gamma^0 \Lambda_s \psi \\
+& \to \psi^\dagger \gamma^0 ( \gamma^0 \Lambda_s \gamma^0)^\dagger \Lambda_s \psi \\
+& \to \psi^\dagger \gamma^0 \Lambda_s^{-1} \Lambda_s \psi\\
+\psi^\dagger \gamma^0 \psi & \to \psi^\dagger \gamma^0 \psi
+\end{align*}
+
+Similarly, 
+
+\begin{align*}
+\psi^\dagger \gamma^0 \gamma^\mu \psi
+& \to \psi^\dagger \Lambda_s^\dagger \gamma^0 \gamma^\mu \Lambda_s \psi\\
+& \to \psi^\dagger \gamma^0 \Lambda_s^{-1} \gamma^\mu \Lambda_s^{-1} \psi\\
+\psi^\dagger \gamma^0 \gamma^\mu \psi
+& \to \psi^\dagger \gamma^0 (\Lambda_V)^{\mu \nu} \gamma^\nu \psi \\
+\end{align*}
+
+Therefore $\psi^\dagger \gamma^0 \gamma^\mu \psi$ transforms as a vector.
+
+Similarly:
+
+\begin{align*}
+\psi^\dagger \gamma^0 \sigma^{\mu \nu} \psi
+& \to \psi^\dagger \Lambda_s^\dagger \gamma^0 
+	\left( \frac i2 [ \gamma^\mu, \gamma^\nu ] \right) \Lambda_s \psi\\
+& \to \psi^\dagger \gamma^0 \Lambda_s^{-1}
+	\left( \frac i2 \gamma^\mu \gamma^\nu - \gamma^\nu \gamma^\mu \right) \Lambda_s \psi\\
+& \to \psi^\dagger \Lambda_s^\dagger \gamma^0
+	(\Lambda_V)^{\sigma \mu} (\Lambda_V)^{\rho \nu}
+	\left( \frac i2 [ \gamma^\mu, \gamma^\nu ] \right)\psi\\
+& \to \psi^\dagger \Lambda_s^\dagger \gamma^0
+	(\Lambda_V)^{\sigma \mu} (\Lambda_V)^{\rho \nu}
+	\sigma^{\mu \nu}\psi
+\end{align*}
+
+Therefore it transforms as a lorentz tensor.
+
+Finally:
+
+\begin{align*}
+\psi^\dagger \gamma^0 \gamma^5 \psi
+& \to \psi^\dagger \Lambda_s^\dagger \gamma^0 \gamma^5 \Lambda_s \psi \\
+& \to i \psi^\dagger \gamma^0 \Lambda_s^{-1} 
+	\gamma^0 \gamma^1 \gamma^2 \gamma^3 \Lambda_s \psi\\
+& \to i \psi^\dagger \gamma^0 \Lambda_s^{-1} \gamma^0 \Lambda_s
+	\Lambda_s^{-1} \gamma^1 \Lambda_s
+	\Lambda_s^{-1} \gamma^2 \Lambda_s
+	\Lambda_s^{-1} \gamma^3 \Lambda_s \psi\\
+& \to i \psi^\dagger \gamma^0 
+	\Lambda_V^{0 \mu} \gamma^\mu
+	\Lambda_V^{1 \nu} \gamma^\nu
+	\Lambda_V^{2 \rho} \gamma^\rho
+	\Lambda_V^{3 \lambda} \gamma^\lambda \psi\\
+& \to i \psi^\dagger \gamma^0 
+	\Lambda_V^{0 \mu}
+	\Lambda_V^{1 \nu} 
+	\Lambda_V^{2 \rho} 
+	\Lambda_V^{3 \lambda} 
+	\gamma^\mu
+	\gamma^\nu
+	\gamma^\rho
+	\gamma^\lambda \psi\\
+\end{align*}
+
+\section{Eigenstates}
+
+\begin{tabular}{|c|c|c|c|}
+\hline
+Value & C Eigenvalue & P Eigenvalue & T Eigenvalue \\
+\hline
+$\bar\psi \psi$ & 1 & 1 & 1 \\
+\hline
+$i \bar\psi \gamma^5 \psi$ & 1 & -1 & -1 \\
+\hline
+$\bar\psi \gamma^\mu \psi$ & -1 & 1 & -1 \\
+\hline
+$\bar\psi \gamma^\mu \gamma^5 \psi$ & 1 & -1 &-1  \\
+\hline
+$\bar\psi \sigma^{\mu \nu} \psi$ & -1 & 1 & -1 \\
+\hline
+\end{tabular}
+\end{document}
