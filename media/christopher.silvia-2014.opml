@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<opml version="1.0">
+    <head>
+        <title>Christopher subscriptions in feedly Cloud</title>
+    </head>
+    <body>
+        <outline text="Dance" title="Dance">
+            <outline type="rss" text="Dance World Takeover" title="Dance World Takeover" xmlUrl="http://feeds.feedburner.com/rebeccabrightly" htmlUrl="http://rebeccabrightly.com"/>
+        </outline>
+        <outline text="programming" title="programming">
+            <outline type="rss" text="there's gotta be a better way" title="there's gotta be a better way" xmlUrl="http://blog.spang.cc/index.rss" htmlUrl="http://blog.spang.cc/"/>
+            <outline type="rss" text="Chris Done's home page feed." title="Chris Done's home page feed." xmlUrl="http://chrisdone.com/rss.xml" htmlUrl="http://chrisdone.com"/>
+            <outline type="rss" text="Programming in the 21st Century" title="Programming in the 21st Century" xmlUrl="http://prog21.dadgum.com/atom.xml" htmlUrl="http://prog21.dadgum.com/"/>
+            <outline type="rss" text="the programmer language," title="the programmer language," xmlUrl="http://blog.txus.io/atom.xml" htmlUrl="http://blog.txus.io/"/>
+            <outline type="rss" text="Neil Mitchell's Haskell Blog" title="Neil Mitchell's Haskell Blog" xmlUrl="http://neilmitchell.blogspot.com/feeds/posts/default" htmlUrl="http://neilmitchell.blogspot.com/"/>
+            <outline type="rss" text="Michael O. Church" title="Michael O. Church" xmlUrl="http://michaelochurch.wordpress.com/feed/" htmlUrl="http://michaelochurch.wordpress.com"/>
+            <outline type="rss" text="Haskell for all" title="Haskell for all" xmlUrl="http://www.haskellforall.com/feeds/posts/default" htmlUrl="http://www.haskellforall.com/"/>
+            <outline type="rss" text="Idle Words" title="Idle Words" xmlUrl="http://www.idlewords.com/index.xml" htmlUrl="http://idlewords.com"/>
+            <outline type="rss" text="Sam Altman" title="Sam Altman" xmlUrl="http://blog.samaltman.com/posts.atom" htmlUrl="http://blog.samaltman.com"/>
+            <outline type="rss" text="Well-Typed Blog" title="Well-Typed Blog" xmlUrl="http://www.well-typed.com/blog/rss2.xml" htmlUrl="http://www.well-typed.com/blog/"/>
+            <outline type="rss" text="Giant Robots Smashing Into Other Giant Robots" title="Giant Robots Smashing Into Other Giant Robots" xmlUrl="http://feeds.feedburner.com/GiantRobotsSmashingIntoOtherGiantRobots" htmlUrl="http://robots.thoughtbot.com"/>
+            <outline type="rss" text="Coding Horror" title="Coding Horror" xmlUrl="http://feeds.feedburner.com/codinghorror/" htmlUrl="http://blog.codinghorror.com/"/>
+            <outline type="rss" text="__del__( self )" title="__del__( self )" xmlUrl="http://zulko.github.io/atom.xml" htmlUrl="http://Zulko.github.io/"/>
+            <outline type="rss" text="Codon" title="Codon" xmlUrl="http://codon.com/feed.atom" htmlUrl="http://codon.com/"/>
+            <outline type="rss" text="Thruput | Garbage In, Garbage Out" title="Thruput | Garbage In, Garbage Out" xmlUrl="http://qzaidi.github.com/atom.xml" htmlUrl="http://qzaidi.github.com/"/>
+            <outline type="rss" text="Light Table Blog" title="Light Table Blog" xmlUrl="http://www.lighttable.com/atom.xml" htmlUrl="http://www.lighttable.com"/>
+            <outline type="rss" text="Linus' blog" title="Linus' blog" xmlUrl="http://torvalds-family.blogspot.com/feeds/posts/default" htmlUrl="http://torvalds-family.blogspot.com/"/>
+            <outline type="rss" text="James Long" title="James Long" xmlUrl="http://feeds.feedburner.com/jlongster" htmlUrl="http://jlongster.com/"/>
+            <outline type="rss" text="Sam Lavigne" title="Sam Lavigne" xmlUrl="http://lav.io/feed/" htmlUrl="http://lav.io"/>
+            <outline type="rss" text="Encinographic" title="Encinographic" xmlUrl="http://encinographic.blogspot.com/feeds/posts/default" htmlUrl="http://encinographic.blogspot.com/"/>
+            <outline type="rss" text="Julia Evans" title="Julia Evans" xmlUrl="http://jvns.ca/atom.xml" htmlUrl="http://jvns.ca/"/>
+            <outline type="rss" text="pbrisbin dot com" title="pbrisbin dot com" xmlUrl="http://pbrisbin.com/feed" htmlUrl="http://pbrisbin.com"/>
+            <outline type="rss" text="rs.io" title="rs.io" xmlUrl="http://feeds.feedburner.com/rsio" htmlUrl="http://rs.io"/>
+        </outline>
+        <outline text="Comics" title="Comics">
+            <outline type="rss" text="The Last Halloween" title="The Last Halloween" xmlUrl="http://www.last-halloween.com/posts.rss" htmlUrl="http://www.last-halloween.com/"/>
+            <outline type="rss" text="PHD Comics" title="PHD Comics" xmlUrl="http://www.phdcomics.com/gradfeed.php" htmlUrl="http://www.phdcomics.com"/>
+        </outline>
+        <outline text="politics" title="politics">
+            <outline type="rss" text="Adora's Blog" title="Adora's Blog" xmlUrl="http://adorasv.blogspot.com/feeds/posts/default" htmlUrl="http://adorasv.blogspot.com/"/>
+            <outline type="rss" text="Gwern" title="Gwern" xmlUrl="http://www.gwern.net/atom.xml"/>
+            <outline type="rss" text="Popehat" title="Popehat" xmlUrl="http://www.popehat.com/feed/" htmlUrl="http://www.popehat.com"/>
+        </outline>
+        <outline text="Science" title="Science">
+            <outline type="rss" text="Marcio von Muhlen" title="Marcio von Muhlen" xmlUrl="http://marciovm.com/atom.xml" htmlUrl="http://marciovm.com/"/>
+            <outline type="rss" text="Sean Carroll" title="Sean Carroll" xmlUrl="http://www.preposterousuniverse.com/blog/feed/" htmlUrl="http://www.preposterousuniverse.com/blog"/>
+            <outline type="rss" text="The Appendix Combined Feed" title="The Appendix Combined Feed" xmlUrl="http://theappendix.net/feeds/combined" htmlUrl="http://theappendix.net"/>
+            <outline type="rss" text="A geek with a hat" title="A geek with a hat" xmlUrl="http://swizec.com/blog/feed/atom" htmlUrl="http://swizec.com/blog"/>
+            <outline type="rss" text="Coding 2 Learn" title="Coding 2 Learn" xmlUrl="http://www.coding2learn.org/atom.xml" htmlUrl="http://coding2learn.org/"/>
+        </outline>
+        <outline text="Physics" title="Physics">
+            <outline type="rss" text="Not Even Wrong" title="Not Even Wrong" xmlUrl="http://www.math.columbia.edu/~woit/wordpress/?feed=rss2" htmlUrl="http://www.math.columbia.edu/~woit/wordpress"/>
+            <outline type="rss" text="Backreaction" title="Backreaction" xmlUrl="http://backreaction.blogspot.com/feeds/posts/default" htmlUrl="http://backreaction.blogspot.com/"/>
+            <outline type="rss" text="Coffeeshop Physics" title="Coffeeshop Physics" xmlUrl="http://www.coffeeshopphysics.com/feed.xml" htmlUrl="http://www.coffeeshopphysics.com"/>
+            <outline type="rss" text="...a NonLinearEditor's Blog" title="...a NonLinearEditor's Blog" xmlUrl="http://uniquedesigners.wordpress.com/feed/" htmlUrl="http://uniquedesigners.wordpress.com"/>
+        </outline>
+        <outline text="Math" title="Math">
+            <outline type="rss" text="Math ∩ Programming" title="Math ∩ Programming" xmlUrl="http://jeremykun.wordpress.com/feed/" htmlUrl="http://jeremykun.com"/>
+            <outline type="rss" text="Vi Hart" title="Vi Hart" xmlUrl="http://vihart.com/feed/" htmlUrl="http://vihart.com"/>
+            <outline type="rss" text="Wolfram|Alpha Blog" title="Wolfram|Alpha Blog" xmlUrl="http://blog.wolframalpha.com/feed/" htmlUrl="http://blog.wolframalpha.com"/>
+            <outline type="rss" text="eleVR" title="eleVR" xmlUrl="http://elevr.com/feed/" htmlUrl="http://elevr.com"/>
+            <outline type="rss" text="A Neighborhood of Infinity" title="A Neighborhood of Infinity" xmlUrl="http://sigfpe.blogspot.com/feeds/posts/default" htmlUrl="http://blog.sigfpe.com/"/>
+            <outline type="rss" text="What's new" title="What's new" xmlUrl="http://terrytao.wordpress.com/feed/" htmlUrl="http://terrytao.wordpress.com"/>
+            <outline type="rss" text="Complex Projective 4-Space" title="Complex Projective 4-Space" xmlUrl="http://cp4space.wordpress.com/feed/" htmlUrl="http://cp4space.wordpress.com"/>
+            <outline type="rss" text="Vi Hart" title="Vi Hart" xmlUrl="http://vihartvihart.tumblr.com/rss" htmlUrl="http://vihartvihart.tumblr.com/"/>
+            <outline type="rss" text="Munson's City" title="Munson's City" xmlUrl="http://munsonscity.wordpress.com/feed/" htmlUrl="http://munsonscity.com"/>
+        </outline>
+        <outline text="Tech" title="Tech">
+            <outline type="rss" text="Alex Payne" title="Alex Payne" xmlUrl="http://al3x.net/atom.xml" htmlUrl="https://al3x.net/"/>
+            <outline type="rss" text="Joel on Software" title="Joel on Software" xmlUrl="http://www.joelonsoftware.com/rss.xml" htmlUrl="http://www.joelonsoftware.com"/>
+        </outline>
+    </body>
+</opml>
