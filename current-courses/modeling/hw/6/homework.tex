@@ -1,8 +1,18 @@
 \documentclass{article}
 
 \usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+
+\DeclareMathOperator\erf{erf}
 
 \begin{document}
+
+%	\begin{flushright}
+%	Chris Silvia
+%	(with help from Sascha Hernandez)
+%	\date
+%	\end{flushright}
 
 \section{Lottery}
 
@@ -41,41 +51,51 @@ The \$1,200,000 ticket goes into the expected value, but it can only
 	be one of the tickets.
 Therefore, the expected value will be less than $5 E\left( \text{Ticket} \right)$.
 
-\subsubsection{Expected Value of Two Tickets}
+\subsubsection{Expected Value of Five Tickets}
 
-To prepare for this calculation, I will first calculate the expected value
-	of two tickets.
+To compute the expected value of five tickets, I computed the likelihood that each
+	possible combination of tickets could arise, and then multiplied it	by
+	the payoff of that combination.
+To my \emph{complete and utter shock}, the expected value for 5 tickets which I got 
+	is 4.3, exactly 5 times the expected value for one ticket by itself.
+I am completely astounded and I do not believe my result. 
+I have reimplemented this several times, once in haskell, and I keep getting the same
+	result over and over again.
+I don't believe it's true, but I'm not sure what to do at this point.
 
-\begin{align*}
-E\left( \text{Two Tickets} \right)
-	& =	P\left( \text{Ticket 1 is worth \$ 0} \right)
-		\left( 0 
-			+ E\left( \text{Ticket 2} \mid \text{Ticket 1 is worth \$0} \right)\right)\\
-	&	+ P\left( \text{Ticket 1 is worth \$ 30} \right)
-		\left( \$30 
-			+ E\left( \text{Ticket 2} \mid \text{Ticket 1 is worth \$30} \right)\right)\\
-	&	+ P\left( \text{Ticket 1 is worth \$ 800} \right)
-		\left( \$800
-			+ E\left( \text{Ticket 2} \mid \text{Ticket 1 is worth \$800} \right)\right)\\
-	&	+ P\left( \text{Ticket 1 is worth \$ 1,200,000} \right)
-		\left( \$1,200,000
-			+ E\left( \text{Ticket 2} \mid \text{Ticket 1 is worth \$1,200,000} \right)
-		\right)\\
-	& = \frac{1995499}{2000000} 
-		\left( \frac{120000 + 400000 + 1200000}{1999999} \right)\\
-	& + \frac{4000}{2000000} 
-		\left( 30 + \frac{110070 + 400000 + 1200000}{1999999} \right)\\
-	& + \frac{500}{2000000} 
-		\left( 800 + \frac{120000 + 399500 + 1200000}{1999999} \right)\\
-	& + \frac{1}{2000000} 
-		\left( 1200000 + \frac{120000 + 400000}{1999999} \right)\\
-	& = 0.85806 + 0.061710 + 0.20021 + 0.6 \\
-	& = 1.71998
-\end{align*}
-
-This is very slightly smaller than $2 * E\left( \text{Ticket} \right) = 1.72$,
-	as predicted.
-
+%	To prepare for this calculation, I will first calculate the expected value
+%		of two tickets.
+%	
+%	\begin{align*}
+%	E\left( \text{Two Tickets} \right)
+%		& =	P\left( \text{Ticket 1 is worth \$ 0} \right)
+%			\left( 0 
+%				+ E\left( \text{Ticket 2} \mid \text{Ticket 1 is worth \$0} \right)\right)\\
+%		&	+ P\left( \text{Ticket 1 is worth \$ 30} \right)
+%			\left( \$30 
+%				+ E\left( \text{Ticket 2} \mid \text{Ticket 1 is worth \$30} \right)\right)\\
+%		&	+ P\left( \text{Ticket 1 is worth \$ 800} \right)
+%			\left( \$800
+%				+ E\left( \text{Ticket 2} \mid \text{Ticket 1 is worth \$800} \right)\right)\\
+%		&	+ P\left( \text{Ticket 1 is worth \$ 1,200,000} \right)
+%			\left( \$1,200,000
+%				+ E\left( \text{Ticket 2} \mid \text{Ticket 1 is worth \$1,200,000} \right)
+%			\right)\\
+%		& = \frac{1995499}{2000000} 
+%			\left( \frac{120000 + 400000 + 1200000}{1999999} \right)\\
+%		& + \frac{4000}{2000000} 
+%			\left( 30 + \frac{110070 + 400000 + 1200000}{1999999} \right)\\
+%		& + \frac{500}{2000000} 
+%			\left( 800 + \frac{120000 + 399500 + 1200000}{1999999} \right)\\
+%		& + \frac{1}{2000000} 
+%			\left( 1200000 + \frac{120000 + 400000}{1999999} \right)\\
+%		& = 0.85806 + 0.061710 + 0.20021 + 0.6 \\
+%		& = 1.71998
+%	\end{align*}
+%	
+%	This is very slightly smaller than $2 * E\left( \text{Ticket} \right) = 1.72$,
+%		as predicted.
+%	
 %	\subsubsection{Five Tickets}
 %	
 %	\paragraph{}
@@ -164,7 +184,7 @@ The spammer does not know which one is which.
 	or Badly Written Solicitations (BWS).
 \item The probability of initial response from each VG individual is $p_g = 0.01$
 	regardless of the type of solicitation.
-\item The probability of initial response from each RS individual is $q_w - 0.002$
+\item The probability of initial response from each RS individual is $q_w = 0.002$
 	if the spammer sends WWS and $q_b = 0.001$ if the spammer sends BWS.
 \item Once the recipient responds, the probability of successfully fooling
 	him is $r_1 = 0.1$ for VG responders and $r_2 = 0.005$ for RS.
@@ -182,8 +202,8 @@ E\left( \text{Responses} \mid \text{WWS} \right)
 E\left( \text{Follow-Up Cost} \mid \text{WWS} \right)
 	& = K \left( x N p_g + (1 - x) N q_w \right) \nonumber \\
 	& = K * 5000 + K * 19000 \nonumber \\
-	& = 100000 + 380000\nonumber\\
-	& = 480000 \nonumber \\
+	& = \$ 100000 + \$ 380000\nonumber\\
+	& = \$ 480000 \nonumber \\
 E\left( \text{Gross Revenue} \mid \text{WWS} \right)
 	& = E\left( \text{Gross Revenue from VG} \mid \text{WWS} \right)
 	+ E\left( \text{Gross Revenue from RS} \mid \text{WWS} \right) \nonumber \\
@@ -194,21 +214,19 @@ E\left( \text{Gross Revenue} \mid \text{WWS} \right)
 		r_2 E\left( \text{Responses from RS} \mid \text{WWS} \right)
 		+ r_1 E\left( \text{Responses from VG} \mid \text{WWS} \right) \right) \nonumber \\
 	& = L \left( 
-		r_2 p_g x N
-		+ r_1 q_w (1-x) N  \right) \nonumber \\
-E\left( \text{Gross Revenue} \mid \text{BWS} \right)
-	& = L N \left( r_1 p_g x + r_2 q_w (1-x) \right) \\
+		r_1 p_g x N
+		+ r_2 q_w (1-x) N  \right) \nonumber \\
 	& = L N \left( 5 \times 10^{-5} + 9.5 \times 10^{-6} \right)
 	& = \$ 1190000 \nonumber \\
-E\left( \text{Profit} \mid \text{BWS} \right)
+E\left( \text{Profit} \mid \text{WWS} \right)
 	& = E\left( \text{Gross Revenue} \mid \text{WWS} \right)
 	- E\left( \text{Follow-Up Cost} \mid \text{WWS} \right) \nonumber \\
 	& = N \left( L \left( 
-		r_2 p_g x
-		+ r_1 q_w (1-x)  \right) 
-	- K \left(x p_g + (1 - x) q_w \right) \right) \nonumber
-	& = 1190000 - 480000 \nonumber \\
-	& = 710000 \nonumber \\
+		r_1 p_g x
+		+ r_2 q_w (1-x)  \right) 
+	- K \left(x p_g + (1 - x) q_w \right) \right) \nonumber\\
+	& = \$ 1190000 - \$ 480000 \nonumber \\
+	& = \$ 710000 \nonumber \\
 \end{align}
 
 Most of the expense comes from sending emails to the RS individuals,
@@ -223,7 +241,7 @@ E\left( \text{Follow-Up Cost} \mid \text{BWS} \right)
 	& = K \left(x N p_g + (1 - x) N q_b \right) \nonumber \\
 	& = K * 5000 + K * 9500 \nonumber \\
 	& = 100000 + 190000 \nonumber\\
-	& = 290000 \nonumber\\ 
+	& = \$ 290000 \nonumber\\ 
 E\left( \text{Gross Revenue} \mid \text{BWS} \right)
 	& = E\left( \text{Gross Revenue from VG} \mid \text{BWS} \right)
 	+ E\left( \text{Gross Revenue from RS} \mid \text{BWS} \right) \nonumber \\
@@ -234,8 +252,8 @@ E\left( \text{Gross Revenue} \mid \text{BWS} \right)
 		r_2 E\left( \text{Responses from RS} \mid \text{BWS} \right)
 		+ r_1 E\left( \text{Responses from VG} \mid \text{BWS} \right) \right) \nonumber \\
 	& = L \left( 
-		r_2 p_g x N
-		+ r_1 q_w (1-x) N  \right) \nonumber \\
+		r_1 p_g x N
+		+ r_2 q_w (1-x) N  \right) \nonumber \\
 E\left( \text{Gross Revenue} \mid \text{BWS} \right)
 	& = L N \left( r_1 p_g x + r_2 q_b (1-x) \right) \nonumber \\
 	& = L N \left( 5 \times 10^{-5} + 4.75 \times 10^{-6} \right) \nonumber \\
@@ -244,11 +262,11 @@ E\left( \text{Profit} \mid \text{BWS} \right)
 	& = E\left( \text{Gross Revenue} \mid \text{BWS} \right)
 	- E\left( \text{Follow-Up Cost} \mid \text{BWS} \right) \nonumber \\
 	& = N \left( L \left( 
-		r_2 p_g x
-		+ r_1 q_b (1-x)  \right) 
+		r_1 p_g x
+		+ r_2 q_b (1-x)  \right) 
 	- K \left(x p_g + (1 - x) q_b \right) \right) \nonumber\\
-	& = 1095000 - 290000 \nonumber \\
-	& = 805000 \nonumber
+	& = \$ 1095000 - \$ 290000 \nonumber \\
+	& = \$ 805000 \nonumber
 \end{align}
 
 Although the expected revenue doesn't change significantly,
@@ -262,21 +280,48 @@ We have determined:
 \begin{align}
 E\left( \text{Profit} \mid \text{WWS} \right)
 	& = N \left( L \left( 
-		r_2 p_g x
-		+ r_1 q_w (1-x)  \right) 
+		r_1 p_g x
+		+ r_2 q_w (1-x)  \right) 
 	- K \left(x p_g + (1 - x) q_w \right) \right) \nonumber \\
 E\left( \text{Profit} \mid \text{BWS} \right)
 	& = N \left( L \left( 
-		r_2 p_g x
-		+ r_1 q_b (1-x)  \right) 
+		r_1 p_g x
+		+ r_2 q_b (1-x)  \right) 
 	- K \left(x p_g + (1 - x) q_b \right) \right) \nonumber
 \end{align}
 
 Therefore, the two strategies are equivalent if  
 	$E\left( \text{Profit} \mid \text{WWS} \right) = 
-	E\left( \text{Profit} \mid \text{BWS} \right)$
-The cost of sending an email therefore doesn't affect the strategy
-	choice at all.
+	E\left( \text{Profit} \mid \text{BWS} \right)$,
+or:
+
+\begin{align}
+	N \left( L \left( 
+		r_1 p_g x
+		+ r_2 q_w (1-x)  \right) 
+	- K \left(x p_g + (1 - x) q_w \right) \right) \nonumber \\
+ = N \left( L \left( 
+		r_1 p_g x
+		+ r_2 q_b (1-x)  \right) 
+	- K \left(x p_g + (1 - x) q_b \right) \right) \nonumber \\
+	L \left( 
+		r_2 q_w (1-x)  \right) 
+	- K (1 - x) q_w
+& = L \left((1 - x) 
+		r_2 q_b  \right) 
+	- K \left((1 - x) q_b \right) \nonumber \\
+	L r_2 q_w
+	- K  q_w
+& = L r_2 q_b
+	- K  q_b  \nonumber \\
+K (q_b - q_w) & = L r_2 (q_b - q_w) \nonumber \\
+K & = L r_2\\
+K & = \$ 10 
+\end{align}
+
+As long as the exchanges cost more than $\$10$, one should send badly
+	written emails.
+If exchanges cost fewer than $\$10$, then well-written emails make sense.
 
 \section{Speech Problem}
 
@@ -482,5 +527,125 @@ I could check the second derivative, but I think that it will
 %	Since the function's derivative has a unique zero, this local minimum
 %		is the maximum value of th
 %	
+
+\subsection{Monte Carlo Simulation}
+
+I conducted a monte carlo simulation, which yielded the attached plots.
+The mean was slightly below the theoretical value, while the standard deviation 
+	was around 2.6
+
+\subsection{Variance}
+
+The expected number of new supporters given $k$ mentions is the sum of everybody who
+	does succumb to pressure, but is also the total number minus the expected
+	number of people who don't succumb to pressure.
+Recall that $\mathcal{N}(n p, n p (1 - p))$ approximates the sum of $n$ Bernoulli
+	random variables with probability $p$.
+
+If there are $k$ mentions of the issue, and a convertable issue-supporter is converted 
+	with probability
+	$p$, then each issue-supporter will not be converted with probability $(1 - p)^k$.
+There are $n - r$ issue-supporters who do not support the candidate.
+Therefore, in the limit of a large number of supporters, the number of unconverted
+	supporters will follow the following probability distribution:
+
+\begin{align}
+\text{Unconverted} 
+	& = \mathcal{N}\left((n-r)(1-p)^k, (n-r)(1-p)^k(1-(1-p)^k))\right)
+\end{align}
+
+Similarly, the number of non-alienated but alienable supporters will follow the
+	following probability distribution:
+
+\begin{align}
+\text{Unalienated}
+	& = \mathcal{N}\left(s(1-q)^k, s(1-q)^k(1-(1-q)^k))\right)
+\end{align}
+	
+The sum of two uncorrelated normal distributions is 
+	$\mathcal{N}(\mu_x, \sigma_x^2) + \mathcal{N}(\mu_y, \sigma_y^2)
+		= \mathcal{N}(\mu_x + \mu_y, \sigma_x^2 + \sigma_y^2)$.
+
+The number of non-supporters who are convinced is the total number of convincable non-
+	supporters minus
+	the non-alienated supporters.
+Since the total number of supporters is known, it's a ``random'' variable
+	of variance zero: $\mathcal{N}((n - r), 0)$,
+	and therefore the total number of non-supporters who are convinced 
+	(and alienatables who are alienated) is:
+
+\begin{align}
+\text{Converted} 
+	& = \mathcal{N} \left( (n-r)(1 - (1 - p)^k), (n - r)(1 - p)^k(1 - (1 - p)^k)\right)\\
+\text{Alienated}
+	& = \mathcal{N} \left( s(1 - (1 - q)^k), s(1 - q)^k(1 - (1 - q)^k)\right)
+\end{align}
+
+Therefore, by the same sum formula, the amount of change in supporters is given
+	by the following random variable:
+
+\begin{align}
+\text{Change in Support}
+	& = \mathcal{N} \left( (n-r)(1 - (1 - p)^k) - s(1 - (1 - q)^k),
+		(n - r)(1 - p)^k(1 - (1 - p)^k) + s(1 - q)(1 - (1 - q)^k) \right)
+\end{align}
+
+The variance of change in support is therefore:
+
+\begin{align}
+\sigma_s^2 & = 
+		(n - r)(1 - p)^k(1 - (1 - p)^k) + s(1 - q)^k(1 - (1 - q)^k)
+\end{align}
+
+\section{Problem 4}
+
+The sum of $n$ independant Bernoulli trials with probability $p$ is approximated
+	in the large-n limit by $\mathcal{N}(n p, n p (1 - p))$.
+Therefore, the gaussian is a good way of approximating many different bernoullit trials,
+	which might arise in a stochastic population model.
+In the population model, each time-step, every female produces offspring with
+	probability p.
+The total new offspring is the sum of all of the females' offspring.
+
+%	To sample the gaussian distribution, if I have a way of obtaining numbers
+%		uniformly spaced from zero to one, I can invert the CDF and apply it 
+%		to a random value from zero to one.
+%	
+%	The CDF of a gaussian distribution is given by:
+%	
+%	\begin{align}
+%	f(x) & = \frac12 \left[ 1 + \erf \left( \frac{x - \mu}{\sqrt2 \sigma} \right) \right] \\
+%	f^{-1}(x) & = \mu + \sqrt2 \sigma \erf^{-1} \left( 2 x - 1 \right) 
+%	\end{align}
+%	
+%	Therefore, to sample a gaussian distribution with mean $\mu$ and standard deviation $\sigma$,
+%		one should apply $f^{-1}$ to a uniform random sampling from zero to one.
+%	I found through numerical tests that this was faster than OCTAVE's sampling function.
+
+\paragraph{}
+\begin{tabular}{| l | l | l |}
+\hline
+Initial Population & Mean Bernoulli Runtime & Mean Gaussian Runtime \\
+\hline
+4 & 0.015499 sec & 0.020110 sec \\
+\hline
+10 & 0.021467 sec & 0.020323 sec \\
+\hline
+40 & 0.047958 sec & 0.019802 sec \\
+\hline 
+100 & 0.103264 sec & 0.019680 sec \\
+\hline
+\end{tabular}
+
+\paragraph{}
+From the runtimes, we see that for smaller runtimes, the bernoulli trials
+	are better, but for larger runtimes, the gaussian approximation is better.
+As the initial population grows, it becomes more and more difficult to compute
+	the bernoulli trials, getting more difficult approximately linearly, 
+	but the difficulty of computing the gaussian
+	approximation remains constant.
+
+From the plots, we can see that the smaller the initial population size,
+	the worse the agreement with the bernoulli trial will be.
 
 \end{document}

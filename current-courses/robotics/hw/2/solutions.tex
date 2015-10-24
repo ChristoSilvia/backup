@@ -1,6 +1,7 @@
 \documentclass{article}
 
 \usepackage{amsmath}
+\usepackage{amsfonts}
 \usepackage{tikz}
 \usetikzlibrary{arrows}
 
@@ -92,5 +93,205 @@ J_{v_i} = z_{i-1} \times \left( o_n - o_{i-1} \right) \label{eq:def-of-Jvi}
 \end{tikzpicture}
 
 Show that the determinant agrees with Equation (4.99).
+
+\section{The Pseudoinverse and the Solution Space}
+Suppose that $\dot{q}$ is a solution the the equation (\ref{eq:inverse-kinematics}) below:
+
+\begin{align}
+	\xi & = J \dot{q} \label{eq:inverse-kinematics}
+\end{align}
+
+\subsection{Finding Other Solutions}
+
+I will show that $\dot{q} + \left( 1 - J^+J \right) b$ is also a solution to
+	equation \ref{eq:inverse-kinematics} for any $b \in \mathbb{R}^n$.
+
+Recall the definition of $J^+$:
+
+\begin{align}
+	J^+ & \equiv J^T (J J^T)^{-1}
+\end{align}
+
+Note that $J J^+ = 1$.
+Therefore, if $\dot{q}$ is such that $\xi = J \dot{q}$, then:
+
+\begin{align}
+	J \left( \dot{q} + \left( 1 - J^+J \right) b \right) & = \nonumber \\
+	J \dot{q} + J b - J J^+ (J b) & = \nonumber \\
+	J \dot{q} + J b - J b & = \nonumber \\
+	J \dot{q} & = \xi \nonumber
+\end{align}
+
+Therefore, for all $b \in \mathbb{R}^n$, if (\ref{eq:inverse-kinematics}) holds,
+	then (\ref{eq:inverse-kinematics-with-b}) holds, as shown below:
+
+\begin{align}
+	J \left( \dot{q} + (1 - J^+ J ) b \right) & = \xi 
+		\label{eq:inverse-kinematics-with-b}
+\end{align}
+
+\subsection{Showing that $b = 0$ minimizes the resulting joint velocities}
+
+We start by noting that the quantity $J^+ J$ is symmetric, as shown in (\ref{eq:JpJsym})
+
+\begin{align}
+	\left(J^+ J \right)^T & = \nonumber \\
+	\left( J^T (J J^T)^{-1} J \right)^T & = \nonumber \\
+	J^T (J J^T)^{-1} J & = \left(J^+ J \right) \label{eq:JpJsym}
+\end{align}
+
+I will show that the choice $b = 0$ minimizes the resulting joint velocities.
+The joint velocities are encoded in the vector $\dot{q} + (1 - J^+ J) b$.
+
+By the triangle inequality, $\left\lVert x + y \right\rVert 
+	\leq \left\lVert x \right\rVert + \left\lVert y \right\rVert$.
+
+Therefore,
+
+\begin{align}
+	\left\lVert \dot{q} + (1 - J^+ J) b \right\rVert 
+		& \leq \left\lVert \dot{q} \right\rVert
+		+ \left\lVert (1 - J^+ J) b \right\rVert
+\end{align}
+
+The norm of this quantity is:
+
+\begin{align}
+	\sqrt{ \left( \dot{q}^T + b^T (1 - J^+ J) \right) 
+		\left( \dot{q} + (1 - J^+ J) b \right) } & = \nonumber \\
+	\sqrt{ \dot{q}^T \dot{q}
+		+ b^T (1 - J^+ J) \dot{q} 
+		+ \dot{q}^T (1 - J^+ J) b
+		+ b^T (1 - J^+ J) b} & = \nonumber \\
+	\sqrt{ \dot{q}^T \dot{q}
+		+ b^T \dot{q}
+		- b^T J^T (JJ^T)^{-1} \xi
+		+ \dot{q}^T b
+		- \dot{q}^T J^T (JJ^T)^{-1} J) b
+		+ b^T b
+		- b^T J^T (JJ^T)^{-1} J b} & = \nonumber \\
+\end{align}
+
+\section{Exploiting the null-space}
+
+In the previous section, the expression $(1 - J^+ J) b$ projects the vector $b$ 
+	onto the null space of the jacobian.
+While choices of $b$ do not alter the end-effector velocity, they do alter the joint
+	velocities.
+The choice of $b$ lets me chose among different joint velocities which satisfy
+	the end-effector velocity constraint.
+
+Since I can use $b$ to chose among many different joint velocity configurations,
+	I can chose $b$ to satsify several objectives.
+
+\begin{enumerate}
+\item
+I showed in the previous section that a choice of $b = 0$ will minimize the total magnitude
+	of the joint velocity vector.
+\item
+I may be interested in minimizing something else, for example, the joint velocity
+	of a slow joint.
+A different choice of $b$ may minimize that velocity.
+\item
+I may also want to keep my joint velocity values within a certain range.
+This will be a linear programming problem, which can potentially be computationally
+	difficult.
+\end{enumerate}
+
+\section{Path Planning with Artificial Potential Fields}
+
+A motion planner that uses artificial potential fields is guarenteed to reach its
+	goal if there are no local minima.
+If there is a unique local minimum, then the gradient descent algorithm is guarenteed
+	to reach it.
+However, if there are local minima, then the gradient descent algorithm can get stuck there,
+	and probabilistic methods need to be used to extract it from the local minimum.
+
+\section{Probabilitic Path Planners vs. Deterministic Path Planners}
+
+\subsection{Simple Workspaces}
+
+In a workspace with few obstacles, probabilistic planners will not be able to take
+	advantage of this fact, and will explore the space as usual, recieving fewer
+	rejected samples and eventually producing a path to the goal.
+
+However, artificial potential fields will quickly produce a path which goes directly
+	to the goal.
+
+\subsection{Irregular Workspaces}
+
+Probabilistic Path Planners are well-equipped to deal with irregular workspaces.
+If there are many different intermediate configurations, the path planner
+	may sample them.
+
+However, Artificial Potential Fields may yield local minima along the path to the
+	goal in an irregular workspace.
+These local minima may be escaped with probabilistic processes, or other processes.
+
+\subsection{High-Dimensional Workspaces}
+
+High-Dimensional Workspaces are difficult to sample with a probabilitics
+	path planner.
+As the number of dimensions increases, exponentially more samples are required to have
+	a reasonable map of the space.
+The narrow passage problem becomes more acute in higher dimensions as well, because
+	large regions have far more volume.
+
+Artificial Potential Fields will not be significantly affected by the increase
+	in dimensionality.
+The distance to the nearest obstacle, which could be approximated as the distance to the
+	nearest vertex, will not become significiantly more difficult to compute.
+The increase in dimensionality can slow it down only polynomially.
+Therefore constructing the artificial potential field will not be significantly more
+	difficult in higher dimensions.
+
+\section{Narrow Passage Problem}
+
+The Narrow Passage problem is a drawback of probabilitic planners.
+If there are two regions of large volume connected by a region of small volume,
+	uniform random sampling is unlikely to sample within the region of small volume.
+This problem is especially acute at high configuration space dimensions.
+The probabilitic motion planner will treat the two regions as discontinuous, and finding
+	the path will be very difficult unless sampling is done more intelligently.
+
+The game \emph{Operation} will cause a narrow passage problem in a manipulator.
+The goal is to pick up a small plastic game piece embedded in a hole with metal tweezers, 
+	without touching the tweezers to the side of the hole.
+Very few configurations get the tweezers right through to the game piece.
+If one is uniformly sampling, then these may be very difficult to find.
+However, if one decides to sample more around the goal, then the configurations may be
+	found.
+
+\section{Using Motion Planners to solve Manipulation Problems}
+
+The goal of motion planning is to find a good path through the configuration space which
+	does not intersect any obstacles.
+However, when one wants to manipulate objects, one needs to intersect the object which
+	one is manipulating, and exert forces on it.
+Motion Planning does not account for this.
+
+A motion planner trying to pick up an object will try to place the manipulator exactly around
+	the object.
+This configuration has very little tolerance for error, and constitutes a narrow passage.
+The motion planner does not encode the fact that the object will tolerate some squeezing 
+	forces applied to it, and cannot take advantage of this to make its planning easier.
+Therefore motion planners are not good for direct manipulation.
+
+\section{Which robots use motion planners?}
+
+Home robots are more likely to use motion planners than industrial robots, because an industrial
+	robot operates within a highly structured and predicatable environment while a home
+	robot must adjust to a constantly changing environment.
+
+Since industrial robots typically will only perform a single action within their lifecycle,
+	their action can be efficiently hand-engineered.
+Technicians can manually make an efficient trajectory one time, and then direct the industrial
+	robot to repeat that trajectory.
+
+Home robots, however, are deposited in an unfamiliar environment that they need to explore.
+Even when they do explore, it is constantly changing, as new obstacles are added.
+Therefore, the robot needs to do its own path planning, and needs to come up with
+	new paths to adjust to new situations.
+
 
 \end{document}
