@@ -157,3 +157,5 @@ bar {
 # begin added files
 # exec --no-startup-id nm-applet
 
+exec_always "xrandr --output LVDS1 --auto"
+exec_always "xrandr --output HDMI1 --auto --left-of LVDS1"
