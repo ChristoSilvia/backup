@@ -1,9 +1,14 @@
 \documentclass{article}
 
+\usepackage{fullpage}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{tikz}
+\usepackage{cancel}
 \usetikzlibrary{arrows}
+
+\DeclareMathOperator{\atan2}{atan2}
+\DeclareMathOperator{\tr}{Tr}
 
 \begin{document}
 
@@ -88,11 +93,308 @@ J_{v_i} = z_{i-1} \times \left( o_n - o_{i-1} \right) \label{eq:def-of-Jvi}
 \node[below right] (end) at (o3) {$o_3$};
 \draw[-] (o2) to (o3);
 
-\draw[-] (origin) to (o3);
+\draw[->] (origin) to (o3);
 
 \end{tikzpicture}
 
 Show that the determinant agrees with Equation (4.99).
+
+\subsection{Computing the Forward Kinematics}
+
+I will first compute the forward kinematics of the arm, with
+	the geometric approach.
+
+\paragraph{}
+\begin{tikzpicture}
+
+\coordinate(o0) at (0,0);
+\draw[->, thick] (o0) to (1,0) node[below] (y0) {$y_0$};
+\draw[->, thick] (o0) to (0,-1) node[right] (x0) {$x_0$};
+
+\coordinate(o1) at (0,0);
+\draw[->, thick] (o1) to (0.9,-0.6) node[below] (x1) {$x_1$};
+\draw[->, thick] (o1) to (-0.6,-0.9) node[below] (z1) {$z_1$};
+
+\coordinate(o2) at (1.5, -1);
+\draw[-] (o0) to (o2);
+\draw[->, thick] (o2) to (1.5+0.9,-0.6-1) node[below] (x2) {$x_2$};
+\draw[->, thick] (o2) to (-0.6+1.5,-0.9-1) node[below] (z2) {$z_2$};
+
+\coordinate(o3) at (3,-2);
+\node[right] at (o3) (endeffector) {$(x_c, y_c)$};
+\draw[-] (o2) to (o3);
+
+\draw (1.2,-0.7) arc (-30:-2:1.5);
+\node[right] at (1.3, -0.4) (theta1) {$\theta_1$};
+\end{tikzpicture}
+
+
+\subsection{Computing the Jacobian}
+
+The first column of the jacobian is 
+
+\begin{tikzpicture}
+\coordinate (origin) at (0,0);
+\draw[->, thick] (origin) to (-0.5,-0.5) node[below] (x0) {$x_0$};
+\draw[->, thick] (origin) to (1,0) node[below right] (y0) {$y_0$};
+\draw[->, thick, color=blue] (origin) to (0,1) node[left] (z0) {$z_0$};
+
+\coordinate (o1) at (0,2);
+\draw[-] (origin) to (o1);
+\draw[->, thick] (o1) to (1,2) node[below] (x1) {$x_1$};
+\draw[->, thick] (o1) to (0,3) node[left] (y1) {$y_1$};
+\draw[->, thick] (o1) to (-0.5, 1.5) node[left] (z1) {$z_1$};
+
+\coordinate (o2) at (2,2);
+\draw[-] (o1) to (o2);
+\draw[->, thick] (o2) to (3,2) node[below] (x2) {$x_2$};
+\draw[->, thick] (o2) to (2,3) node[left] (y2) {$y_2$};
+\draw[->, thick] (o2) to (1.5, 1.5) node[below right] (z2) {$z_2$};
+
+\coordinate (o3) at (4.5,2);
+\node[below right] (end) at (o3) {$o_3$};
+\draw[-] (o2) to (o3);
+
+\draw[->, color=red] (origin) to (o3);
+
+\end{tikzpicture}
+
+The cross product is:
+
+\begin{align*}
+z_0 \times (o_3 - o_0)
+	& = \left[ \begin{matrix} 0 \\ 0 \\ 1 \end{matrix} \right]
+	\times \left[ 
+		\begin{matrix} 
+			\cos \theta_1 (a_2 \cos \theta_2 + a_3 \cos ( \theta_2 + \theta_3))\\
+			\sin \theta_1 (a_2 \cos \theta_2 + a_3 \cos ( \theta_2 + \theta_3))\\
+			a_1 + (a_2 \sin \theta_2 + a_3 \sin (\theta_2 + \theta_3))
+		\end{matrix} \right]\\
+	& = 
+	\left[ 
+		\begin{matrix} 
+			-\sin \theta_1 (a_2 \cos \theta_2 + a_3 \cos ( \theta_2 + \theta_3))\\
+			\cos \theta_1 (a_2 \cos \theta_2 + a_3 \cos ( \theta_2 + \theta_3))\\
+			0
+		\end{matrix} \right]
+\end{align*}
+
+The second column of the jacobian is:
+
+\begin{tikzpicture}
+\coordinate (origin) at (0,0);
+\draw[->, thick] (origin) to (-0.5,-0.5) node[below] (x0) {$x_0$};
+\draw[->, thick] (origin) to (1,0) node[below right] (y0) {$y_0$};
+\draw[->, thick] (origin) to (0,1) node[left] (z0) {$z_0$};
+
+\coordinate (o1) at (0,2);
+\draw[-] (origin) to (o1);
+\draw[->, thick] (o1) to (1,2) node[below] (x1) {$x_1$};
+\draw[->, thick] (o1) to (0,3) node[left] (y1) {$y_1$};
+\draw[->, thick, color=blue] (o1) to (-0.5, 1.5) node[left] (z1) {$z_1$};
+
+\coordinate (o2) at (2,2);
+\draw[-] (o1) to (o2);
+\draw[->, thick] (o2) to (3,2) node[below] (x2) {$x_2$};
+\draw[->, thick] (o2) to (2,3) node[left] (y2) {$y_2$};
+\draw[->, thick] (o2) to (1.5, 1.5) node[below right] (z2) {$z_2$};
+
+\coordinate (o3) at (4.5,2);
+\node[below right] (end) at (o3) {$o_3$};
+\draw[-] (o2) to (o3);
+
+\draw[->, color=red] (o1) to (o3);
+
+\end{tikzpicture}
+
+The cross product is:
+
+\begin{align*}
+z_1 \times (o_3 - o_1)
+	& = \left[
+		\begin{matrix} 
+			\cos(\theta_1 - \pi/2) \\ \sin(\theta_1 - \pi/2) \\ 0 
+		\end{matrix} \right]
+	\times \left[ 
+		\begin{matrix} 
+			\cos \theta_1 (a_2 \cos \theta_2 + a_3 \cos ( \theta_2 + \theta_3))\\
+			\sin \theta_1 (a_2 \cos \theta_2 + a_3 \cos ( \theta_2 + \theta_3))\\
+			a_2 \sin \theta_2 + a_3 \sin (\theta_2 + \theta_3)
+		\end{matrix} \right]\\
+	& = \left[
+		\begin{matrix} 
+			\sin \theta_1 \\ - \cos \theta_1 \\ 0 
+		\end{matrix} \right]
+	\times \left[ 
+		\begin{matrix} 
+			\cos \theta_1 (a_2 \cos \theta_2 + a_3 \cos ( \theta_2 + \theta_3))\\
+			\sin \theta_1 (a_2 \cos \theta_2 + a_3 \cos ( \theta_2 + \theta_3))\\
+			a_2 \sin \theta_2 + a_3 \sin (\theta_2 + \theta_3)
+		\end{matrix} \right]\\
+	& = 
+	\left[ 
+		\begin{matrix} 
+			- \cos \theta_1 
+				\left(a_2 \sin \theta_2 + a_3 \sin (\theta_2 + \theta_3)\right)\\ 
+			- \sin \theta_1 
+				\left(a_2 \sin \theta_2 + a_3 \sin (\theta_2 + \theta_3)\right)\\ 
+			\left(\cos^2 \theta_1 + \sin^2 \theta_1 \right)
+				\left(a_2 \cos \theta_2 + a_3 \cos ( \theta_2 + \theta_3\right)
+		\end{matrix} \right]\\
+	& = 
+	\left[ 
+		\begin{matrix} 
+			- \cos \theta_1 
+				\left(a_2 \sin \theta_2 + a_3 \sin (\theta_2 + \theta_3)\right)\\ 
+			- \sin \theta_1 
+				\left(a_2 \sin \theta_2 + a_3 \sin (\theta_2 + \theta_3)\right)\\ 
+			\left(a_2 \cos \theta_2 + a_3 \cos ( \theta_2 + \theta_3 \right)
+		\end{matrix} \right]
+\end{align*}
+
+The third column of the jacobian is:
+
+\begin{tikzpicture}
+\coordinate (origin) at (0,0);
+\draw[->, thick] (origin) to (-0.5,-0.5) node[below] (x0) {$x_0$};
+\draw[->, thick] (origin) to (1,0) node[below right] (y0) {$y_0$};
+\draw[->, thick] (origin) to (0,1) node[left] (z0) {$z_0$};
+
+\coordinate (o1) at (0,2);
+\draw[-] (origin) to (o1);
+\draw[->, thick] (o1) to (1,2) node[below] (x1) {$x_1$};
+\draw[->, thick] (o1) to (0,3) node[left] (y1) {$y_1$};
+\draw[->, thick] (o1) to (-0.5, 1.5) node[left] (z1) {$z_1$};
+
+\coordinate (o2) at (2,2);
+\draw[-] (o1) to (o2);
+\draw[->, thick] (o2) to (3,2) node[below] (x2) {$x_2$};
+\draw[->, thick] (o2) to (2,3) node[left] (y2) {$y_2$};
+\draw[->, thick, color=blue] (o2) to (1.5, 1.5) node[below right] (z2) {$z_2$};
+
+\coordinate (o3) at (4.5,2);
+\node[below right] (end) at (o3) {$o_3$};
+\draw[-] (o2) to (o3);
+
+\draw[->, color=red] (o2) to (o3);
+
+\end{tikzpicture}
+
+with the cross product:
+
+\begin{align*}
+z_2 \times (o_3 - o_2) 
+	& = \left[ \begin{matrix}
+		\sin \theta_1\\
+		-\cos \theta_1\\
+		0
+	\end{matrix} \right]
+	\times
+	\left[ \begin{matrix}
+		\cos \theta_1 a_3 \cos(\theta_2 + \theta_3) \\
+		\sin \theta_1 a_3 \cos(\theta_2 + \theta_3) \\
+		a_3 \sin(\theta_2 + \theta_3)
+	\end{matrix} \right]\\
+	& = \left[ \begin{matrix}
+		- \cos \theta_1 a_3 \sin(\theta_2 + \theta_3)\\
+		- \sin \theta_1 a_3 \sin(\theta_2 + \theta_3)\\
+		\left( \sin^2 \theta_1 + \cos^2 \theta_1 \right)
+			a_3 \cos (\theta_2 + \theta_3)
+	\end{matrix} \right]
+\end{align*}
+
+The complete jacobian is therefore:
+
+\begin{align}
+J_{11} & = 
+	\left[ \begin{matrix}
+		-\sin \theta_1 (a_2 \cos \theta_2 + a_3 \cos ( \theta_2 + \theta_3))
+			& 
+			- \cos \theta_1 
+				\left(a_2 \sin \theta_2 + a_3 \sin (\theta_2 + \theta_3)\right)
+			&
+		- \cos \theta_1 a_3 \sin(\theta_2 + \theta_3)\\
+		\cos \theta_1 (a_2 \cos \theta_2 + a_3 \cos ( \theta_2 + \theta_3))
+			& 
+			- \sin \theta_1 
+				\left(a_2 \sin \theta_2 + a_3 \sin (\theta_2 + \theta_3)\right) 
+			&
+			- \sin \theta_1 a_3 \sin(\theta_2 + \theta_3)\\
+		0
+			&		
+			\left(a_2 \cos \theta_2 + a_3 \cos ( \theta_2 + \theta_3 \right)
+			&
+			a_3 \cos (\theta_2 + \theta_3)
+	\end{matrix} \right]
+\end{align}
+
+\subsection{Determinant of the Jacobian}
+
+$\det J_{11}$ is given by:
+
+\begin{align*}
+\det J_{11}
+	& = 
+	-\sin \theta_1 (a_2 \cos \theta_2 + a_3 \cos ( \theta_2 + \theta_3))
+	\det \left[ \begin{matrix}
+			- \sin \theta_1 
+				\left(a_2 \sin \theta_2 + a_3 \sin (\theta_2 + \theta_3)\right) 
+			&
+			- \sin \theta_1 a_3 \sin(\theta_2 + \theta_3)\\
+			\left(a_2 \cos \theta_2 + a_3 \cos ( \theta_2 + \theta_3 \right)
+			&
+			a_3 \cos (\theta_2 + \theta_3)
+	\end{matrix} \right]\\
+	& + \cos \theta_1 (a_2 \cos \theta_2 + a_3 \cos ( \theta_2 + \theta_3))
+	\det \left[ \begin{matrix}
+		(a_2 \cos \theta_2 + a_3 \cos ( \theta_2 + \theta_3 ))
+		&
+		a_3 \cos (\theta_2 + \theta_3)\\
+		- \cos \theta_1 
+			\left(a_2 \sin \theta_2 + a_3 \sin (\theta_2 + \theta_3)\right)
+			&
+		- \cos \theta_1 a_3 \sin(\theta_2 + \theta_3)
+	\end{matrix} \right]\\
+	& = \left( a_2 \cos \theta_2 + a_3 \cos (\theta_2 + \theta_3) \right)\\
+	&
+		- \sin \theta_1
+			\left( - a_3 \cos(\theta_2 + \theta_3)
+					\sin \theta_1 (a_2 \sin \theta_2 + a_3 \sin (\theta_2 + \theta_3))
+					+ a_3 \sin \theta_1 \sin(\theta_2 + \theta_3)
+					(a_2 \cos \theta_2 + a_3 \cos (\theta_2 + \theta_3)) \right)\\
+	&	\cos \theta_1
+			\left( - \cos \theta_1 a_3 \sin(\theta_2 + \theta_3)
+				(a_2 \cos \theta_2 + a_3 \cos(\theta_2 + \theta_3))
+				+ a_3 \cos(\theta_2 + \theta_3)
+				\cos \theta_1 (a_2 \sin \theta_2 + a_3 \sin(\theta_2 + \theta_3))
+			\right)\\
+	& = a_3 \left( a_2 \cos \theta_2 + a_3 \cos (\theta_2  +\theta_3) \right)\\
+	& (\sin^2 \theta_1 
+		\left(
+			\cos(\theta_2 + \theta_3)(a_2 \sin \theta_2 + a_3 \sin (\theta_2 + \theta_3)
+			- \sin(\theta_2 + \theta_3)(a_2 \cos \theta_2 + a_3 \cos (\theta_2 + \theta_3)
+		\right)\\
+	& + \cos^2 \theta_1 
+		\left(
+			\cos(\theta_2 + \theta_3)(a_2 \sin \theta_2 + a_3 \sin (\theta_2 + \theta_3)
+			- \sin(\theta_2 + \theta_3)(a_2 \cos \theta_2 + a_3 \cos (\theta_2 + \theta_3)
+		\right) )\\
+	& = a_3 \left( a_2 \cos \theta_2 + a_3 \cos (\theta_2  +\theta_3) \right)
+		\left(
+			\cos(\theta_2 + \theta_3)(a_2 \sin \theta_2 + \cancelto1{a_3 \sin (\theta_2 + \theta_3)})
+			- \sin(\theta_2 + \theta_3)(a_2 \cos \theta_2 + \cancelto1{a_3 \cos (\theta_2 + \theta_3)})
+		\right)\\
+	& = a_2 a_3 \left( a_2 \cos \theta_2 + a_3 \cos (\theta_2  +\theta_3) \right)
+		\left(
+			\cos(\theta_2 + \theta_3) \sin \theta_2
+			- \sin(\theta_2 + \theta_3) \cos \theta_2
+		\right)\\
+	& = a_2 a_3 \left( a_2 \cos \theta_2 + a_3 \cos (\theta_2  +\theta_3) \right)
+		\sin ( \theta_2 + \theta_3 - \theta_2 )\\
+	& = a_2 a_3 \sin \theta_3 \left( a_2 \cos \theta_2 + a_3 \cos (\theta_2  +\theta_3) \right)
+\end{align*}
+		
+
 
 \section{The Pseudoinverse and the Solution Space}
 Suppose that $\dot{q}$ is a solution the the equation (\ref{eq:inverse-kinematics}) below:
@@ -132,45 +434,58 @@ Therefore, for all $b \in \mathbb{R}^n$, if (\ref{eq:inverse-kinematics}) holds,
 
 \subsection{Showing that $b = 0$ minimizes the resulting joint velocities}
 
-We start by noting that the quantity $J^+ J$ is symmetric, as shown in (\ref{eq:JpJsym})
-
 \begin{align}
-	\left(J^+ J \right)^T & = \nonumber \\
-	\left( J^T (J J^T)^{-1} J \right)^T & = \nonumber \\
-	J^T (J J^T)^{-1} J & = \left(J^+ J \right) \label{eq:JpJsym}
+J^+ & = J^T (J J^T)^{-1} \\
+{J^+}^T & = (J J^T)^{-1} J \\
+{J^+ }^T J^+ & = (J J^T)^{-1} 
 \end{align}
 
-I will show that the choice $b = 0$ minimizes the resulting joint velocities.
-The joint velocities are encoded in the vector $\dot{q} + (1 - J^+ J) b$.
+The resuliting joint velocities are $J^+ \xi + (1 - J^+ J)b$.
+	for some $b \in \mathbb{R}^n$.
+This is $J^+ (\xi - J b) + b$.
 
-By the triangle inequality, $\left\lVert x + y \right\rVert 
-	\leq \left\lVert x \right\rVert + \left\lVert y \right\rVert$.
+\begin{align*}
+\left\lVert \dot{q} \right\rVert^2
+	& = (J^+ \xi + (1 - J^+ J) b)^T (J^+ \xi + (1 - J^+ J) b) \\
+	& = (\xi^T {J^+}^T
+		+ b^T (1 - J^T {J^+}^T))(J^+ \xi + (1 - J^+ J) b) \\
+	& = \xi^T (J J^T)^{-1} \xi + \cancelto1{\xi^T (J J^T)^{-1} (J b)}
+		- \cancelto1{\xi^T (J J^T)^{-1} (J b)}\\
+	& + \cancelto2{(J b)^T (J J^T)^{-1} \xi} + b^T b 
+		- (J b)^T (J J^T)^{-1} (J b)\\
+	& - \cancelto2{(J b)^T (J J^T)^{-1} \xi} 
+		- \cancelto3{(J b)^T (J J^T)^{-1} (J b)}
+		+ \cancelto3{(J b)^T (J J^T)^{-1} (J b)}\\ 
+	& = \xi^T (J J^T)^{-1} \xi + b^T b - (J b)^T (J J^T)^{-1} (J b)\\
+	& = \xi^T (J J^T)^{-1} J J^T (J J^T)^{-1} \xi
+	+ b^T b - b^T J^T (J J^T)^{-1}  J J^T (J J^T)^{-1} J b\\
+\left\lVert \dot{q} \right\rVert^2
+	& = \left\lVert J^+ \xi \right\rVert^2
+		+ \left\lVert b \right\rVert^2
+		- \left\lVert J^+ J b \right\rVert^2
+\end{align*}
 
-Therefore,
+Since the operator $J^+ J$ projects $b$ onto the nullspace of $J$,
+	the norm of $J^+ J b$ will always be less than the norm of $b$.
+Therefore, the quantity $\left\lVert b \right\rVert^2 
+	- \left\lVert J^+ J b \right\rVert^2$
+	is nonnegative, and thus is minimized by setting $b = 0$.
 
-\begin{align}
-	\left\lVert \dot{q} + (1 - J^+ J) b \right\rVert 
-		& \leq \left\lVert \dot{q} \right\rVert
-		+ \left\lVert (1 - J^+ J) b \right\rVert
-\end{align}
-
-The norm of this quantity is:
-
-\begin{align}
-	\sqrt{ \left( \dot{q}^T + b^T (1 - J^+ J) \right) 
-		\left( \dot{q} + (1 - J^+ J) b \right) } & = \nonumber \\
-	\sqrt{ \dot{q}^T \dot{q}
-		+ b^T (1 - J^+ J) \dot{q} 
-		+ \dot{q}^T (1 - J^+ J) b
-		+ b^T (1 - J^+ J) b} & = \nonumber \\
-	\sqrt{ \dot{q}^T \dot{q}
-		+ b^T \dot{q}
-		- b^T J^T (JJ^T)^{-1} \xi
-		+ \dot{q}^T b
-		- \dot{q}^T J^T (JJ^T)^{-1} J) b
-		+ b^T b
-		- b^T J^T (JJ^T)^{-1} J b} & = \nonumber \\
-\end{align}
+%	It is a property of norms that:
+%	
+%	\begin{align}
+%	\left\lVert J^+ J b \right\rVert^2
+%		& \leq \left\lVert J^+ J \right\rVert^2 \left\lVert b \right\rVert^2
+%	\end{align}
+%	
+%	Therefore, 
+%	
+%	\begin{align}
+%	\left\lVert b \right\rVert^2
+%		- \left\lVert J^+ J b \right\rVert^2
+%		& \leq \left\lVert b \right\rVert^2 
+%			\left( 1 - \left\lVert J^+ J \right\rVert^2 \right)
+%	\end{align}
 
 \section{Exploiting the null-space}
 
@@ -293,5 +608,25 @@ Even when they do explore, it is constantly changing, as new obstacles are added
 Therefore, the robot needs to do its own path planning, and needs to come up with
 	new paths to adjust to new situations.
 
+
+%	\section{Exponentials}
+%	
+%	Given a square matrix $A$, $e^A$ is defined as the power series
+%		$1 + A + \frac{A^2}2 + \dots + \frac{A^n}{n!} + \dots$
+%	Suppose $S \in so(3)$.
+%	Show that $e^S \in SO(3)$
+%	
+%	\begin{align}
+%		{e^A}^T & = e^{A^T}\\
+%		e^A e^B & = e^{A + b} \text{ provided $[A,B] = 0$}\\
+%		\det(e^A) &  = e^{\tr A}
+%	\end{align}
+%	
+%	Since $A \in so(3)$, $A^T A = A A^T = I$, and therefore $A$ and $A^T$ commute.
+%	Therefore,
+%	
+%	\begin{align}
+%		{e^A}^T e^A & = e^{A + A^T}
+%	\end{align}
 
 \end{document}
