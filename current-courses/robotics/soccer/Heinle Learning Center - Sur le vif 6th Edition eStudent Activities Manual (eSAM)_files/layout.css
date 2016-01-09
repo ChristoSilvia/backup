@@ -1,0 +1,1296 @@
+body {
+	background-color: #FFFFFF;
+	font: 13px Verdana, Arial, Helvetica, sans-serif; color: #000000;
+	behavior:url("/files/heinle/common/IE6-9_CSS_hover.htc"); /* for tr:hover td:hover to work in IE6-9*/
+}
+td, th { font: 13px Verdana, Arial, Helvetica, sans-serif; color: #000000; }
+
+td ul, td ol { padding-bottom: 0px; margin-bottom: 0px; }
+
+/* Ordered and unordered list css starts */
+li { font: 13px Verdana, Arial, Helvetica, sans-serif; color: #000000; }
+ol { font: 13px Verdana, Arial, Helvetica, sans-serif; color: #000000; }
+ul { font: 13px Verdana, Arial, Helvetica, sans-serif; color: #000000; list-style: disc; }
+/* Ordered and unordered list css ends */
+
+b { font-weight: bold; }
+
+.font11 { font-size: 11px; }
+.font14 { font-size: 14px; }
+.font16 { font-size: 16px; }
+.font18 { font-size: 18px; font-weight: bold; }
+
+.text150 { line-height: 150%; }
+.text175 { line-height: 195%; }
+.nobr { white-space: nowrap; }
+
+a:link, a:hover, a:active, a:visited { color: #333333; }
+
+/* Fill-in css starts */
+input {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color:#000000;
+    resize:none;  /* disable the resize grabber */
+}
+textarea {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color:#000000;
+    overflow:auto;
+    resize:none;  /* disable the resize grabber */
+} 
+.text_area textarea { /* this style fixed the textarea size on Firefox */
+	width:100%;	
+	display:block;	
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox */
+	box-sizing: border-box;         /* IE */
+}
+input.fix-width, .fix-width input {
+	/* this style fixed the width of 60-char fill-ins */
+	width: 440;
+}
+textarea.fix-width, .fix-width textarea {
+	/* this style fixed the width of 120-char, 300-char, 600-char fill-ins */
+	width:440;
+} 
+/* Fill-in css ends */
+
+div.contentpg {
+    padding-top: 48px;
+    padding-left: 10px;
+}
+sup, sub {
+   vertical-align: baseline;
+   position: relative;
+   font-size: 80%;
+   top: -0.4em;
+}
+sub { top: 0.4em; }
+
+.caption { font-size: 11px; }
+
+/* Copyright css starts */
+div.copyright {
+	position:relative;}
+
+div.copyright_description {
+	position:relative;
+	display:none;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	color: #000;
+	left:0px;
+	margin-bottom:auto;
+}
+div.description_content {
+	position:relative;
+	bottom:0;
+}	
+body.hlc div.description_content {
+	font-size:10px;
+}
+/* Copyright css ends */
+
+/* Pop-win link css starts (older titles - 2013) */
+a.popwin-link:link, .popwin-link a:link, a.popwin-link:visited, .popwin-link a:visited { 
+	color: #064f82;
+	text-decoration:underline; 
+}
+a.popwin-link:hover, .popwin-link a:hover, a.popwin-link:active, .popwin-link a:active { 
+	color: #5b8dc7;
+	text-decoration:underline;
+}
+div.spResultsTable0 p a, div.spResultsTable1 p a, div.spResultsTable0 p a:active, div.spResultsTable1 p a:active, div.spResultsTable0 p a:hover, div.spResultsTable1 p a:hover, p.taskText a, p.taskText a:active, p.taskText a:hover, p.taskText a.popwin-link:active, p.taskText a.popwin-link:hover, p.taskText a.smartIconLk:active, p.taskText a.smartIconLk:hover {
+	color: #5b8dc7;
+	text-decoration:underline;
+}
+/* Pop-win link css ends (older titles - 2013) */
+
+/* Pop-win link css starts (2014 - New titles) */
+a.popwindow-link:link, .popwindow-link a:link, a.popwindow-link:visited, .popwindow-link a:visited { 
+	color: #064f82;
+	text-decoration:underline; 
+}
+a.popwindow-link:hover, .popwindow-link a:hover, a.popwindow-link:active, .popwindow-link a:active { 
+	color: #5b8dc7;
+	text-decoration:underline;
+}
+div.spResultsTable0 p a, div.spResultsTable1 p a, div.spResultsTable0 p a:active, div.spResultsTable1 p a:active, div.spResultsTable0 p a:hover, div.spResultsTable1 p a:hover, p.taskText a, p.taskText a:active, p.taskText a:hover, p.taskText a.popwindow-link:active, p.taskText a.popwindow-link:hover, p.taskText a.smartIconLk:active, p.taskText a.smartIconLk:hover {
+	color: #5b8dc7;
+	text-decoration:underline;
+}
+
+* .popwindow-link {
+    padding-bottom: 12px;
+}
+/*Pop-win link css ends (2014 - New titles) */
+
+/* Mouseover css starts */
+a.mouseover, .mouseover:hover, .mouseover:active, .mouseover:focus {
+	position:static;
+	font-weight:normal;
+	color: #000;
+	outline:none;
+	cursor:text;
+	text-decoration:none;
+}
+a.mouseover, a.mouseover span {
+	text-decoration:none;
+}
+.mouseover:hover span, a.mouseover:hover span {
+	text-decoration:none;
+	background:#fbf499;
+	cursor:default;
+}
+div.yui-module.navtext div {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+}
+.footnote {
+	color: #007EFD;
+}
+/* Mouseover css ends */
+
+/* Enlarge image link css starts */
+.enlarge {
+	display: inline-block;
+	position: relative;
+}
+.enlarge span {
+	background: url(/files/heinle/common/enlarge.png) no-repeat;
+	bottom: 0;
+	display: block;
+	position: absolute;
+	right: 0;
+	height: 30px;
+	width: 32px;
+	cursor: hand;
+}
+.enlarge img {
+	height: auto;
+	max-width: 100%;
+	border: 0;
+}
+/* Enlarge image link css ends */
+
+/* Phonetic symbol css starts */
+.stressed-syllable {
+	background-image: url(/files/heinle/common/img/dot.gif);
+	background-repeat: no-repeat;
+	background-position: bottom;
+	padding-bottom: 2px; }
+
+.strikethrough {
+	background-image: url(/files/heinle/common/img/strike.gif);
+	background-repeat: no-repeat;
+	background-position:center;
+	padding-bottom: 2px; }
+
+.strikethrough-small {
+	background-image: url(/files/heinle/common/img/strike-small.gif);
+	background-repeat: no-repeat;
+	background-position:center;
+	padding-bottom: 2px; }
+/* Phonetic symbol css ends */
+
+/* ----- Practice pages ----- */
+/* Practice css starts (2012 - 2013 titles) */
+.practice-header {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	color: #FFF;
+	background-color: #ada58f;
+}
+.practice-color1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	background-color: #f4f1e6;
+}
+.practice-color2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	background-color: #DED5B4;
+}
+.practice-font {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+}
+/* Practice css ends (2012 - 2013 titles) */
+
+/* Practice css starts (2014 - 2015 titles) */
+.prac-color1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	background-color: #f4f1e6;
+	border: 1px dotted #999;
+	border-width: 1px 0;
+	margin: 5px 0;
+}
+.prac-color1 a { 
+	color: #006;
+	display: block;
+	font: bold Arial, Helvetica, sans-serif;
+	padding: 5px;
+	text-decoration: none;
+}
+.prac-color1:hover {
+	background-color: #ffffcc;
+}
+.prac-color2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	background-color: #DED5B4;
+	border: 1px dotted #999;
+	border-width: 1px 0;
+	margin: 5px 0;
+}
+.prac-color2 a { 
+	color: #006;
+	display: block;
+	font: bold Arial, Helvetica, sans-serif;
+	padding: 5px;
+	text-decoration: none;
+}
+.prac-color2:hover {
+	background-color: #ffffcc;
+}
+.podcast-color1{
+	background-color: #f4f1e6;
+	display: block;
+	border: 1px dotted #999;
+	border-width: 1px 0;
+	padding-top:5px;
+	padding-bottom:5px;
+}
+.podcast-color1 a {
+	background-color: #f4f1e6;
+	color: #006;
+    font: bold Arial, Helvetica, sans-serif;
+    padding: 5px;
+    text-decoration: none;
+}
+.podcast-color1 a:hover {
+	background-color: #ffffcc;
+}
+.podcast-color2 {
+	background-color: #DED5B4;
+	display: block;
+	border: 1px dotted #999;
+	border-width: 1px 0;
+	padding-top:5px;
+	padding-bottom:5px;
+}
+.podcast-color2 a {
+	background-color: #DED5B4;
+	color: #006;
+    font: bold Arial, Helvetica, sans-serif;
+    padding: 5px;
+    text-decoration: none;
+}
+.podcast-color2 a:hover {
+	background-color: #ffffcc;
+}
+/* Practice css ends (2014 - 2015 titles) */
+
+/* Practice page css starts (2015 - new titles) */
+.practice-section-header {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #464646;
+	background-color: #d6d6d6;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	padding-left: 12px;
+}
+table.practice {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	text-align: left;
+}
+table.practice td {
+	border-bottom: 2px solid #e8e8e8;
+	padding: 10px 0px;
+}
+table.practice td.icon {
+	text-align: center;
+	vertical-align: middle;
+	width: 60px;
+}
+.practice-padding1 { padding-bottom: 14px; }
+.practice-padding2 { padding-bottom: 25px; }
+/* Practice page css ends (2015 - new titles) */
+
+/* ----- Video and Media Libary ----- */
+/* Video Library link css starts (older titles - 2013) */
+.video_background {
+	background-color: #EEF3FD;
+	border:1px solid #EEF3FD;
+	border-radius:10px;
+	behavior: url('/files/heinle/common/IE7_rounded_corners.htc');
+}
+.video-header {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	color: #92918F;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+.video-spacer {
+	background-image: url(/files/heinle/common/vl_spacer.gif);
+	background-repeat: repeat-x;
+	width: 1px;
+}
+/* Video Library link css ends (older titles - 2013) */
+
+/* Media Library css starts (2014 - 2015 titles) */
+#tabs {
+	 width: 575px;
+	 margin: 0 auto;
+	 padding: 0;
+	 float:left;
+}
+#tabs .ui-tabs-nav {
+	margin: 0;
+	padding: .2em .2em 0;
+	background-color: #bcbdbe;
+}
+.tab_header {
+	font-size: 12px;
+	text-align: left;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	color: #7d7d7e;
+}
+/* Media Library css ends (2014 - 2015 titles) */
+
+/* Media Library css starts (2015 - new titles) */
+.ui-corner-all {
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+.ui-corner-top, .ui-corner-left, .ui-corner-tl { border-top-left-radius: 3px; }
+.ui-corner-top, .ui-corner-right, .ui-corner-tr { border-top-right-radius: 3px; }
+.ui-corner-bottom, .ui-corner-left, .ui-corner-bl { border-bottom-left-radius: 3px; }
+.ui-corner-bottom, .ui-corner-right, .ui-corner-br { border-bottom-right-radius: 3px; }
+
+#ML-tabs  {
+	 width: 100%;
+	 margin: 0 auto;
+	 padding: 0;
+	 float: left;
+}
+#ML-tabs .ui-tabs-nav {
+	margin: 0;
+	padding: .2em 5px 0;
+	background-color: #bcbdbe;
+	border-bottom-width: 1px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-bottom-color: #aaaaaa;
+}
+#ML-tabs .ui-tabs-nav li {
+	width: 171px;
+	text-align: center;
+	vertical-align: middle; 
+}
+#ML-tabs .ui-tabs-nav li a {
+	font-size: 12px;
+	display: inline-block;
+	float: none;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	padding: 9px 0px;
+	color: #7d7d7e;
+	width: 100%;
+	height: 100%;
+}
+table .ML-video-table {
+	border-bottom: 1px solid #92918f;
+}
+.ML-video-header {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	color: #7d7d7e;
+	margin: 0px;
+	padding: 24px 0px 12px;
+}
+.ML-video-content {
+	margin: 0px;
+	padding: 0px 0px 24px;
+}
+.ML-act-style {
+	line-height: 26px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 13px;
+	text-decoration: underline;
+	vertical-align: top;
+	padding-bottom: 24px;
+	margin: 0px;
+}
+.ML-act-padding {
+	padding-bottom: 40px;
+}
+.ML-icon-style {
+	line-height: 26px;
+	padding-right: 20px;
+	vertical-align: baseline;
+	margin: 0px;
+}
+table .ML-audio-table {
+	padding-top: 24px;
+}
+table .ML-audio-table td:first-child {
+	padding-left: 181px;
+}
+table .ML-audio-child-table td:first-child {
+	padding-left: 0;
+}
+table .ML-audio-child-table td {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+/* Media Library css ends (2015 - new titles) */
+
+/* Custom resource header css starts (2015 - new titles) */
+table .resource-header {
+	height: 38px;
+	background-color: #8a9196;
+	vertical-align: baseline;
+}
+.resource-ch-num {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 14px;
+	color: #FFFFFF;
+	text-transform: uppercase;
+	padding-left: 10px;
+}
+.resource-ch-num-digit {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 20px;
+	color: #ffffff;
+	padding-left: 5px;
+}
+.resource-ch-title {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 15px;
+	color: #FFFFFF;
+	font-weight: normal;
+	letter-spacing: 0.1em;
+	background-color: #8a9196;
+	text-align: right;
+	padding-right: 10px;
+}
+/* Custom resource header css ends (2015 - new titles) */
+
+/* ----- Global UI (copyright 2012 - new titles) ----- */
+/* Book shell and logo css starts */
+#hd #titlebar #logo {
+    background: url("/files/heinle/common/hlc_bk_logo.png");
+    height: 28px;
+    width: 219px;
+}
+#hd #yui-navset #bkTools {
+    background-color: #252525;
+}
+div #hd #yui-navset ul li a {
+    color: #959595;
+	font-size: 13px;
+}
+#hd #yui-navset ul#bkTools li {
+    padding: 9px 13px 1px;
+}
+div #hd #yui-navset ul li a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+#hd #yui-navset ul li.selected a {
+    background-color: #252525;
+    color: #fff;
+}
+#hd #yui-navset ul#bkTools li.selected { 
+ 	background-image: none !important;
+}
+body.hlc #doc3 {
+    background-color: #afafaf;
+}
+div#bdLeftBdr, div#bdRightBdr, div#bdLeftBdr div.bdrInsideDv, div#bdRightBdr div.bdrInsideDv {
+    display: none;
+}
+div #ft {
+    background-color: #afafaf;
+	color: #363636;
+}
+/* Book shell and logo css ends */
+
+/* Assignment Calendar: General css starts */
+div h1.assignLiCal {
+    color: #363636;
+    font: 19px Arial,Helvetica,sans-serif;
+	margin: 15px 0 10px;
+}
+.completeCheckmark img { display: none; }
+.completeCheckmark {
+    background-image: url("/files/heinle/common/hlc/green-checkmark.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding-right: 17px;
+}
+#refreshLink img { display: none; }
+div.left_col #refreshP a {
+    background-image: url("/files/heinle/common/hlc/refresh.png");
+    background-repeat: no-repeat;
+    padding-bottom: 24px;
+    padding-left: 170px;
+    padding-top: 4px;
+}
+div #dvToggleAssignListCalendar div.left_col {
+    background-color: #36393b;
+    float: left;
+}
+div #dvToggleAssignListCalendar div.left_col a.selected {
+    background-color: #3aa5da;
+    color: #ffffff;
+    font-size: 12px;
+}
+div #dvToggleAssignListCalendar div.left_col a {
+    color: #3aa5da;
+    display: block;
+    float: left;
+    font-size: 12px;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+div #dvToggleAssignListCalendar div.left_col a.selected:first-child {
+    background-image: url("/files/heinle/common/hlc/chapter_hover.png");
+    background-position: 15px 6px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+    width: 95px;
+}
+div #dvToggleAssignListCalendar div.left_col a:first-child {
+    background-image: url("/files/heinle/common/hlc/chapter_normal.png");
+    background-position: 15px 6px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+    width: 95px;
+}
+div #dvToggleAssignListCalendar div.left_col a:first-child + a.selected {
+    background-image: url("/files/heinle/common/hlc/date_hover.png");
+    background-position: 15px 5px;
+    background-repeat: no-repeat;
+    padding-left: 32px;
+    width: 77px;
+}
+div #dvToggleAssignListCalendar div.left_col a:first-child + a {
+    background-image: url("/files/heinle/common/hlc/date_normal.png");
+    background-position: 15px 5px;
+    background-repeat: no-repeat;
+    padding-left: 32px;
+    width: 77px;
+}
+div .tmpl_assignments.hasPointsScore tr.isAssigned:hover td,
+.tmpl_assignments.hasPointsScore tr.unAssigned:hover td,
+.stud_calendar table.dashboardAssignmentTable tr.highlight td {
+    background-color: #f2f2f2;
+}
+#tblCalLegend #txtrow td img {
+    display: none;
+}
+#tblCalLegend #txtrow td:first-child {
+    background-image: url("/files/heinle/common/hlc/Textbook-Activity.png");
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    width: 28px;
+}
+#actrow td img {
+    display: none;
+}
+#actrow td:first-child {
+    background-image: url("/files/heinle/common/hlc/Activity-Manual.png");
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    width: 28px;
+}
+/* Assignment Calendar: General css ends */
+
+/* Assignment Calendar: View by chapter css starts */
+div .tmpl_assignments.hasPointsScore .chapterHdr td, .tmpl_assignments.hasPointsScore .secHdr td {
+    background-color: #d4dfe4;
+    color: #363636;
+	padding: 0;
+}
+.chapterHdr b {
+    font-size: 15px;
+}
+.secHdr td b {
+    font-size: 11px;
+    text-transform: uppercase;
+}
+div .tmpl_assignments.hasPointsScore td.indent1 {
+    text-indent: 10px;
+}
+div .tmpl_assignments.hasPointsScore td {
+    background-color: #ffffff;
+    border-bottom: 2px solid #e8e8e8;
+    color: #363636;
+    font-size: 12px;
+	height: 30px;
+    margin: 0;
+    padding: 5px 0;
+	vertical-align: middle;
+}
+div .tmpl_assignments.hasPointsScore td a {
+    color: #3aa5da;
+    font-size: 12px;
+    padding-right: 10px;
+}
+div .tmpl_assignments tr.textbook div.bkTypeIcon {
+    background-image: url("/files/heinle/common/hlc/Textbook-Activity.png");
+	background-position: 12px center;
+	width: 35px;
+}
+div .tmpl_assignments tr.manual div.bkTypeIcon, .tmpl_assignments tr.activities_manual div.bkTypeIcon {
+    background-image: url("/files/heinle/common/hlc/Activity-Manual.png");
+	background-position: 12px center;
+	width: 35px;
+}
+/* Assignment Calendar: View by chapter css ends */
+
+/* Assignment Calendar: View by date css starts */
+div .stud_calendar .dashboardCalendar {
+    background-color: #cbd7dd;
+    border-radius: 0px;
+    padding: 0;
+}
+.stud_calendar .dashboardCalendar td #monthviewexterior {
+    border: 1px solid #8a9196;
+}
+.stud_calendar .dashboardCalendar tr td#weekview div {
+    color: #7f8e96;
+    font-family: Arial;
+	text-transform: uppercase;
+}
+.stud_calendar .dashboardCalendar #weekview div span.selectedWeek {
+    color: #7f8e96;
+	font-family: Arial;
+	font-size: 12px;
+	text-transform: capitalize;
+}
+.stud_calendar .dashboardCalendar .yui-calendar th .calheader {
+    color: #7d7d7e;
+    font-family: Arial;
+	font-size: 12px;
+    text-transform: uppercase;
+}
+.stud_calendar .dashboardCalendar .yui-calendar .calweekdaycell {
+    color: #7d7d7e;
+	font-size: 12px;
+}
+.stud_calendar .dashboardCalendar .yui-calendar td.calcell a.selector {
+    color: #3aa5da;
+    font-family: Arial;
+    font-weight: bold;
+}
+.stud_calendar .dashboardCalendar .yui-calendar td.calcell.oom.calcelltop {
+    background-color: #e2f2f9;
+    color: #b6d0dd;
+    font-weight: bold;
+}
+.stud_calendar .dashboardCalendar .yui-calendar td.calcell.oom.calcellbottom {
+    background-color: #e2f2f9;
+    color: #b6d0dd;
+    font-weight: bold;
+}
+.stud_calendar .dashboardCalendar .yui-calendar tr td.calcell.selected {
+    background-color: #d3eaaf;
+}
+.stud_calendar .dashboardCalendar .yui-calendar td.calcell.today.selectedtoday {
+    background-color: #197b30;
+}
+.stud_calendar .dashboardCalendar .yui-calendar td.calcell.today a.selector {
+    color: #ffffff;
+}
+.stud_calendar .dashboardCalendar .yui-calendar tr td.calcell.today {
+    background-color: #197b30;
+}
+.stud_calendar .dashboardCalendar .vertical td#weekview {
+    background: url("/files/heinle/common/hlc/Calendar_graphic.png") no-repeat scroll 190px 10px rgba(0, 0, 0, 0);
+}
+.stud_calendar .dashboardCalendar .yui-calendar tr td.calcell {
+    font-size: 12px;
+}
+div .stud_calendar .dashboardCalendar .yui-calendar .calheader a.calnavright {
+    background-image: url("/files/heinle/common/hlc/right-arrow_cal.png");
+    background-position: 7px center;
+    background-repeat: no-repeat;
+}
+div .stud_calendar .dashboardCalendar .yui-calendar .calheader a.calnavright-disabled {
+    background-image: url("/files/heinle/common/hlc/right-arrow_cal-disabled.png");
+    background-position: 5px center;
+    background-repeat: no-repeat;
+}
+div .stud_calendar .dashboardCalendar .yui-calendar .calheader a.calnavleft {
+    background-image: url("/files/heinle/common/hlc/left-arrow_cal.png");
+    background-position: 6px center;
+    background-repeat: no-repeat;
+}
+div .stud_calendar .dashboardCalendar .yui-calendar .calheader a.calnavleft-disabled {
+    background-image: url("/files/heinle/common/hlc/left-arrow_cal-disabled.png");
+    background-position: 5px center;
+    background-repeat: no-repeat;
+}
+.textbook td img[src*="/img/dashboard-common/textbook.png"] {
+    display: none;
+}
+div#table .studCalendarDayInfo tr.textbook td:first-child {
+    background-image: url("/files/heinle/common/hlc/Textbook-Activity.png");
+    background-position: 12px center;
+    background-repeat: no-repeat;
+    width: 5%;
+}
+.activities_manual td img[src*="/img/dashboard-common/activity_manual.gif"] {
+    display: none;
+}
+div#table .studCalendarDayInfo tr.activities_manual td:first-child {
+    background-image: url("/files/heinle/common/hlc/Activity-Manual.png");
+    background-position: 12px center;
+    background-repeat: no-repeat;
+    width: 5%;
+}
+div .stud_calendar table.dashboardAssignmentTable th, .tmpl_assignments.hasPointsScore .header td {
+    background-color: #1d5672;
+    border-left: medium none;
+    color: #aecad5;
+    font-size: 11px;
+    padding-right: 7px;
+    text-transform: uppercase;
+	vertical-align: middle;
+}
+div .stud_calendar table.dashboardAssignmentTable td {
+	background-color: #ffffff;
+	border-bottom: 2px solid #e8e8e8;
+	color: #363636;
+	font-size: 12px;
+	height: 30px;
+	margin: 0;
+	padding: 5px 7px;
+	vertical-align: middle;
+}
+div .stud_calendar .studCalendarDayInfo td a {
+    color: #3aa5da;
+}
+/* Assignment Calendar: View by date css ends */
+
+/* Table of contents css starts */
+body.hlc div#pagenav a.backArrow, body.hlc div#pagenav a.forwardArrow {
+    background: url("/files/heinle/common/hlc/Test_arrows.gif") no-repeat scroll 0 0 transparent;
+    border: 0 none;
+    display: block;
+    float: left;
+    height: 21px;
+    margin: 0 -5px 4px 5px;
+    text-indent: -9999px;
+    width: 31px;
+	background-position: 0 1px;
+}
+body.hlc div#pagenav a.forwardArrow {
+   background-position: 0 -50px;
+    margin-left:0;
+	margin-right:1px;
+}
+body.hlc div#pagenav input.quia_books_button {
+    background: url("/files/heinle/common/hlc/Search_GO.png") no-repeat scroll 0 0 transparent;
+    border: 0 none;
+    color: #fff;
+    cursor: pointer;
+    font: bold 10px/0 verdana helvetica,sans-serif;
+    height: 20px;
+    padding: 0;
+    text-indent: -9999px;
+    width: 31px;
+}
+body.hlc #pagenav input {
+	font-family: Arial,Helvetica,sans-serif;
+	width:50px;
+	margin-left:5px;
+	margin-right:5px;
+	height:16px;
+}
+body.hlc #pagenav #pgNavPad {
+    height: 100%;
+    padding: 0;
+}
+body.hlc div#toc ul#qbTblContentList li, body.hlc div#toc ul#qbTblContentList li a {
+    color: #838383;
+    font: bold 12px Arial, Helvetica, sans-serif;
+	text-decoration:none;
+	vertical-align:middle;
+	padding-bottom:8px;
+}
+body.hlc div#toc ul#qbTblContentList li a {
+    display: inline-block;
+}
+body.hlc div#toc ul#qbTblContentList li.qb_css_toc_highlight, body.hlc div#toc ul#qbTblContentList li.qb_css_toc_highlight a strong {
+    color: #838383;
+    font: bold 12px Arial,Helvetica,sans-serif;
+}
+body.hlc div#toc ul#qbTblContentList li.extraSpace, body.hlc div#toc ul#qbTblContentList li.extraSpace a, body.hlc div#toc ul#qbTblContentList li.extraSpace a strong {
+    color: #838383;
+    font: 12px Arial, Helvetica, sans-serif;
+	text-decoration:none;
+	vertical-align:middle;
+	width:0;
+}
+body.hlc div#toc ul#qbTblContentList li.extraSpace, body.hlc div#toc ul#qbTblContentList li.extraSpace a:hover, body.hlc div#toc ul#qbTblContentList li.extraSpace a:hover strong {
+    color: #3aa5da;
+    font: 12px Arial, Helvetica, sans-serif;
+	text-decoration:underline;
+	vertical-align:middle;
+	width:0;
+}
+body.hlc div#toc ul#qbTblContentList li.extraSpace.qb_css_toc_highlight, body.hlc div#toc ul#qbTblContentList li.extraSpace.qb_css_toc_highlight a, body.hlc div#toc ul#qbTblContentList li.extraSpace.qb_css_toc_highlight a strong {
+    color: #3aa5da;
+    font: 12px Arial, Helvetica, sans-serif;
+	text-decoration:none;
+	vertical-align:middle;
+	width:0;
+}
+body.hlc div#toc ul#qbTblContentList li.extraSpace2, body.hlc div#toc ul#qbTblContentList li.extraSpace2 a {
+	color: #838383;
+	font: 12px Arial, Helvetica, sans-serif;
+	text-decoration:none;
+	vertical-align:middle;
+	padding-bottom:8px;
+	padding-left: 14px;
+}
+body.hlc div#toc ul#qbTblContentList li.extraSpace2 a strong {
+	color: #838383;
+	font: 12px Arial, Helvetica, sans-serif;
+	text-decoration:none;
+	vertical-align:middle;
+}
+body.hlc div#toc ul#qbTblContentList li.extraSpace2.qb_css_toc_highlight a strong {
+	color: #3aa5da;
+	font: 12px Arial, Helvetica, sans-serif;
+	text-decoration:none;
+	vertical-align:middle;
+}
+body.hlc div#toc ul#qbTblContentList li.extraSpace2, body.hlc div#toc ul#qbTblContentList li.extraSpace2 a:hover, body.hlc div#toc ul#qbTblContentList li.extraSpace2 a:hover strong {
+    color: #3aa5da;
+    font: 12px Arial, Helvetica, sans-serif;
+	text-decoration:underline;
+	vertical-align:middle;
+	width:0;
+}
+body.hlc div#toc ul#qbTblContentList li a.leftArrow, body.hlc div#toc ul#qbTblContentList li a.downArrow {
+	background: transparent url("/files/heinle/common/hlc/Test_nav.gif") no-repeat scroll 0 4px;
+    height: 15px;
+    width: 12px;
+	vertical-align:middle;
+}
+body.hlc div#toc ul#qbTblContentList li a.downArrow {
+    background-position: 0 -194px;
+	height:11px;
+}
+body.hlc div#toc ul#qbTblContentList li.extraSpace a.leftArrow, body.hlc div#toc ul#qbTblContentList li.extraSpace a.downArrow {
+	font: 12px Arial, Helvetica, sans-serif;
+	background: transparent url("/files/heinle/common/hlc/hlc_bk_left_nav_li_arrows_v200px.gif") no-repeat scroll 0 4px;
+    height: 9px;
+    padding-bottom: 8px;
+    vertical-align: top;
+	width:10px;
+}
+body.hlc div#toc ul#qbTblContentList li.extraSpace a.downArrow {
+	background-position: 0 -194px;
+	height:11px;
+}
+div.split div.leftInsideDv, div.split div.rightInsideDv {
+    background: transparent none repeat scroll 0 0;
+}
+body.hlc div#doc3 #pagenav {
+    -moz-border-bottom-colors: #dfdfdf;
+    -moz-border-left-colors: #dfdfdf;
+    -moz-border-right-colors: #dfdfdf;
+    -moz-border-top-colors: #dfdfdf;
+    background: none repeat scroll 0 0 #f2f2f2;
+    border-color: #dfdfdf;
+    border-image: none;
+    border-style: solid;
+    border-width: 0 1px;
+    height: 23px;
+    position: absolute;
+    top: 17px;
+    white-space: nowrap;
+    width: 174px;
+	padding-bottom:18px;
+}
+body.hlc div#doc3.yui-t2 div.yui-b div#leftNav {
+    -moz-border-bottom-colors: #dfdfdf;
+    -moz-border-left-colors: #dfdfdf;
+    -moz-border-right-colors: #dfdfdf;
+    -moz-border-top-colors: #dfdfdf;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-color: #dfdfdf;
+    border-image: none;
+    border-style: solid;
+    border-width: 0 1px;
+    bottom: 20px;
+    display: block;
+    position: absolute;
+    top: 47px;
+    width: 174px;
+}
+body.hlc div.yui-b div#leftNavTop {
+    background: none repeat scroll 0 0 #f2f2f2;
+    border-image: none;
+	border-top:1px solid #dfdfdf;
+	border-right:1px solid #dfdfdf;
+	border-left:1px solid #dfdfdf;
+    position: absolute;
+    top: 7px;
+}
+body.hlc div.yui-b div#leftNavBot {
+    background: none repeat scroll 0 0 transparent;
+    border-image: none;
+	border-bottom:1px solid #dfdfdf;
+	border-right:1px solid #dfdfdf;
+	border-left:1px solid #dfdfdf;
+    position: absolute;
+    top: 7px;
+}
+body.hlc div#leftNavTop div.middleInsideDv, body.hlc div#leftNavBot div.middleInsideDv {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border:none;
+    border-image: none;
+    width: 174px;
+	float:none;
+	height: 0;
+}
+body.hlc div#doc3.yui-t2 div.yui-b div#leftNavBot {
+    bottom: 20px;
+    top: auto;
+    border-bottom: 1px solid #dfdfdf;
+}
+body.hlc div.split div#pgNavHr {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #dfdfdf;
+    border-image: none;
+    border-style: solid;
+    border-width: 0 0 1px;
+    clear: left;
+    margin: 0;
+    padding: 0;
+    width: 174px;
+	height:5px;
+}
+/* Table of contents css ends */
+
+/* Right navigation css starts */
+#bd #bkTabs ul.yui-nav li a, #bkTabs ul.yui-nav li a:hover {
+	background-image: none;
+    font: 12px  Arial, Helvetica, sans-serif;
+    color: #a1a1a1;
+}
+li.assignCalTabLi, li.eBooknavtabli, li.Activitiesnavtabli, li.Self-testsnavtabli, li.MediaLibrarynavtabli, li.VideoLibrarynavtabli, li.Practicenavtabli,
+li.TextAudionavtabli, li.Podcastsnavtabli, li.GrammarTutorialsnavtabli, li.CourseMaterialsnavtabli,
+li.ChapterMaterialsnavtabli, li.ReferenceMaterialsnavtabli, li.CommunicationManualnavtabli {
+	text-align:center;
+}
+#bd #bkTabs ul.yui-nav li.assignCalTabLi a{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+    background-color: #f4f4f4;
+	background-image:url("/img/books/heinle/rightNav/Calendar_Normal.png");
+	background-repeat:no-repeat;
+	background-position:50% 20%;
+	padding: 30px 0 0;
+}
+#bd #bkTabs ul.yui-nav li.assignCalTabLi a:hover, #bd #bkTabs ul.yui-nav li.assignCalTabLi.selected a {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+    background-color: #e2f2f9;
+	background-image:url("/img/books/heinle/rightNav/Calendar_Active.png");
+	background-repeat:no-repeat;
+	background-position:50% 20%;
+	padding: 30px 0 0;
+	color:#3aa5da;
+}
+#bd #bkTabs ul.yui-nav li.eBooknavtabli a {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+    background-color: #f4f4f4;
+	background-image:url("/img/books/heinle/rightNav/eBook_Normal.png");
+	background-repeat:no-repeat;
+	background-position:50% 35%;
+	padding: 30px 0 0;	
+	line-height:28px;
+}
+#bd #bkTabs ul.yui-nav li.eBooknavtabli a:hover, #bd #bkTabs ul.yui-nav li.eBooknavtabli.selected a{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#3aa5da;
+    background-color: #e2f2f9;
+	background-image:url("/img/books/heinle/rightNav/eBook_Active.png");
+	background-repeat:no-repeat;
+	background-position:50% 35%;
+	padding: 30px 0 0;
+	line-height:28px;
+}
+#bd #bkTabs ul.yui-nav li.Activitiesnavtabli a {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+    background-color: #f4f4f4;
+	background-image:url("/img/books/heinle/rightNav/Activities_Normal.png");
+	background-repeat:no-repeat;
+	background-position:50% 35%;
+	padding: 30px 0 0;	
+	line-height:28px;
+}
+#bd #bkTabs ul.yui-nav li.Activitiesnavtabli a:hover,  #bd #bkTabs ul.yui-nav li.Activitiesnavtabli.selected a {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#3aa5da;
+    background-color: #e2f2f9;
+	background-image:url("/img/books/heinle/rightNav/Activities_Active.png");
+	background-repeat:no-repeat;
+	background-position:50% 35%;
+	padding: 30px 0 0;	
+	line-height:28px;
+}
+li.Self-testsnavtabli{
+	text-align:center;
+}
+#bd #bkTabs ul.yui-nav li.Self-testsnavtabli a {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+    background-color: #f4f4f4;
+	background-repeat:no-repeat;
+	background-position:50% 38%;
+	padding: 30px 0 0;	
+	line-height: 28px;
+	background-image:url("/img/books/heinle/rightNav/Self-Tests_Normal.png");
+}
+#bd #bkTabs ul.yui-nav li.Self-testsnavtabli a:hover,  #bd #bkTabs ul.yui-nav li.Self-testsnavtabli.selected a {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#3aa5da;
+    background-color: #e2f2f9;
+	background-image:url("/img/books/heinle/rightNav/Self-Tests_Active.png");
+	background-repeat:no-repeat;
+	background-position:50% 38%;
+	padding: 30px 0 0;	
+	line-height:28px;
+}
+#bd #bkTabs ul.yui-nav li.MediaLibrarynavtabli a, #bd #bkTabs ul.yui-nav li.VideoLibrarynavtabli a {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+    background-color: #f4f4f4;
+	background-repeat:no-repeat;
+	background-position:50% 38%;
+	padding: 30px 0 0;	
+	line-height:28px;
+	background-image:url("/img/books/heinle/rightNav/Media-Library_Normal.png");
+}
+#bd #bkTabs ul.yui-nav li.MediaLibrarynavtabli a:hover, #bd #bkTabs ul.yui-nav li.MediaLibrarynavtabli.selected a, 
+#bd #bkTabs ul.yui-nav li.VideoLibrarynavtabli a:hover, #bd #bkTabs ul.yui-nav li.VideoLibrarynavtabli.selected a {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#3aa5da;
+    background-color: #e2f2f9;
+	background-image:url("/img/books/heinle/rightNav/Media-Library_Active.png");
+	background-repeat:no-repeat;
+	background-position:50% 38%;
+	padding: 30px 0 0;	
+	line-height:28px;
+}
+#bd #bkTabs ul.yui-nav li.Practicenavtabli  a {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+    background-color: #f4f4f4;
+	background-repeat:no-repeat;
+	background-position:50% 38%;
+	padding: 30px 0 0;	
+	line-height:28px;
+	background-image:url("/img/books/heinle/rightNav/Practice_Normal.png");
+}
+#bd #bkTabs ul.yui-nav li.Practicenavtabli a:hover,  #bd #bkTabs ul.yui-nav li.Practicenavtabli.selected a {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#3aa5da;
+    background-color: #e2f2f9;
+	background-image:url("/img/books/heinle/rightNav/Practice_Active.png");
+	background-repeat:no-repeat;
+	background-position:50% 38%;
+	padding: 30px 0 0;	
+	line-height:28px;
+}
+#bd #bkTabs ul.yui-nav li.TextAudionavtabli a {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+    background-color: #f4f4f4;
+	background-image:url("/img/books/heinle/rightNav/textaudio_normal.png");
+	background-repeat:no-repeat;
+	background-position:50% 35%;
+	padding: 30px 0 0;	
+	line-height:28px;
+}
+#bd #bkTabs ul.yui-nav li.TextAudionavtabli a:hover,  #bd #bkTabs ul.yui-nav li.TextAudionavtabli.selected a {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#3aa5da;
+    background-color: #e2f2f9;
+	background-image:url("/img/books/heinle/rightNav/textaudio_active.png");
+	background-repeat:no-repeat;
+	background-position:50% 35%;
+	padding: 30px 0 0;	
+	line-height:28px;
+}
+#bd #bkTabs ul.yui-nav li.Podcastsnavtabli a {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+    background-color: #f4f4f4;
+	background-image:url("/img/books/heinle/rightNav/Podcast_normal.png");
+	background-repeat:no-repeat;
+	background-position:50% 35%;
+	padding: 30px 0 0;	
+	line-height:28px;
+}
+#bd #bkTabs ul.yui-nav li.Podcastsnavtabli a:hover,  #bd #bkTabs ul.yui-nav li.Podcastsnavtabli.selected a {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#3aa5da;
+    background-color: #e2f2f9;
+	background-image:url("/img/books/heinle/rightNav/Podcast_active.png");
+	background-repeat:no-repeat;
+	background-position:50% 35%;
+	padding: 30px 0 0;	
+	line-height:28px;
+}
+#bd #bkTabs ul.yui-nav li.GrammarTutorialsnavtabli a {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+    background-color: #f4f4f4;
+	background-image:url("/img/books/heinle/rightNav/Grammar-Tutorials_Normal.png");
+	background-repeat:no-repeat;
+	background-position:50% 35%;
+	line-height:28px;
+	padding: 30px 0 0;	
+}
+#bd #bkTabs ul.yui-nav li.GrammarTutorialsnavtabli a:hover,  #bd #bkTabs ul.yui-nav li.GrammarTutorialsnavtabli.selected a {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#3aa5da;
+    background-color: #e2f2f9;
+	background-image:url("/img/books/heinle/rightNav/Grammar-Tutorials_Active.png");
+	background-repeat:no-repeat;
+	background-position:50% 35%;
+	line-height:28px;
+	padding: 30px 0 0;	
+}
+#bd #bkTabs ul.yui-nav li.CourseMaterialsnavtabli a, #bd #bkTabs ul.yui-nav li.ChapterMaterialsnavtabli a {
+    background-color: #f4f4f4;
+    background-image: url("/img/books/heinle/rightNav/Course-Materials_Normal.png");
+    font-size: 12px;
+    background-position: 50% 35%;
+    background-repeat: no-repeat;
+    font-family: Arial,Helvetica,sans-serif;
+    padding: 30px 0 0;
+	line-height:28px;
+}
+#bd #bkTabs ul.yui-nav li.CourseMaterialsnavtabli a:hover, #bd #bkTabs ul.yui-nav li.CourseMaterialsnavtabli.selected a, #bd #bkTabs ul.yui-nav li.ChapterMaterialsnavtabli a:hover, #bd #bkTabs ul.yui-nav li.ChapterMaterialsnavtabli.selected a {
+	color:#3aa5da;
+    background-color: #e2f2f9;
+    background-image: url("/img/books/heinle/rightNav/Course-Materials_Active.png");
+    font-size: 12px;
+    background-position: 50% 35%;
+    background-repeat: no-repeat;
+    font-family: Arial,Helvetica,sans-serif;
+    padding: 30px 0 0;
+	line-height:28px;
+}
+#bd #bkTabs ul.yui-nav li.ReferenceMaterialsnavtabli a {
+    background-color: #f4f4f4;
+    background-image: url("/img/books/heinle/rightNav/Reference_Normal.png");
+    font-size: 12px;
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+    font-family: Arial,Helvetica,sans-serif;
+    padding: 30px 0 0;
+	line-height:28px;
+}
+#bd #bkTabs ul.yui-nav li.ReferenceMaterialsnavtabli a:hover, #bd #bkTabs ul.yui-nav li.ReferenceMaterialsnavtabli.selected a {
+	font-family:Arial, Helvetica, sans-serif;
+	color:#3aa5da;
+    background-color: #e2f2f9;
+    background-image: url("/img/books/heinle/rightNav/Reference_Active.png");
+    font-size: 12px;
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+    font-family: Arial,Helvetica,sans-serif;
+    padding: 30px 0 0;
+	line-height:28px;
+}
+#bd #bkTabs ul.yui-nav li.CommunicationManualnavtabli a {
+    background-color: #f4f4f4;
+    background-image: url("/img/books/heinle/rightNav/Manual_Normal.png");
+    font-size: 12px;
+    background-position: 50% 20%;
+    background-repeat: no-repeat;
+    font-family: Arial,Helvetica,sans-serif;
+    padding: 30px 0 0;
+}
+#bd #bkTabs ul.yui-nav li.CommunicationManualnavtabli a:hover, #bd #bkTabs ul.yui-nav li.CommunicationManualnavtabli.selected a {
+	font-family:Arial, Helvetica, sans-serif;
+	color:#3aa5da;
+    background-color: #e2f2f9;
+    background-image: url("/img/books/heinle/rightNav/Manual_Active.png");
+    font-size: 12px;
+    background-position: 50% 20%;
+    background-repeat: no-repeat;
+    font-family: Arial,Helvetica,sans-serif;
+    padding: 30px 0 0;
+}
+/* Right navigation css ends */
+
+/* Activity page css starts */
+#bkBreadCrumb table tr td {
+	font: bold 12px Arial,Helvetica,sans-serif;
+	height: 45px;
+	color: #363636;
+}
+#bkBreadCrumb table tr td a {
+    color: #3aa5da;
+}
+#tblFloatAccentBar #tdInfoIcon {
+	height: 30px;
+	padding: 0 4px;
+	width: 20px;
+    background-image: url(/files/heinle/common/hlc/Information.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.fstTd img {
+    display: none;
+}
+/* Activity page css ends */

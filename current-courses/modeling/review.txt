@@ -1,0 +1,45 @@
+Here are some hopefully constructive comments:
+
+Governor Letter
+
+---
+
+The letter to the governor buries the prediction in the body.
+
+Assumptions
+
+---
+
+Full access to transportation is a good assumption, but the authors could have justified it more.
+
+I'm not sure why the authors need to know the location of the hurricane over the gulf, if they have a predicted landfall location and time.
+
+I'm also not sure why the shapes of the counties are relevant for traffic flow
+
+Parameters and Justifications
+
+---
+
+The free/congested/saturated traffic flow model is a very good and useful simplification.
+
+I'm not sure what exactly "average error" is.
+
+Model
+
+---
+
+I don't think that determining the category of the hurricane "randomly" was the best choice.  Since there was no mention of an underlying distribution, I was assuming that the authors selected category 1 through 5 uniformly at random.  This doesn't model real hurricanes, however, since the larger hurricanes are significantly less frequent.
+
+For the risk areas, given that the entire coast of Mississippi is smaller than a category 3 hurricane, it might make sense to say that the coast is impacted together, and not have the county being impacted as a separate risk area.
+
+The evacuation plans seem to be guesses, and aren't justified by data.
+
+I'm surprised that the cost function for the evacuation function seems to treat 5 people needlessly evacuated from a category 5 the same as 1 person left behind.  I think that the governor might be significantly more cautious, so as to minimize casualties.  I would recommend adding in a coefficient to the C term, so that the weight of lives could be increased.
+
+I'm surprised that the code is stuck in the appendix.  This paper doesn't contain an evaluation of its model, or an example run of its model, in the body of the paper.  This is a major flaw, I think that there should be plots of model runs within the body of the paper.
+
+Conclusion
+
+---
+
+I don't know why you didn't run your model!  Since there weren't any displays of how it performed, I don't know how to evaluate it.  What did it predict would happen?

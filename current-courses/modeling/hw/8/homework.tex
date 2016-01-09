@@ -1,0 +1,107 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{listings}
+
+\begin{document}
+
+\title{Math Modeling Assignment 8}
+\author{Christopher Silvia}
+\maketitle
+
+\section{Rate Changes}
+
+Suppose $b_i$ for $1 \leq i \leq n$ represents the expected number of 
+	females birthed in a given year by a single $i$-year old female,
+	and $s_i$ for $1 \leq i \leq n-1$ represents the expected fraction 
+	of the $i$-year-old	population to survive to age $i+1$ the next year
+	\footnote{This assumes that there is an age, $n$, which is the
+		maximum age and cannot be exceeded.}
+Then, if $\vec{p} \in \mathbb{R}^n$ is a vector representing the population
+	one year, then for $A$ defined in (\ref{eq-def-of-A}), the
+	expected population is given by $A p$.
+
+\begin{align}
+A & =  \left( \begin{matrix}
+	b_1 & b_2 & \dots & \dots & b_{n-1} & b_n \\
+	s_1 & 0   & \dots & \dots & 0 & 0 \\
+	0 & s_2 & \ddots & & \vdots & \vdots \\
+	\vdots & & \ddots & \ddots & \vdots & \vdots \\
+	\vdots & & & s_{n-2} & 0 & 0 \\
+	0 & \dots & \dots & 0 & s_{n-1} & 0 \\
+\end{matrix} \right) \label{eq-def-of-A}
+\end{align}
+
+We are provided with data for natality and mortality rates from the US census,
+	and construct an $A$ matrix corresponding to this data.
+The $A$ matrix is constructed in part \ref{script-setup-A} of the code appendix.
+The ``stationary age distribution'' is the eigenvector corresponding
+	to the largest eigenvalue of the matrix.
+The others will be exponentially suppressed, and the stationary distribution
+	will not depend on initial conditions, as long as there is a single largest
+	eigenvalue.
+
+We rescaled the census data by factors ranging from $0.1$ to $1.0$, and plotted
+	the resulting stationary age distributions.
+
+\subsection{Steady Population}
+
+As long as the largest eigenvalue is positive, \emph{at large times}, the population
+	will not be shrinking.
+	\footnote{Initial conditions can always be chosen so that the population is shrinking:
+		for example, if the entire population is placed at a large age where 
+		reproduction is unlikely.
+	At first, the age distribution will decrease, but eventually, the few children who
+		the elderly have will reproduce and we will recover the stationary distribution
+		\emph{at large times in the future}}
+We want to figure out by how much of a factor US natality can decrease without the 
+	population shrinking.
+We found that the natality can be multiplied by a factor of $0.488666$ to produce
+	a population which is stable.
+Any value of $r$ above this will produce a population whose size is asymptotically 
+	increasing.
+This example is section \ref{script-r-script} in the code appendix.
+	\footnote{Sascha Hernandez pointed out that the population could initially
+		decrease, for any choice of $r$, and that it was necessary to specify
+		what it meant for the population to be ``non-decreasing''}
+
+\section{Maximize Working Age}
+
+From looking at the graph of age distributions, we observe that a larger proportion
+	of the people are older as $r$ is decreased, and a larger proportion are younger
+	as $r$ is increased.
+Suppose we want to maximize the number of working-age adults, from ages 15 to 64.
+Which values of $r$ should we choose?
+
+As shown in Plot 2, to achieve a population which is 60\% working age,
+	$r$ must be between $0.533371$ and $0.71044$.
+The code for plot 2 is given in section \ref{script-maximize-workers} of the code appendix.
+The reason that there is such a narrow interval is because if $r$ is too small,
+	the population skews too old, while if $r$ is too large, the population
+	skews too young.
+
+\section{Code Appendix}
+
+\lstinputlisting[language=Matlab, 
+	caption={Code to plot the asymptotic population distributions for values of $r$ from $0.1$ to $1.0$},
+	label=script-plot-r]
+	{code-for-plotting.m}
+
+\lstinputlisting[language=Matlab, 
+	caption={Code to find a value for $r$ such that the largest eigenvalue of $A$ is 1},
+	label=script-r-script]
+	{code-for-r.m}
+
+\lstinputlisting[language=Matlab,
+	caption={Code to find the values of $r$ for which the working age (15-64) population is greater 
+		than 60\% of the total population},
+	label=script-maximize-workers]
+	{code-for-age-windowing.m}
+
+\lstinputlisting[language=Matlab,
+	caption={Code to setup the $A$ matrix, with inline US census data},
+	label=script-setup-A]
+	{setup_a.m}
+
+\end{document}

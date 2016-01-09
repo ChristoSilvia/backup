@@ -1,0 +1,55 @@
+\relax 
+\@writefile{toc}{\contentsline {section}{\numberline {1}Instructions}{2}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Model Assumptions}{2}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Parameter Values and their Justifications}{2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Gotham City}{2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Technical Data for UAV}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Assumptions for drone behaviors}{3}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Simulation Algorithm}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Model I: Rectangular Patrol Path}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Path of one drone after one cycle of 15 minutes. \relax }}{4}}
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{M1Path1}{{1}{4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Path of 6 drones after one cycle of 15 minutes. \relax }}{5}}
+\newlabel{M1Path}{{2}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Path of 6 drones in a large comb pattern. \relax }}{6}}
+\newlabel{Comb}{{3}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Strategy II: Variable Levels of Coverage}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Strategy III: Contingencies}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces H and U Paths of a drone\relax }}{10}}
+\newlabel{Paths}{{4}{10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {H Path of a drone given even number of grid squares}}}{10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {U Path of a drone given even number of grid squares}}}{10}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Path of 6 drones in a large comb pattern. \relax }}{10}}
+\newlabel{Comb2}{{5}{10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Strategy IV: Ideal Gas Model}{11}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.1}Problem Statement}{11}}
+\@writefile{toc}{\contentsline {paragraph}{}{11}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.2}Description of Model}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces An incoming drone bounces off of a barrier. The circle is its radius of vision. Note that if the wall extends in the $y$ direction, the bouncing just multiplies the $x$ component of the velocity by $-1$.\relax }}{12}}
+\newlabel{fig:drone-barrier-bounce}{{6}{12}}
+\newlabel{fig:drone-in-random}{{\caption@xref {fig:drone-in-random}{ on input line 285}}{13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces A drone moves through $A$ with constant velocity $v$\relax }}{13}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.3}Analytical Formula for Observation CDF}{13}}
+\newlabel{fig:drone-coverage-area}{{\caption@xref {fig:drone-coverage-area}{ on input line 328}}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces In time $t$, the drone covers area $\pi r^2 + 2 r (v t)$\relax }}{14}}
+\newlabel{fig:p-plot}{{\caption@xref {fig:p-plot}{ on input line 357}}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Plot of the Cumulative Probability of being observed by a single drone, between times $0$ and $t$. Note that this model breaks down at or before $t = \genfrac  {}{}{}{}{ A - \pi r^2 }{2 r v}$, when the model predicts $P(t) = 1$.\relax }}{14}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.4}Multiple Drones}{14}}
+\newlabel{fig:p-curves}{{\caption@xref {fig:p-curves}{ on input line 436}}{16}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Expected values for $P(t)$. Here $A = 6.0, r = 0.1$, $\genfrac  {}{}{}{}rA = 0.0166$.\relax }}{16}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.5}Validating the Expected Number of Drones}{16}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.6}How Many Drones to Buy?}{17}}
+\@writefile{toc}{\contentsline {paragraph}{}{18}}
+\@writefile{toc}{\contentsline {paragraph}{}{18}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.7}Robustness Testing}{18}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Robustness Test for Changed Velocity Values. If the velocity is above about $15 m/sec$, then the desired 95\% coverage is still achieved.\relax }}{19}}
+\newlabel{fig:robust}{{11}{19}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}References}{19}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Math Appendix}{19}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces If the drone is closer than $\sqrt  {(vt)^2 - r^2}$, then the drone will always make it in time. It only matters if it misses or not\relax }}{20}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Code Appendix}{20}}
+\newlabel{code:ideal-gas}{{1}{20}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {1}Ideal Gas Simulation}{20}}
+\newlabel{code:Basic}{{2}{25}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2}Basic Coverage}{25}}

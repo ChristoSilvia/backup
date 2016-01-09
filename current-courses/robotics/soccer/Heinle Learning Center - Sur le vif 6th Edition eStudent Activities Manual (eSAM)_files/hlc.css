@@ -1,0 +1,1508 @@
+html {
+  height:100%;
+  overflow:hidden;
+  width:100%;
+  /**
+   * For IE 8
+   * overflow:hidden - hides the empty scroll bar
+   * height:100% - so that there are distance between #doc3 top and #doc3 bottom
+   * width:100% - seems not necessary, added to complete with height:100%
+   */
+}
+
+body.hlc {
+  background:#1B4673 url(/books/hlc/img/pg_bg_gradient.png) repeat-x 0 0;
+  font:normal 13px Arial,Helvetica,sans-serif;
+  height:100%;
+  margin:0;
+  padding:0;
+  width:100%;
+  /**
+   * For IE 8
+   * height:100% - so that there are distance between #doc3 top and #doc3 bottom
+   * width:100% - seems not necessary, added to complete with height:100%
+   */
+}
+
+/* Override layout.css which set the size to 12px. */
+body.hlc div {
+  font-size:11px;
+}
+
+#doc3 {
+  border:0;
+  height:100%; /* height:100% seems necessary for IE8, div#bd to have a height*/
+  _border:5px solid transparent;
+  _border-bottom-width:0;
+  _border-top-width:15px;
+  _border-color:#1B4673; /* making IE 6 presentable, same color as <body> background */
+  _height:550px;
+  _width:990px; /* making IE6 presentable, non-elastic */
+}
+
+#hd {
+  border:0;
+  left:5px;
+  margin:0;
+  min-width:700px;
+  padding:0;
+  position:absolute;
+  right:5px;
+  top:15px;
+  z-index:10;
+}
+
+#hd #titlebar {
+  background:none repeat scroll 0 0 #ccc;
+  border:0;
+  height:71px;
+  /* with #yui-navset, affect top of #bdLeftBdr, #bdRightBdr, #bkBreadCrumb, #yui-main, #bkTabs */
+  margin:0;
+  padding:0;
+  position:relative;
+  width:100%;
+}
+
+#hd #titlebar #logo {
+  background:url(../img/hlc_bk_logo.png) no-repeat 0 0;
+  float:right;
+  height:20px;
+  margin:10px 20px 0 0;
+  _margin:10px 5px 0 0;
+  text-indent:-9999px;
+  width:202px;
+}
+
+#hd #titlebar #courseinfo {
+  color:#fff;
+  clear:right;
+  float:right;
+  font:normal 11px "Century Gothic", verdana, arial, helvetica, sans-serif;
+  margin:10px 20px 0 0;
+  _margin:10px 5px 0 0;
+  text-align: right;
+}
+
+#hd #yui-navset {
+  background:url(../img/hlc_bk_top_nav_bg.png) repeat-x 0 0;
+  font:13px Arial, Helvetica, sans-serif;
+  height:33px;
+  /* with #titlebar, affect top of #bdLeftBdr, #bdRightBdr, #bkBreadCrumb, #yui-main, #bkTabs */
+  position:relative;
+  text-transform:uppercase;
+  width: 100%;
+  z-index: 10;
+}
+
+#hd #hdrTrCorner {
+  background:none;
+  height:5px;
+  position:absolute;
+  right:0;
+  top:0;
+  width:5px;
+}
+
+#hd #hdrBkImg {
+  background:none;
+  height:71px;
+  left:0;
+  position:absolute;
+  top:0;
+  width:483px;
+}
+
+#hd #yui-navset ul {
+  margin:0;
+  height:33px;
+  padding:0;
+}
+
+#hd #yui-navset ul li {
+  color:#fff;
+  float:left;
+  font-family:Verdana, Helvetica, sans-serif;
+  font-size:12px;
+  display:inline-block;
+  height:23px;
+  padding:9px 8px 1px 8px;
+}
+
+#hd #yui-navset ul li.selected {
+  background:url(../img/hlc_bk_top_nav_bg_highlight.png) repeat-x 0 0;
+  font-family:Verdana, Helvetica, sans-serif;
+  font-size:12px;
+}
+
+#hd #yui-navset ul li.last {
+  padding-right:0;
+}
+
+#hd #yui-navset ul li a {
+  color:#fff;
+  font-family:Verdana, Helvetica, sans-serif;
+  font-size:12px;
+  text-decoration:none;
+}
+
+#hd #yui-navset ul li a:hover {
+  text-decoration:underline;
+}
+
+#bd {
+  background-color:#fff;
+  border:0;
+  bottom:0;
+  left:5px;
+  margin:0;
+  padding:0;
+  position:absolute;
+  right:5px;
+  top:15px;
+  _height:670px;
+  _position:relative;
+  _bottom:auto;
+  _left:auto;
+  _right:auto;
+  _top:auto;
+  /* 500px (#yui-main) + 104px (hd) + 51px (#bkBreadCrumb) + 30px (#ft) - 15 #doc top border */
+}
+
+#yui-main {
+  background:#fff;
+  bottom:31px; /* 30 #ft + 1 space */
+  left:9px; /* bdLeftBdr width */
+  margin:0;
+  overflow:auto;
+  padding:0;
+  position:absolute;
+  right:138px; /* applies to #yui-main, #bkBreadCrumb; 9(bdRightBdr) + 128(bkTabs) + 1(space) */
+  top:155px; /* 104 (hd height) + 51 (#bkBreadCrumb height) */
+  z-index:5;
+  _height:500px; /* for IE 6 iframe, height and width are requried for 100% */
+  _width:838px; /* for IE 6 iframe, height and width are requried for 100% */
+}
+
+div#doc3.yui-t2 #yui-main {
+  padding:0;
+  left:195px; /* applies to #yui-main, #bkBreadCrumb; 9(bdLeftBdr)+185(yui-b)+1(space) */
+  width:auto;
+  _width:650px; /* for IE 6 iframe, height and width are requried for 100% */
+}
+
+#bkTabs {
+  bottom:30px; /* 30 #ft */
+  overflow:auto;
+  position:absolute;
+  right:9px; /* width of bdLeftBdr */
+  top:104px; /* 71px (#titlebar) + 33px (#yui-navset) */ 
+  width:128px;
+  /**
+   * with bdRightBdr width, this will affect #yui-main right, #bkBreadCrumb right;
+   * 9(bdRightBdr) + 128(bkTabs)
+   */
+  z-index:5px;
+  _height:500px;
+  _width:130px;
+}
+
+#bkTabs ul.yui-nav li {
+  margin-top:7px;
+}
+
+#bkTabs ul.yui-nav li a {
+  background:url(../img/hlc_bk_action_btns_v110px.png) no-repeat 0 0;
+  color:#fff;
+  display:block;
+  font:bold 11px Verdana, Helvetica, sans-serif;
+  height:35px;
+  padding:20px 5px 0 8px;
+  margin:0 auto;
+  text-decoration:none;
+  vertical-align:middle;
+  width:115px
+}
+
+#bkTabs ul.yui-nav li a:hover
+{
+  background:url(../img/hlc_bk_action_btns_v110px.png) no-repeat 0 -110px;
+  color:#7f7e7c;
+}
+
+#bkTabs ul.yui-nav li.selected a {
+  background:url(../img/hlc_bk_action_btns_v110px.png) no-repeat 0 -110px;
+  color:#7f7e7c;
+}
+
+#bkTabs ul.yui-nav li.longname a {
+  height:40px;
+  padding:15px 5px 0 8px;
+}
+
+#yui-main iframe {
+  height:100%;
+  margin:0 auto;
+  position:absolute;
+  width:100%;
+  z-index: 6;
+}
+
+#ft {
+  background-color:#1B4673;
+  bottom:0;
+  _bottom:-1px;
+  color: #FFF;
+  font:normal 11px/30px Arial,Helvetica,sans-serif;
+  height:30px;
+  margin:0;
+  padding:0;
+  position:absolute;
+  text-align: center;
+  width: 100%;
+}
+
+/**
+ * Left Nav Container
+ */
+#bd div.yui-b {
+  border:0;
+  bottom:30px; /* 30 #ft */
+  _height:560px;
+  overflow:hidden;
+  position:absolute;
+  left:9px; /* width of bdLeftBdr */
+  top:104px; /* 71px (#titlebar) + 33px (#yui-navset) */ 
+  width:185px;
+}
+
+/**
+ * Bread Crumb
+ */
+#bkBreadCrumb {
+  border:0;
+  color:#616161;
+  left:15px;
+  margin:0;
+  padding-right:10px;
+  position:absolute;
+  right:138px; /* applies to #yui-main, #bkBreadCrumb; 9(bdRightBdr) + 128(bkTabs) + 1(space) */
+  text-decoration:none;
+  top:104px; /* 71px (#titlebar) + 33px (#yui-navset) */ 
+}
+
+#bkBreadCrumb table tr td {
+  font:bold 11px Arial, Helvetica, sans-serif;
+  height:45px; /* also apply to the top of #yui-main */
+}
+
+#bkBreadCrumb table tr td a {
+  color:#064f82;
+}
+
+/**
+ * For Calendar and Announcements page, we don't need #bkBreadCrumb, and div#yui-main can move up
+ */
+div#doc3 #bd.noLeftNav #yui-main {
+  top:114px; /* 104 (hd) + 10 (space) */
+  left:10px /** bug 30742 - no more left nav for Announcements page */
+}
+
+div#doc3 #bd.noLeftNav #bkBreadCrumb {
+  display:none;
+}
+
+/**
+ * For Assignment List page, when TOC is hidden, breadCrumb can move to left edge of div#bd,
+ * because page nav does not render on Assignment List page at all.
+ */
+
+div#doc3 #bd.hasPgNav #bkBreadCrumb, div#doc3.yui-t2 #bd.noPgNav #bkBreadCrumb {
+  left:195px; /* same for #yui-main, #bkBreadCrumb; 9(bdLeftBdr)+185(yui-b)+1(space) */
+}
+
+/**
+ * Main Content Area corners
+ */
+div#bdLeftBdr, div#bdRightBdr {
+  background:url(../img/hlc_bk_main_corners_h30px.gif) no-repeat 0 0;
+  bottom:30px; /* 30 #ft */
+  left:0;
+  position:absolute;
+  top:104px; /* 71px (#titlebar) + 33px (#yui-navset) */ 
+  width:9px;
+}
+
+div#bdRightBdr {
+  background-position:-27px 0;
+  left:auto;
+  right:0;
+}
+
+div#bdRightBdr div.bdrInsideDv {
+  background:url(../img/hlc_bk_main_corners_h30px.gif) no-repeat -60px 0;
+  bottom:0;
+  height:9px;
+  position:absolute;
+  width:9px;
+}
+
+div#bdLeftBdr div.bdrInsideDv {
+  background:url(../img/hlc_bk_main_corners_h30px.gif) no-repeat -90px 0;
+  bottom:0;
+  height:9px;
+  position:absolute;
+  width:9px;
+}
+
+/**
+ * leftNav
+ */
+div.yui-b div#leftNavTop, div.yui-b div#leftNavBot {
+  background:url(../img/hlc_bk_left_nav_bg.png) repeat-y 0 0;
+  position:absolute;
+  top:7px;
+}
+
+div#doc3 div.yui-b div#leftNavBot {
+  top:40px; /* 7(top margin) + 10(top left nav corner height) + 23(pagenav, short version) */
+  bottom:auto;
+}
+
+div#doc3.yui-t2 div.yui-b div#leftNavBot {
+  top:auto;
+  bottom:10px;
+}
+
+div.leftInsideDv, div.rightInsideDv {
+  background:url(../img/hlc_bk_left_nav_corners_v40px.png) no-repeat 0 0;
+  float:left;
+  height:10px;
+  width:10px;
+}
+
+div#leftNavTop div.rightInsideDv {
+  background-position:0 -40px;
+}
+
+div#leftNavBot div.leftInsideDv {
+  background-position:0 -80px;
+}
+
+div#leftNavBot div.rightInsideDv {
+  background-position:0 -120px;
+}
+
+div#leftNavTop div.middleInsideDv, div#leftNavBot div.middleInsideDv {
+  border:1px solid #BBD1E8;
+  border-width:1px 0 0 0;
+  float:left;
+  height:9px;
+  width:156px; /* 1px (border-width) + 174px#leftNav + 1px (border-width), 176 - 10x2 = 156px */
+}
+
+div#leftNavBot div.middleInsideDv {
+  border-width:0 0 1px 0;
+}
+
+div#doc3 div.yui-b div#leftNav {
+  display:none;
+}
+
+div#doc3.yui-t2 div.yui-b div#leftNav {
+  background:url(../img/hlc_bk_left_nav_bg.png) repeat-y 0 0;
+  display:block;
+  border:1px solid #BBD1E8;
+  border-width:0 1px;
+  bottom:20px;
+  position:absolute;
+  top:47px; /* 7(top margin) + 10(top left nav corner height) + 30(pagenav, long version) */
+  width:174px;
+}
+
+/*****************************************************************************/
+/* Next and previous */
+/*****************************************************************************/
+
+div#doc3 #pagenav {
+  background:url(../img/hlc_bk_left_nav_bg.png) repeat-y 0 0;
+  border:1px solid #BBD1E8;
+  border-width:0 1px;
+  height:23px; /* shorter version; doesn't have the divider for TOC */
+  position:absolute;
+  top:17px;
+  white-space:nowrap;
+  width:174px;
+}
+
+div#doc3.yui-t2 div#pagenav {
+  height:30px; /* long version; has divider for TOC */
+}
+
+body.hlc div#pgNavHr {
+  clear:left;
+  border:1px solid #BBD1E8;
+  border-width:0 0 1px 0;
+  height:3px;
+  padding:0;
+  margin:0;
+  width:95%;
+}
+
+#pagenav #pgNavPad {
+  height:100%;
+  padding:0 10px;
+}
+
+#pagenav.search {
+  padding-top: 0;
+}
+
+#pagenav a.backArrow, #pagenav a.forwardArrow {
+  background:url(../img/hlc_bk_white_arrow_btns_v50px.gif) no-repeat 0 0;
+  border:0;
+  display:block;
+  float:left;
+  height:22px;
+  margin:0;
+  text-indent:-9999px;
+  width:31px;
+}
+
+#pagenav a.forwardArrow {
+  background-position:0 -50px;
+  margin-left:2px;
+}
+
+#pagenav.search a {
+  margin-right: 1px;
+}
+
+#pagenav form {
+  display: inline;
+}
+
+#pagenav input {
+  font-size:11px;
+  width:40px;
+  height: 14px;
+  margin-left:5px;
+}
+
+#pagenav input.quia_books_button {
+  background:transparent url(/static/skins/books/hlc/img/course/books/book_manager/instructor_buttons/go.gif) no-repeat 0 0;
+  border:0;
+  color:#fff;
+  font:bold 10px verdana helvetica, sans-serif;
+  width:31px;
+  height:21px;
+  line-height:0;
+  padding:0;
+  cursor:pointer;
+  text-indent:-9999px;
+}
+
+/*****************************************************************************/
+/* Table of contents */
+/*****************************************************************************/
+
+body.hlc #toc {
+  border:0;
+  height:100%;
+  *height:expression((document.body.clientHeight-216) + 'px');
+  _height:expression((493) + 'px');
+  /**
+   * height for IE
+   * 71#titlebar + 33#yui-navset + 15:#doc3(top border width) + 30#ft + 41#pgnav + 10#leftNavTop
+   * + 10#leftNavBot + 7#leftNavTop(top) + 10#leftNavBot(bottom) = 227px 
+   */
+  margin:0;
+  overflow:auto;
+  padding:0;
+  position:relative;
+  width:100%;
+}
+
+div#doc3 #toctoggle {
+  background:url(../img/hlc_bk_left_nav_tabs_h14px.png) no-repeat 0 0;
+  display:block;
+  height:51px;
+  position:absolute;
+  left:0;
+  text-indent:-9999px;
+  top:164px;
+  width:7px;
+  z-index:10;
+}
+
+div#doc3 #toctoggle:hover {
+  background-position:-14px 0;
+}
+
+div#doc3.yui-t2 #toctoggle.expanded {
+  background-position:-28px 0;
+}
+
+div#doc3.yui-t2 #toctoggle.expanded:hover {
+  background-position:-42px 0;
+}
+
+div#doc3.yui-t2 #toctoggle {
+  left:185px;
+}
+
+body.hlc ul#qbTblContentList {
+  list-style-type:none;
+  margin:0;
+  padding:5px 5px 0 5px;
+}
+
+body.hlc ul#qbTblContentList li {
+  display:block;
+  margin:0;
+  padding:0;
+  white-space:nowrap;
+}
+
+body.hlc ul#qbTblContentList li {
+  position:relative;zoom:1;
+}
+
+body.hlc ul#qbTblContentList li:after {
+  content:'.';display:block;clear:both;height:0;width:0;visibility:hidden;
+}
+
+/**
+ * For IE, height can only be set after we do the hack with li:after and zome:1
+ */
+body.hlc ul#qbTblContentList li {
+  height:15px;
+}
+
+body.hlc ul#qbTblContentList li.extraSpace {
+  padding-left:10px;
+}
+
+body.hlc ul#qbTblContentList li.extraSpace2 {
+  padding-left:20px;
+}
+
+body.hlc ul#qbTblContentList li.extraSpace3 {
+  padding-left:30px;
+}
+
+body.hlc ul#qbTblContentList li a {
+  display:inline-block;
+  /** width:134px; */
+}
+
+/**
+body.hlc ul#qbTblContentList li.extraSpace a { width:124px; }
+body.hlc ul#qbTblContentList li.extraSpace2 a { width:114px; }
+body.hlc ul#qbTblContentList li.extraSpace3 a { width:104px; }
+*/
+
+body.hlc ul#qbTblContentList li a.leftArrow, body.hlc ul#qbTblContentList li a.downArrow {
+  background:url(../img/hlc_bk_left_nav_li_arrows_v200px.gif) no-repeat 0 4px;
+  height:12px;
+  width:10px;
+}
+
+/** TODO: this should be removed, replaced by span.arrowPlcHldr */
+/** TODO: this should be removed, replaced by span.arrowPlcHldr */
+/** TODO: this should be removed, replaced by span.arrowPlcHldr */
+body.hlc ul#qbTblContentList div.arrowPlcHldr {
+  float:left;
+  display:block;
+  height:12px;
+  width:10px;
+}
+
+body.hlc ul#qbTblContentList span.arrowPlcHldr {
+  display:inline-block;
+  width:10px;
+}
+
+body.hlc ul#qbTblContentList li a.downArrow {
+  background-position:0 -194px;
+}
+
+body.hlc ul#qbTblContentList li, body.hlc ul#qbTblContentList li a {
+  color:#064f82;
+  font:normal 11px Verdana , Helvetica, sans-serif;
+}
+
+/*****************************************************************************/
+.split {
+  position:relative;zoom:1;
+}
+.split:after {
+  content:'.';display:block;clear:both;height:0;width:0;visibility:hidden;
+}
+
+/**
+ * New Assignment List and Calendar page
+ */
+
+h1.assignLiCal {
+  color:#4E4D4C;
+  font:bold 14px Arial,Helvetica,sans-serif;
+  margin:5px 0 10px 0;
+}
+
+#dvToggleAssignListCalendar { 
+  margin:0 0 15px;
+}
+
+#dvToggleAssignListCalendar div.right_col {
+  float:right;
+}
+
+#dvToggleAssignListCalendar.assignmentListPg div.right_col {
+  display:none;
+}
+
+#dvToggleAssignListCalendar div.left_col {
+  background-color:#e1e9f5;
+  float:left;
+}
+
+#dvToggleAssignListCalendar div.left_col a {
+  color:#064f82;
+  font-size:12px;
+  display:block;
+  float:left;
+  padding:5px 10px;
+  text-decoration:none;
+}
+
+#dvToggleAssignListCalendar div.left_col a.selected {
+  background:url(/books/hlc/img/bg_view_opt_highlight.gif) 0 0 repeat-x;
+}
+
+#dvAssignmentPgNav {
+  margin:0 0 20px 0;
+}
+
+#dvListChapter {
+  margin-right:5px;
+}
+
+#dvListChapter h3 {
+  color:#4E4D4C;
+  font-size:12px;
+  display:inline;
+  margin:0 7px 0 0;
+}
+
+#dvAssignmentPgNav #dvListChapter,
+#dvAssignmentPgNav #dvViewActivitesOnly {
+  float:left;
+  height:20px;
+}
+
+#dvViewActivitesOnly span.viewActivitiesOnly {
+  line-height:20px;
+  vertical-align:top;
+  *vertical-align:auto;
+}
+
+/*****************************************************************************/
+
+.tmpl_assignments td {
+  font-family: Arial,Helvetica,sans-serif;
+  padding: 2px 5px 0 10px;
+}
+
+.tmpl_assignments td img {
+  vertical-align:bottom;
+}
+
+.tmpl_assignments td a img {
+  vertical-align:baseline;
+}
+
+.tmpl_assignments td a {
+  color:#1F0544;
+}
+
+/**
+ * td.assignm_book_collapse will not appear for new layout
+ * (combine Assignment & Calendar page project) where we do not show book name
+ */
+td.assignm_book_collapse {
+  font-weight:bold;
+  font-size:14px;
+  color:#1F0544;
+  padding:20px 5px 5px 5px;
+}
+
+.assignm_book_collapse a {
+  text-decoration:none;
+}
+
+.assignm_book_collapse img {
+  border: none;
+}
+
+/**
+ * New layout, merge Assignment List and Calendar page, adding Score and Poins column
+ */
+.tmpl_assignments.hasPointsScore td {
+  background-color:#ecf1f7;
+  color:#064f82;
+  border-bottom:1px solid #fff;
+  font:normal 12px/30px Arial,Helvetica,sans-serif;
+  height:30px;
+  margin:0;
+  padding:0;
+}
+
+.tmpl_assignments.hasPointsScore td.tdActName {
+  line-height:normal;
+}
+
+.tmpl_assignments div.noAssignedMsg {
+  font-size:12px;
+  text-indent:25px;
+}
+
+.tmpl_assignments.hasPointsScore tr.header td {
+  height:40px;
+}
+
+.tmpl_assignments.hasPointsScore td a {
+  color:#064f82;
+}
+
+.tmpl_assignments.hasPointsScore td.labelAssignments {
+  text-indent:10px;
+  width:470px; /** 25px bktypeIcon+20px reviewTypeIcon+55px act number+230px act name + 2x70px */
+}
+
+.tmpl_assignments.hasPointsScore.hasDueDate td.labelAssignments,
+.tmpl_assignments.hasPointsScore.hasAttempt td.labelAssignments {
+  width:400px; /** 25px bktypeIcon+20px reviewTypeIcon+55px act number+230px act name + 1x70px */
+}
+
+.tmpl_assignments.hasPointsScore.hasAttempt.hasDueDate td.labelAssignments {
+  width:330px; /** 25px bktypeIcon + 20px reviewTypeIcon + 55px act number + 230px act name */
+}
+
+.tmpl_assignments.hasPointsScore td.labelAttempts {
+  line-height:14px;
+}
+
+.tmpl_assignments.hasPointsScore td.labelAttempts,
+.tmpl_assignments.hasPointsScore td.labelAssigned,
+.tmpl_assignments.hasPointsScore td.labelDueDate {
+  width:70px;
+}
+.tmpl_assignments.hasPointsScore td.labelComplete {
+  width:100px;
+}
+.tmpl_assignments.hasPointsScore td.labelScore,
+.tmpl_assignments.hasPointsScore td.labelPoints {
+  text-align:center;
+  width:40px;
+}
+
+.tmpl_assignments.hasPointsScore td.points,
+.tmpl_assignments.hasPointsScore td.score {
+  text-align:center;
+}
+
+.tmpl_assignments.hasPointsScore td img {
+  vertical-align:middle;
+}
+/**
+ * "View by date" view handles row highlight with JavaScript, adding "highlight" to the TR tag
+ * "View by chapter" uses "hover" in CSS to highlight hovered tr row,
+ * because only HLC is using "View by chapter" layout and IE 6 support is not requred.
+ */
+.tmpl_assignments.hasPointsScore tr.isAssigned:hover td,
+.tmpl_assignments.hasPointsScore tr.unAssigned:hover td,
+.stud_calendar table.dashboardAssignmentTable tr.highlight td {
+  background-color:#d9e3f0;
+}
+
+.tmpl_assignments.hasPointsScore tr.chapterHdr,
+.tmpl_assignments.hasPointsScore td.noExTxt {
+  text-indent:10px;
+}
+
+.tmpl_assignments.hasPointsScore td.indent1 {
+  text-indent:25px;
+}
+
+.stud_calendar table.dashboardAssignmentTable th,
+.tmpl_assignments.hasPointsScore .header td {
+  background-color:#4f81bd;
+  border-left:1px solid #fff;
+  color:#fff;
+  font-size:12px;
+}
+
+.tmpl_assignments.hasPointsScore .header td:first-child {
+  border-left-color:#4f81bd;
+}
+
+.tmpl_assignments.hasPointsScore .chapterHdr td,
+.tmpl_assignments.hasPointsScore .secHdr td {
+  background-color:#96b4d6;
+  color:#fff;
+  font-size:12px;
+}
+
+.tmpl_assignments.hasPointsScore .chapterHdr td {
+  border-bottom:0;
+}
+
+.tmpl_assignments.hasPointsScore td.td0 {
+  width:25px; /** this value will affect width of td.labelAssignments */
+}
+
+.tmpl_assignments.hasPointsScore td.td1 {
+  width:20px; /** this value will affect width of td.labelAssignments */
+}
+
+.tmpl_assignments.hasPointsScore td.tdExNum {
+  width:55px; /** this value will affect width of td.labelAssignments */
+}
+
+.tmpl_assignments.hasPointsScore td.tdActName {
+  width:370px; /** this value will affect width of td.labelAssignments */
+  vertical-align:middle;
+}
+
+.tmpl_assignments.hasPointsScore.hasDueDate td.tdActName,
+.tmpl_assignments.hasPointsScore.hasAttempt td.tdActName{
+  width:300px; /** this value will affect width of td.labelAssignments */
+}
+
+.tmpl_assignments.hasPointsScore.hasAttempt.hasDueDate td.tdActName {
+  width:230px; /** this value will affect width of td.labelAssignments */
+}
+
+
+.tmpl_assignments div.bkTypeIcon {
+  background-position:0 50%;
+  background-repeat:no-repeat;
+  border:0;
+  height:28px;
+  margin:0 auto;
+  padding:0;
+  width:20px;
+}
+
+.tmpl_assignments tr.workbook div.bkTypeIcon {
+  background-image:url(/img/dashboard-common/workbook.png); /** type -1 */
+}
+
+.tmpl_assignments tr.textbook div.bkTypeIcon {
+  background-image:url(/img/dashboard-common/textbook.png); /** type 0 */
+}
+
+.tmpl_assignments tr.laboratory_manual div.bkTypeIcon {
+  background-image:url(/img/dashboard-common/Labmanual.png); /** type 3 */
+}
+
+.tmpl_assignments tr.workbook_lab_manual div.bkTypeIcon {
+  background-image:url(/img/dashboard-common/workbk_lab_manual.gif); /** type 4 */
+}
+
+.tmpl_assignments tr.manual div.bkTypeIcon, /** type 6 */
+.tmpl_assignments tr.activities_manual div.bkTypeIcon { /** type 5 */
+  background-image:url(/img/dashboard-common/activity_manual.gif);
+}
+
+/**
+ * Grading required? Red, yellow and green dots
+ */
+.tmpl_assignments div.reviewTypeIcon {
+  background-repeat:no-repeat;
+  background-position:0 50%;
+  border:0;
+  height:28px;
+  margin:0 auto;
+  padding:0;
+  padding:0;
+  width:8px;
+}
+
+.tmpl_assignments tr.not_needed div.reviewTypeIcon {
+  background-image:url(/img/grading/greenIcon.gif);
+}
+
+.tmpl_assignments tr.recommended div.reviewTypeIcon {
+  background-image:url(/img/grading/yellowIcon.gif);
+}
+
+.tmpl_assignments tr.required div.reviewTypeIcon {
+  background-image:url(/img/grading/redIcon.gif);
+}
+
+/**
+ *
+ */
+#calLegend .hiddenRow {
+  display:none;
+}
+
+/**
+ *
+ */
+.announcements-table {
+  margin:10px;
+  padding:0;
+}
+
+.announcements-table td.abmessage {
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 13px;
+}
+
+.announcements-table td {
+  margin: 0;
+  padding: 0;
+}
+
+.navtext_toc,
+.navtext,
+.hlc .navtext_toc,
+.hlc .navtext {
+  background-color: #FFFCE1;
+  font:normal 12px verdana, arial, helvetica, sans-serif;
+  border: 1px solid #666666;
+  max-width:600px;
+  overflow:hidden;
+  position:absolute;
+  width: auto;
+  z-index:999;
+}
+
+/** div.yui-module is added to counter div.yui-module div.bd added in line 1418 */
+div.yui-module.navtext div.bd,
+div.yui-module.navtext_toc div.bd {
+  background-color:transparent;
+  border:0;
+  font-weight:normal;
+  margin:10px;
+  padding:0;
+  z-index:999;
+}
+
+/** Fix for 38153 comment 11 */
+div.yui-module.navtext_toc div.bd {
+  font-size: 11px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+/* Fix zindex issue with IE6 and drop-lists for the TOC tooltips */
+iframe#iframeSliver {
+  z-index: 10;
+}
+
+/* Grading page styles */
+.results td {
+  padding: 4px;
+  background: #FFF;
+}
+
+.results .header td {
+  background: #e1d7cb;
+}
+
+#yui-main table.titlebar tr {
+  background-color:#fff;
+}
+
+#yui-main table.titlebar td {
+  color:#4E4D4C;
+  font:bold 14px Arial, Helvetica, sans-serif;
+  padding:0;
+}
+
+#yui-main table.titlebar td a {
+  color:#064F82;
+  font:bold 14px Arial, Helvetica, sans-serif;
+  text-decoration:none;
+}
+
+#yui-main table.titlebar td a {
+  text-decoration:underline;
+}
+
+/**
+ * Student calendar
+ */
+.stud_calendar table.dashboardAssignmentTable td {
+  background-color:#ecf1f7;
+  color:#064f82;
+  border-bottom:1px solid #fff;
+  font-size:12px;
+  padding:3px 7px 3px 7px;
+}
+
+div.stud_calendar, div.stud_calendar div, div.stud_calendar span,
+div.stud_calendar td, div.stud_calendar th, #calLegend span, #calLegend td {
+  font:normal 12px Arial, Helvetica, sans-serif;
+}
+
+div#bkCalendarTleDv {
+  margin:0 0 15px 0;
+}
+
+div.stud_calendar,
+#dvToggleAssignListCalendar {
+  min-width:823px;
+  width:100%;
+  *width:auto;
+  _width:820px;
+}
+
+.stud_calendar .noassmts {
+  text-align:center;
+}
+
+.stud_calendar .studCalendarDayInfo td a {
+  color:#064F82;
+}
+
+#dvToggleAssignListCalendar .left_col,
+.stud_calendar .left_col {
+  min-width:575px;
+  width:69%;
+}
+
+#dvToggleAssignListCalendar.assignmentListPg div.left_col {
+  width:740px;
+}
+
+#dvToggleAssignListCalendar .right_col,
+.stud_calendar .right_col {
+  margin-right:5px;
+  margin-top:-40px;
+  width:237px;
+}
+
+div#calLegend {
+  margin:40px 0 20px 0;
+  padding:0;
+}
+
+div#calLegend table td:first-child {
+  text-align:center;
+}
+
+/*****************************************************************************
+              dashboard calendar
+*****************************************************************************/
+/* quia books (hlc) calendar */
+.stud_calendar .dashboardCalendar .yui-calcontainer {
+  background-color: #ffffff;
+  padding: 14px;
+}
+
+.stud_calendar .dashboardCalendar #monthviewexterior {
+  background: #ffffff; /*url(../img/ct_calendar_white_top.gif) no-repeat top left;*/
+  width: 212px;
+}
+
+.stud_calendar .dashboardCalendar #monthview {
+  background: transparent; /*url(../img/ct_calendar_white_bottom.gif) no-repeat bottom left;*/
+}
+
+.stud_calendar .dashboardCalendar #monthview table {
+  background: transparent;
+}
+
+.stud_calendar .dashboardCalendar table.yui-calendar {
+  width: 184px;
+}
+
+.stud_calendar .dashboardCalendar .yui-calendar td.calcell a {
+  color:#064F82;
+  font-family:Arial Helvetica, sans-serif;
+  font-weight:bold;
+  height:auto;
+  text-decoration:none;
+}
+
+.stud_calendar .dashboardCalendar .yui-calendar td.calcell {
+  border-style:none;
+  font:bold 11px Arial Helvetica, sans-serif;
+  padding:0;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.stud_calendar .dashboardCalendar .yui-calendar td.calcell.selectable {
+  cursor:pointer;
+}
+
+.stud_calendar .dashboardCalendar .yui-calendar td.calcell.selected a {
+  color:#ffffff;
+}
+
+.stud_calendar .dashboardCalendar .yui-calendar td.calcell.selected {
+  background-color:#D64848;
+}
+
+.stud_calendar .dashboardCalendar .yui-calendar td.calcell.today a {
+  color: #ffffff;
+}
+
+.stud_calendar .dashboardCalendar .yui-calendar td.calcell.today {
+  background-color:#B83D50;
+}
+
+.stud_calendar .dashboardCalendar .yui-calendar td.calcell.selectedtoday {
+  background-color:#A60D24;
+}
+
+.stud_calendar .dashboardCalendar .yui-calendar td.calcell.oom {
+  background-color:#E1E9F5;
+  color:#A4C4F4;
+  font-weight:bold;
+}
+
+.stud_calendar .dashboardCalendar .yui-calendar td.calcell.previous {
+  color:#CCC;
+}
+
+/** calendar header and navigation styles **/
+.stud_calendar .dashboardCalendar .yui-calendar .calweekdaycell, 
+.stud_calendar .dashboardCalendar .yui-calendar .calheader {
+  color:#4E4D4C;
+  font-size:11px;
+  font-weight:bold;
+  height:1.5em;
+}
+
+.stud_calendar .dashboardCalendar .yui-calendar .calheader {
+  position: relative;
+}
+
+.stud_calendar .dashboardCalendar .yui-calendar .calheader a {
+  text-indent:-10000em;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  height: 15px;
+  top: 0;
+  width: 25px;
+  z-index: 1;
+}
+
+.stud_calendar .dashboardCalendar .yui-calendar .calheader a.calnavright {
+  background: url(/img/dashboard/calendar_right_on.gif) no-repeat;
+  right: 0px;
+}
+
+.stud_calendar .dashboardCalendar .yui-calendar .calheader a.calnavright-disabled {
+  background: url(/img/dashboard/calendar_right_off.gif) no-repeat;
+  right: 0px;
+}
+
+.stud_calendar .dashboardCalendar .yui-calendar .calheader a.calnavleft {
+  background: url(/img/dashboard/calendar_left_on.gif) no-repeat ;
+  left: 0px;
+}
+
+.stud_calendar .dashboardCalendar .yui-calendar .calheader a.calnavleft-disabled {
+  background: url(/img/dashboard/calendar_left_off.gif) no-repeat ;
+  left: 0px;
+}
+
+/** non yui-calendar dashbaord styles **/
+div.stud_calendar, div.stud_calendar div, div.stud_calendar span, div.stud_calendar td {
+  font:normal 12px Arial, Helvetica, sans-serif;
+}
+
+.stud_calendar .dashboardCalendar {
+  /* background:url("/books/hlc/img/dashboard_calendar_bg.png") no-repeat scroll 0 0 transparent; */
+  background-color:#014677;
+  border-radius:10px;
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  padding: 0px;
+}
+
+.stud_calendar .dashboardCalendar table {
+  background: transparent;
+}
+
+.stud_calendar .dashboardCalendar .horizontal td {
+  padding: 14px 14px 14px 0px;
+}
+
+.stud_calendar .dashboardCalendar .horizontal td#weekview {
+  padding: 14px 0px 14px 14px;
+}
+
+.stud_calendar .dashboardCalendar .vertical td {
+  padding: 0px 11px 14px 11px;
+}
+
+.stud_calendar .dashboardCalendar .vertical td#weekview {
+  padding: 14px 0px 0px 11px;
+}
+
+.stud_calendar .dashboardCalendar td#weekview div {
+  color: #ffffff;
+  font-size:16px;
+  font-weight:bold;
+  width: 182px;
+}
+
+.stud_calendar .dashboardCalendar #weekview span.selectedWeek {
+  color:#fff;
+  font-size:26px;
+}
+
+div.dashboardNotes {
+  background-color:transparent;
+}
+
+div.dashboardNotes table {
+  border-collapse:collapse;
+}
+
+.stud_calendar .dashboardNotes td {
+  background-color:#F0F0EF;
+  color:#616161;
+  font-size:11px;
+  font-weight:normal;
+  padding:2px;
+}
+
+.stud_calendar table.dashboardAssignmentTable {
+  border-collapse:collapse;
+}
+
+.stud_calendar table.dashboardAssignmentTable td {
+  vertical-align:middle;
+}
+
+.stud_calendar .dashboardAssignmentTable th {
+  background-color:#E1E9F5;
+  color:#4E4D4C;
+  font-weight:bold;
+  padding:5px 0;
+  vertical-align:top;
+  white-space:nowrap;
+}
+
+.stud_calendar .dashboardAssignmentTable th.span4 {
+  text-indent:10px;
+}
+
+div.dashboardDayHeader {
+  margin:20px 0 5px 0;
+}
+
+div.dashboardDayHeader span {
+  color:#4E4D4C;
+  font-size:14px;
+  font-weight:bold;
+}
+
+/** dashboard tooltips **/
+.tooltip, .tooltip table td{
+  font: 11px Verdana;
+  color: #1f0544;
+  white-space: nowrap;
+}
+
+.tooltip table td img {
+  margin: 2px 6px;
+}
+
+.yui-panel.tooltip {
+  /*position: relative;*/
+  height: auto;
+}
+
+.tooltip.tooltip-activity table td {
+  vertical-align: middle;
+  padding: 0px 12px 0px 0px;
+}
+
+.tooltip.tooltip-activity table td a img { 
+  padding: 0px;
+  margin: 0px 4px 0px 0px;
+}
+
+.yui-panel.tooltip .bd {
+  padding: 8px 4px 8px 15px;
+}
+
+.yui-panel.tooltip-student .bd {
+  padding-right: 15px;
+}
+
+.tooltip .hd,
+.tooltip .ft {
+  display: none;
+}
+
+.yui-panel.tooltip {
+  position: relative;
+  height: auto;
+}
+
+.yui-panel.tooltip .bd {
+  background-color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.tooltip .underlay {
+    position:absolute;
+    left:4px;
+    right:-4px;
+    top:4px;
+    bottom:-4px;
+    width:100%;
+    height:100%;
+}
+
+/**
+ * Smart Icons - styling starts here
+ */
+a.smartIconLk {
+  cursor:pointer;
+  text-decoration:none;
+  height:43px;
+  width:33px;
+}
+
+div.smartIcons {
+  background:url(/static/quia/books/smarticons/images/smart_icons_sm_sprite.png) no-repeat 0 50%;
+  display:block;
+  height:43px;
+  margin:0;
+  padding:0;
+  position:relative;
+  width:33px;
+}
+
+div.smart_icon_diagnostic_complete {
+  background-position:0 -506px;
+}
+div.smart_icon_diagnostic_incomplete {
+  background-position:0 -421px;
+}
+div.smart_icon_no_data {
+  background-position:0 -335px;
+}
+div.smart_icon_unassigned_complete {
+  background-position:0 -250px;
+}
+div.smart_icon_unassigned_incomplete {
+  background-position:0 -165px;
+}
+div.smart_icon_assigned_complete {
+  background-position:0 -80px;
+}
+div.smart_icon_assigned_incomplete {
+  background-position:0 5px;
+}
+
+a.smartIconLk div.smartIcons div.shadow {
+  background-color:#ccc;
+  display:none;
+  left:30px;
+  position:absolute;
+  top:0px;
+  width:auto;
+  z-index:20;
+}
+
+div.smartIcons div.dvBdr {
+  background-color:#fff;
+  border:1px solid #666;
+  bottom:4px;
+  color:#333;
+  padding:3px;
+  position:relative;
+  right:4px;
+  width:auto;
+  z-index:25;
+}
+
+div.smartIcons div.dvBdr div {
+  margin:0 3px;
+  white-space:nowrap;
+}
+
+a.smartIconLk:hover div.smartIcons div.shadow {
+  display:block;
+}
+
+div.yui-module {
+  z-index:30;
+}
+div.yui-module div.bd {
+  background-color:#fff;
+  border:1px solid #666;
+  font-family:Verdana, Arial, Helvetica, sans-serif;
+  font-weight:bold;
+  padding:3px;
+  position:relative;
+  z-index:1;
+}
+
+div.yui-module div.yui-tt-shadow {
+  background-color:#ccc;
+  height:100%;
+  left:3px;
+  _left:0;
+  top:3px;
+  width:100%;
+}
+
+#ttBkTypeIcon div.bd {
+  border-color:#7A7978;
+  color:#1F0544;
+  font-size:11px;
+  font-weight:normal;
+  line-height:1.2em;
+  padding:8px 20px;
+}
+
+#ttBkTypeIcon div.yui-tt-shadow {
+  background-color:#9F9E9C;
+  bottom:-4px;
+  left:4px;
+  right:-4px;
+  top:4px;
+}
+
+/**
+ * Smart Icons - styling ends here
+ */
+
+#feedbackNotifsDiv {
+  position: absolute;
+  top: 8px;
+  height: 20px;
+  text-align: right;
+}
+
+/**
+ * for calendar page, size changes to aling with div below
+ */
+#feedbackNotifsDiv.feedbackCalendarPg {
+  width: 69%;
+  min-width: 575px;
+  left: 0px;
+}
+#feedbackNotifsDiv.feedbackAssignListPg {
+  width: 400px;
+  left: 340px;
+}
+
+
+
+

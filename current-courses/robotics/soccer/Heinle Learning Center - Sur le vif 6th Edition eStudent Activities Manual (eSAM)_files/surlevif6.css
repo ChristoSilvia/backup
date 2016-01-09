@@ -1,0 +1,301 @@
+/* Book banner css starts */
+body.default #hd #titlebar #logo {
+background: url("/files/heinle/common/hlc_eSAM_logo.png");
+width: 157px;
+height: 19px;
+}
+body.default #hd #titlebar {
+    background: url("/files/heinle/books/surlevif6/layout/surlevif6_bg.png");
+}
+body.default #hd #hdrBkImg {
+    background: url("/files/heinle/books/surlevif6/layout/surlevif6_left_logo.png");
+    width: 313px;
+}
+/* Book banner css ends */
+
+ul.text175 li {
+	line-height: 175%;
+}
+ol.text175 li {
+	line-height: 175%;
+}
+.act-title {
+	color: #82b049;
+	font-weight: bold;
+	padding-right: 20px;
+}
+.act-title-LM {
+	color: #58a7d1;
+	font-weight: bold;
+}
+ul.text150 li {
+	line-height: 150%;
+}
+ol.text150 li {
+	line-height: 150%;
+}
+.ch-num {
+	font-size: 15px;
+	color: #ffffff;
+	letter-spacing: 0.2em;
+	background-color: #f15922;
+	width: 133px;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	padding-right: 3px;
+	padding-left: 3px;
+}
+.ol-style-for-tables {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 16px;
+	color: #06ace7;
+}
+.ch-num-lude {
+	font-size: 16px;
+	color: #ffffff;
+	letter-spacing: 0.1em;
+	background-color: #8f489c;
+	width: 133px;
+	text-align: center;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.ch-title {
+	font-size: 18px;
+	color: #ffffff;
+	font-weight: bold;
+	letter-spacing: 0.1em;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	background-image: url(/files/heinle/books/surlevif6/layout/ch-title.gif);
+	padding-left: 3px;
+	background-repeat: no-repeat;
+	text-align: right;
+	padding-right: 3px;
+}
+.ch-title-lude {
+	font-size: 18px;
+	color: #ffffff;
+	font-weight: bold;
+	letter-spacing: 0.1em;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	background-image: url(/files/heinle/books/surlevif6/layout/ch-title-lude.gif);
+	padding-left: 3px;
+	background-repeat: no-repeat;
+	text-align: right;
+	padding-right: 3px;
+}
+.header {
+	font-size: 15px;
+	color: #f15922;
+	background-image: url(/files/heinle/books/surlevif6/layout/header1.gif);
+	background-repeat: no-repeat;
+	font-weight: bold;
+	padding: 3px;
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #0593c6;
+}
+.header-sub2 {
+	font-size: 15px;
+	color: #f15922;
+	padding: 3px;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.header-sub2-num {
+	font-size: 15px;
+	color: #0593c6;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	padding-top: 3px;
+	padding-right: 3px;
+	padding-bottom: 3px;
+	padding-left: 30px;
+}
+.header-sub2-num-nopadding {
+	font-size: 15px;
+	color: #0593c6;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	padding-top: 3px;
+	padding-right: 3px;
+	padding-bottom: 3px;
+}
+.header-sub1 {
+	font-size: 13px;
+	color: #faa61a;
+	padding: 3px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.inst {
+	background-color: #fef5e4;
+	padding-top: 2px;
+	padding-right: 5px;
+	padding-bottom: 2px;
+	padding-left: 5px;
+}
+.inst-letter {
+	background-color: #0593c6;
+	font-weight: bold;
+	color: #fff;
+	width: 20px;
+	padding-top: 2px;
+	padding-right: 5px;
+	padding-bottom: 2px;
+	text-align: right;
+	vertical-align: baseline;
+	padding-left: 5px;
+}
+.matching-num {
+	background-color: #d0e5f2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #65aad5;
+}
+.matching-right {
+	border-bottom: 1px solid #65aad5;
+}
+.matching-left {
+	border: 1px solid #65aad5;
+	background-color: #d0e5f2;
+}
+.model {
+	font-weight: bold;
+	width: 65px;
+	padding-left: 3px;
+	vertical-align: baseline;
+	color: #f15922;
+}
+.model-top {
+	font-weight: bold;
+	width: 65px;
+	padding-left: 3px;
+	vertical-align: top;
+	color: #f15922;
+}
+
+.model-text {
+	background-color: #f0f1f1;
+	padding-left: 3px;
+}
+.vocab {
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #0593c6;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+.vocab-utile {
+	color: #82b049;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #f15922;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding-bottom: 3px;
+}
+.color1 {
+	background-color: #d7c7e1;
+}
+.color2 {
+	background-color: #b6e4f8;
+}
+.color3 {
+	background-color: #fdd48e;
+}
+.color4 {
+	background-color: #cce390;
+}
+.color5 {
+	background-color: #ddd;
+}
+/* Horizontal cell borders start */
+.table-horzBorder td {
+	border-top: 1px solid #fff;
+}
+/* Horizontal cell borders end */
+
+/* Border css starts */
+.border {
+	border-collapse:collapse;
+}
+
+.border td {
+	border: 1px solid #000000;
+	border-collapse:collapse;
+}
+.table td {
+	border:none;}
+/* Border css ends */
+
+ol.style li {
+font-size: 16px;
+font-family:Georgia, "Times New Roman", Times, serif;
+color: #06ace7;
+font-style: bold;
+}
+
+ol.style li p {
+   color: #999999;
+   font-size: 12px;
+   font-family: Verdana, Geneva, sans-serif;
+   color: #000000;
+   margin:0;
+   padding:0px 0 9px 9px;
+   font-style: normal;
+   font-weight: normal;
+   line-height: 150%;
+ }
+.undertie {
+	background-image: url(/files/heinle/common/img/undertie.gif);
+	background-repeat: no-repeat;
+	background-position: bottom;
+	padding-bottom: 3px;
+}
+.undertie2 {
+	background-image: url(/files/heinle/books/surlevif6/layout/undertie.gif);
+	background-repeat: no-repeat;
+	background-position: bottom;
+	padding-bottom: 3px;
+}
+	ol.NoBtmSpace { 
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+.uppercase-small {
+	font-family:Verdana, Geneva, sans-serif;
+	font-size: 11px;
+	text-transform: uppercase;
+}
+.intonation {
+background-image: url(/files/heinle/common/img/intonation.gif);
+background-repeat: repeat-x;
+background-position: top;
+padding-top: 7px;
+}
+.arrow-up {
+background-image: url(/files/heinle/common/img/intonation_arrow-up.gif);
+background-repeat: no-repeat;
+background-position: top;
+padding-top: 16px;
+}
+.arrow-down {
+background-image: url(/files/heinle/common/img/intonation_arrow-down.gif);
+background-repeat: no-repeat;
+background-position: top;
+padding-top: 7px;
+}
+.undertie-long {
+background-image: url(/files/heinle/common/img/undertie-long.gif);
+background-repeat: no-repeat;
+background-position: 10px bottom;
+padding-bottom: 5px;
+} 
+ 

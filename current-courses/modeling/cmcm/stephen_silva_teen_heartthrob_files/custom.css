@@ -1,0 +1,266 @@
+    #account-form div.formleft table.form-table tbody tr td input:focus, 
+    #account-form div.formleft table.form-table tbody tr td select:focus,
+	blockquote,
+    textarea:focus,
+    input[type='text']:focus,
+    input[type='url']:focus,
+    input[type='email']:focus,
+    input[type='number']:focus,
+    input[type='password']:focus,
+    select:focus,
+    .bordercolor2, .bordercolor2hover:hover,
+    .carousel-pagination a:hover,
+    .carousel-pagination a.selected,
+    .wp-pagenavi .current,
+    .panel-default,.panel.panel-default:hover,
+    .icon-checklist .border,
+    .buddypress #buddypress .standard-form textarea:focus, .buddypress #buddypress .standard-form input[type=text]:focus, .buddypress #buddypress .standard-form input[type=text]:focus, .buddypress #buddypress .standard-form input[type=color]:focus, .buddypress #buddypress .standard-form input[type=date]:focus, .buddypress #buddypress .standard-form input[type=datetime]:focus, .buddypress #buddypress .standard-form input[type=datetime-local]:focus, .buddypress #buddypress .standard-form input[type=email]:focus, .buddypress #buddypress .standard-form input[type=month]:focus, .buddypress #buddypress .standard-form input[type=number]:focus, .buddypress #buddypress .standard-form input[type=range]:focus, .buddypress #buddypress .standard-form input[type=search]:focus, .buddypress #buddypress .standard-form input[type=tel]:focus, .buddypress #buddypress .standard-form input[type=time]:focus, .buddypress #buddypress .standard-form input[type=url]:focus, .buddypress #buddypress .standard-form input[type=week]:focus, .buddypress #buddypress .standard-form select:focus, .buddypress #buddypress .standard-form input[type=password]:focus, .buddypress #buddypress .dir-search input[type=search]:focus, .buddypress #buddypress .dir-search input[type=text]:focus{
+    	border-color:#333333;
+	}
+    table th,
+    .maincolor2, a.maincolor2, .maincolor2hover:hover, a, a:hover,
+    ul li:before,
+    .dark-div .maincolor2hover:hover,
+    .video-item h2 a:hover, .video-item h3 a:hover,
+    .video-item .item-author,
+    .light-title,
+    .video-toolbar-item.like-dislike .status,
+    a.comment-reply-link,
+    .video-toolbar-item.like-dislike .watch-action .action-like a:hover,
+    .video-toolbar-item.like-dislike .watch-action .action-like a:hover:after,
+    .video-toolbar-item.like-dislike .watch-action  .action-unlike a:hover,
+    .video-toolbar-item.like-dislike .watch-action  .action-unlike a:hover:after,
+    .top_authors_widget .tm_top_author ul li .tm_img2 a:hover,
+    .tm_widget_categories ul,
+    .tm_widget_categories ul li a:hover,
+    #review-box h2.review-box-header,
+    .review-stars .review-final-score,
+    .review-stars .review-final-score h4,
+    #review-box strong,.review-stars .taq-score,
+    #tm_recentcomments .tm_recentcomments .info_rc a:hover,
+    .widget.widget-border.widget_nav_menu .menu .menu-item a:hover,
+    .widget.widget-border.widget_nav_menu .menu .menu-item ul li a:hover,
+    .widget.widget-border.widget_nav_menu .menu li.current-menu-item > a,
+    .widget_tm_mostlikedpostswidget ul,
+    .widget_tm_mostlikedpostswidget ul li a:hover,
+    .tm_widget_most_viewed_entries ul,
+    .tm_widget_most_viewed_entries ul li a:hover,
+    .related-title,
+    .tmr-head h3,.tmr-stars,.tmr-final,
+    .is-carousel.simple-carousel.testimonial .name.pos,
+    .panel-default .panel-title a,.panel.panel-default .panel-heading:before,
+    .boxed-icon .boxed-item .heading,.boxed-icon .boxed-item .ic_st2,
+    .icon-checklist li i,
+    .action-like.change-color a:after,
+    .action-unlike.change-color a:after,
+    .tooltipster-content .gv-title,
+    .buddypress #buddypress div.item-list-tabs ul li a:hover,
+    #membership-wrapper legend,
+    .register-section h4,
+    .standard-form h2,
+    #account-form div.formleft p strong,
+    .video-toolbar-item.tm-favories .wpfp-link[href^="?wpfpaction=remove"]:before, .video-toolbar-item.tm-favories .wpfp-link:hover{
+    	color:#333333;
+    }
+    #account-form div.formleft .button-primary,
+    #membership-wrapper .link .button,
+    #membership-wrapper  div.topbar{background-color: #333333 !important;}    
+    .tooltipster-base .gv-button .quick-view,
+    .bgcolor2, .bgcolor2hover:hover,
+    .wp-pagenavi a:hover, .wp-pagenavi .current,
+    .shortcode-asf .asf-tags .search_tags a.filtered,
+    .shortcode-asf .asf-tags .search_tags a:hover,
+    .carousel-pagination a.selected,
+    .solid-noborder .widget-title,
+    .member .member-info .member-social a.icon-social:hover{
+        background-color:#333333;
+    }
+    button,
+    input[type='submit'],
+    .dark-div .light-div button,
+    .dark-div .light-div input[type='submit'],
+    .light-button,
+    .buddypress #buddypress button, .buddypress #buddypress a.button, .buddypress #buddypress input[type=submit], .buddypress #buddypress input[type=button], .buddypress #buddypress input[type=reset], .buddypress #buddypress ul.button-nav li a, .buddypress #buddypress div.generic-button a, .buddypress #buddypress .comment-reply-link, .buddypress a.bp-title-button{
+        background:#333333;
+        border-color:#333333;
+    }
+    .ct-btn{background:#333333;}
+    .wp-pagenavi a, .wp-pagenavi span,
+    .member .member-info .member-social a.icon-social,
+    .widget.widget-border.widget_nav_menu .menu .menu-item:before{
+        border-color:#333333;
+        color:#333333;
+    }
+    .light-button{
+        border-color:#333333;
+    }
+    .advanced_trending_videos_widget .rt-article-title a, .advanced_popular_videos_widget .rt-article-title a{
+    	color:#333333;
+    }
+    .heading-shortcode .module-title * {color:#333333;}
+    .compare-table-tm .compare-table-column .compare-table-row.row-first{ background-color:#333333; border:1px solid #333333;}
+
+html, body, h1, h2, h3, h4, h5, h6, p, span{
+	font-family: 'Roboto', sans-serif;
+}
+h1{font-size:30px; }
+h2{font-size:18px; }
+h3{font-size:17.5px; }
+body{font-size: 13px; font-weight:400}
+.main-menu .nav > li > a {; }
+
+#home #head-carousel .is-carousel {
+    height: 480px !important;
+}
+#home #head-carousel .video-item {
+    width: 875px;
+    height: 480px !important;
+}
+#home #head-carousel #metro-carousel .video-item .item-thumbnail img {
+    width: 60% !important;
+}
+#home #head-carousel #metro-carousel .video-item > .video-item {
+    width: 1000px !important;
+    height: 250px !important;
+}
+#home #head-carousel #metro-carousel.is-carousel .carousel-button a, #home #head-carousel #big-carousel.is-carousel .carousel-button a{
+    height: 480px !important;
+    line-height: 480px !important;
+    color: #CC0000;
+}
+@media screen and (max-width: 767px) {
+    #home #head-carousel .is-carousel, #show #head-carousel .is-carousel {
+        height: 176px !important;
+    }
+    #home #head-carousel .video-item, #show #head-carousel .video-item {
+        width: 320px !important;
+        height: 176px !important;
+    }
+    #home #head-carousel #metro-carousel .video-item .item-thumbnail img, #show #head-carousel #metro-carousel .video-item .item-thumbnail img {
+        width: 10% !important;
+    }
+    #home #head-carousel #metro-carousel .video-item > .video-item, #show #head-carousel #metro-carousel .video-item > .video-item  {
+        width: 500px !important;
+        height: 146px !important;
+    }
+    #home #head-carousel #metro-carousel.is-carousel .carousel-button a, #home #head-carousel #big-carousel.is-carousel .carousel-button a, #show #head-carousel #metro-carousel .is-carousel .carousel-button a, #show #head-carousel #big-carousel .is-carousel .carousel-button a  {
+        height: 176px !important;
+        line-height: 176px !important;
+    }
+    #home #head-carousel .video-item .item-head h3 a, #show #head-carousel .video-item .item-head h3 a{
+	font-size: 16px !important;
+        visibility: hidden;
+	display: none;
+    }
+}
+@media screen and (min-width: 1280px) and (min-height: 1024px) {
+    #home #head-carousel .is-carousel {
+        height: 650px !important;
+    }
+    #home #head-carousel .video-item {
+        width: 1200px;
+        height: 650px !important;
+    }
+    #home #head-carousel #metro-carousel .video-item .item-thumbnail img {
+        width: 70% !important;
+    }
+    #home #head-carousel #metro-carousel .video-item > .video-item {
+        width: 1500px !important;
+        height: 350px !important;
+    }
+    #home #head-carousel #metro-carousel.is-carousel .carousel-button a, #home #head-carousel #big-carousel.is-carousel .carousel-button a{
+        height: 650px !important;
+        line-height: 650px !important;
+        color: #CC0000;
+    }
+}
+@media screen and (min-width: 1920px) and (min-height: 1200px) {
+    #home #head-carousel .is-carousel {
+        height: 900px !important;
+    }
+    #home #head-carousel .video-item {
+        width: 1600px;
+        height: 900px !important;
+    }
+    #home #head-carousel #metro-carousel .video-item .item-thumbnail img {
+        width: 70% !important;
+    }
+    #home #head-carousel #metro-carousel .video-item > .video-item {
+        width: 1500px !important;
+        height: 350px !important;
+    }
+    #home #head-carousel #metro-carousel.is-carousel .carousel-button a, #home #head-carousel #big-carousel.is-carousel .carousel-button a{
+        height: 900px !important;
+        line-height: 900px !important;
+        color: #CC0000;
+    }
+}
+
+@media screen and (min-width: 2660px) and (min-height: 1600px) {
+    #home #head-carousel .is-carousel {
+        height: 1300px !important;
+    }
+    #home #head-carousel .video-item {
+        width: 2350px;
+        height: 1300px !important;
+    }
+    #home #head-carousel #metro-carousel .video-item .item-thumbnail img {
+        width: 70% !important;
+    }
+    #home #head-carousel #metro-carousel .video-item > .video-item {
+        width: 1500px !important;
+        height: 350px !important;
+    }
+    #home #head-carousel #metro-carousel.is-carousel .carousel-button a, #home #head-carousel #big-carousel.is-carousel .carousel-button a{
+        height: 1300px !important;
+        line-height: 1300px !important;
+        color: #CC0000;
+    }
+    .container{
+        margin-bottom: -33px;
+        margin-top: -13px;
+    }
+}
+
+
+#head-carousel .is-carousel {
+    height: 400px;
+}
+#head-carousel .video-item {
+	width: 711.11111111111px;
+    height: 400px;
+}
+#head-carousel #metro-carousel .video-item .item-thumbnail img {
+    width: 711.11111111111px;
+}
+#head-carousel #metro-carousel .video-item > .video-item {
+    width: 355.55555555556px;
+    height: 200px;
+}
+#head-carousel #metro-carousel.is-carousel .carousel-button a, #head-carousel #big-carousel.is-carousel .carousel-button a {
+    height: 400px;
+    line-height: 400px;
+    color: #cc0000;
+}
+.compare-table-tm .compare-table-row .compare-table-content{ padding:14px 30px; text-align:center; line-height:1.7em}
+.compare-table-tm .comment-form-tm .form-allowed-tags{ display:none}
+.compare-table-tm .compare-table-row.hight-light .compare-table-content span,
+.compare-table-tm .compare-table-row.row-first .compare-table-content span{ font-size:17.5px}
+.compare-table-tm .compare-table-row .compare-table-content{ line-height:1.5em}
+@media (max-width:500px){
+	.blog-heading div.dir-search{ margin-top:20px !important}
+        #buddypress ul.item-list li{padding-bottom: 60px !important;}
+}
+
+
+.btn-group-sm>.btn {
+    font-size: 13px;
+}
+.headline-content .headline{ padding-top:9px}
+.social-links{font-family: sans-serif;}
+
+iframe[name='google_conversion_frame']{display:none}
+
+#player .onp-sociallocker-content, #player .onp-sociallocker-content #player-embed{
+ display:inline-block;
+}

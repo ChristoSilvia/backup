@@ -1,0 +1,318 @@
+\documentclass{article}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{fullpage}
+
+\pgfplotsset{compat=1.11}
+\pgfplotstableread[ col sep = comma]{pareto-front-2.csv}\pareto
+
+\begin{document}
+
+\begin{flushright}
+Chris Silvia
+
+Problem Set 8
+
+(with a little help from Sascha Hernández)
+
+\end{flushright}
+
+\section{Fish Tank Simulation Problem}
+
+\subsection{Problem Statement}
+
+You are a mathematical modeler hired by a store owner, who owns
+	and operates a store which sells fish tanks, as well as other
+	merchandise.
+Customers who wish to buy fish tanks are relatively rare.
+In the store owner's experience, they arrive about once per week.
+Fish tanks need to be ordered from a manufacturer; the tank takes
+	several days to arrive after it is ordered.
+The store owner wants to know the best scheme for ordering fish
+	tanks.
+She has thought up two different schemes for ordering the fish tanks:
+
+\begin{enumerate}
+\item Order a new tank each time one is sold.
+This way, there will never be more than one in stock at any given time,
+	so there will be no waste of shelf space.
+But, the store may also be caught without any fish tanks, and lose
+	the customer.
+\item Order a new tank about once per week.
+We will avoid having more than necessary in stock, but they may 
+	accumulate.
+\end{enumerate}
+
+The store owner wants me to determine which strategy is better,
+	and if there is a still-better strategy.
+
+\subsection{Determination of Parameters} \label{sec:det-of-params}
+
+After consulting with the client, I determined some parameters:
+
+\paragraph{}
+\begin{tabular}{l|l|l}
+Possibility of Customer per Day & $a$ &  1/7 \\
+Length of Fishtank Ordering Process & $O$ & 5 days \\
+Profit from a Sale & $P$ & \$20 \\
+Loss from Customer Not Finding Tank & $L_c$ & \$10 \\
+Loss per Additional Fish Tank per Day & $L_t$ & \$0.5 / day \\
+\end{tabular}
+
+\paragraph{}
+In a single day, if a customer comes to the store, and there are
+	$m$ fishtanks at the beginning of the day, the total profit is:
+
+\begin{align}
+	P - (m - 1) L_t & \text{    if } m \geq 1 \nonumber \\
+	- L_c & \text{    if } m = 0 
+\end{align}
+
+If no customers come to the store, then the total profit is:
+
+\begin{align}
+	- m L_t
+\end{align}
+
+In this model, each day there is a probability $a$ of one customer 
+	arriving, and a probability $1 - a$ of no customers arriving.
+This model doesn't ever allow two customers in the store per day.
+A more sophisticated model may take this into account.
+
+\subsection{Description of the Model}
+
+This is a monte carlo model.
+It consists of a program which uses random numbers to model
+	the randomness observed in real life.
+To make predictions, I will use a large number of program evaulations
+	as data, and then use statistical techniques to analyze the data.
+I will be most interested in the mean and variance of the
+	final profit.
+I will present a pareto front of in mean-variance space to the
+	client, and she will chose the ideal point.
+
+In the program, time will be discretized in days.
+The program will compute a large number of days.
+Each day, a single customer will arrive with probability $a$.
+The profits will be computed as described in section
+	(\ref{sec:det-of-params}), and the running total profit will be
+	computed.
+Each day, if no fish tank is on order, our strategy will decide whether 
+	or not to order a fish tank.
+Our model will only allow us to order one fish tank at any given time,
+	so we cannot order several at once.
+
+From each run of this program, we will record the expected profit
+	as data.
+This will be the data which we later compute the mean and standard
+	deviation of.
+
+\subsection{Additional Strategies}
+
+I can add some additional strategies:
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+\item Order a tank every $i$ days, and also order a new tank every 
+	time the tanks run out.
+\item Stop ordering tanks once you have an inventory of $M$ tanks.
+\end{enumerate}
+
+\subsection{Implementing the Strategies}
+
+If I order a tank every $i$ days, and stop when I have an inventory
+	of $M$ tanks, then strategy 1 is the case of $i = \infty$
+	and $M = \infty$ and a new tank is ordered every time the tanks run out,
+	strategy 2 is the case $M = \infty$ where no new tank is ordered
+	every time the tanks run out,
+	strategy 3 is the case $M = \infty$ where a new tank is ordered
+	every time tanks run out, and strategy 4 can be either when a tank
+	is ordered or not ordered every time tanks run out.
+The choice of ordering or not ordering can be recorded as a boolean 
+	variable $b$.
+Together, these strategies are summarized by three parameters:
+
+\begin{align*}
+i \in \mathbb{Z}_+ \cup \{ \infty \} \\
+M \in \mathbb{Z}_+ \cup \{ \infty \} \\
+b \in \{ 0, 1 \} 
+\end{align*}
+
+Determining the optimal value of the parameters will determine the optimal
+	strategy among the listed strategies.
+I have no way of guarenteeing that the optimal parameters I find
+	yield an optimal strategy.
+
+\subsection{Tests of the Strategies}
+
+I may want to minimize the expected standard deviation, or maximize the
+	expected profit.
+I tested strategies with maximum inventory ranging from 1 to 20, and with 
+	the maximum inventory set to $\infty$, and with the re-ordering inverval
+	ranging from 1 to 30 days.
+I tested each strategy with re-ordering upon purchase, and without.
+For each strategy I computed 200 iterations.
+
+Given these conditions, I present a pareto front of points:
+
+\begin{tikzpicture}
+\begin{axis}[
+	xlabel = {Expected Profit},
+	ylabel = {Standard Deviation of Profit}
+]
+\addplot[only marks] table[x index = {3}, y index = {4}]{\pareto};
+\end{axis}
+\end{tikzpicture}
+
+\paragraph{}
+\begin{tabular}{l|l|l|l|l}
+Order when sold out? & Max Inventory & Order Schedule & Expected Profit & Std Div. of Profit \\
+\hline
+no&1&2&1805.2675&189.6323000966601\\
+no&1&4&1719.635&176.5253246028191\\
+no&1&5&1647.86&140.2045988822717\\
+no&1&6&1493.0425&131.8275367324853\\
+no&1&7&1357.5675&116.5302889163355\\
+no&1&8&1213.07&94.8633113442493\\
+no&1&9&1068.945&79.78480463253172\\
+no&2&8&1262.9625&108.388445506644\\
+no&2&9&1114.5175&89.76312179241314\\
+no&2&10&984.145&76.01933088591156\\
+no&3&9&1117.855&93.37847273785468\\
+no&3&11&845.1975&69.92698808085689\\
+no&6&11&852.9275&75.59357071482391\\
+\end{tabular}
+\paragraph{}
+
+None of the pareto-optimal strategies recommend ordering when sold out.
+I am surprised by this, it felt like a good idea.
+The maximum inventory is only ever 6, which makes me think that establishing
+	a maximum inventory is a good idea.
+The order schedules are larger with larger inventory limits, to account for them.
+
+There is a range of low-value low-variance strategies and high-variance 
+	high-value strategies.
+
+Attached are histograms which verify the gaussian-ness of these points
+	with histograms of 2000 samples.
+
+\section{Making Events Independent}
+
+Consider a model of a queue, which has three states:
+
+\begin{enumerate}
+\item No customers are present
+\item A customer is being served
+\item A customer is being served, and another is waiting
+\end{enumerate}
+
+This assumes that the line can never grow longer than one, or that
+	nobody will join a line when it already has one person in it.
+
+The model also assumes that a customer arrives with probability $p$,
+	and a customer currently being served finishes with probability $q$.
+
+In state 1 there is no customer currently being served to finish,
+	and in state 3 there is no customer to arrive.
+However, in state 2, both events could potentially happen.
+
+\subsection{Characteristics of Independent Events}
+
+Suppose event A happens with probability $p$, and event B happens with
+	probability $q$.
+If A and B are independent, then if A happens, then the probability of 
+	B happening is still $q$.
+If A does not happen, then the probability of $B$ happening is also still $q$.
+
+\subsection{Modification of Transition Probabilities}
+
+Suppose a customer is being served.
+We have assumed that a probability of a customer arriving in a given timestep is  $p$, 
+	and the probability of a customer currently being served finishing is $q$.
+Therefore the following events could happen:
+
+\paragraph{}
+\begin{tabular}{l | l | l | l }
+Customer Arrives & Current Customer Finishes & Probability & Result State\\
+\hline
+false & false & $(1 - p) (1 - q)$ & State 2\\
+false & true  & $(1 - p) q $ & State 1\\
+true & false & $p (1 - q)$ & State 3\\
+true & true & $p q$ & State 2 \\
+\end{tabular}
+\paragraph{}
+
+The old markov matrix is:
+
+\begin{align}
+M & = \left( \begin{matrix}
+1-p & p & 0 \\
+q & 1 - (q + p) & p \\
+0 & q & 1 - q 
+\end{matrix} \right)
+\end{align}
+
+The new markov matrix is:
+
+\begin{align}
+M & = \left( \begin{matrix}
+	1 - p & p & 0 \\
+	(1 - p)q & (1 - p)(1 - q) + p q & p(1 - q) \\
+	0 & q & 1 - q
+\end{matrix} \right) \nonumber \\
+  & = \left( \begin{matrix}
+	1 - p & p & 0 \\
+	(1 - p)q & 1 - (p + q) + 2 p q & p(1 - q) \\
+	0 & q & 1 - q
+\end{matrix} \right)
+\end{align}
+
+The modification is in the second line.
+The first entry changes from $q$ to $(1 - p)q$, which are very similar if $p$ is small.
+The second entry changes $1 - (p + q)$ to $1 - (p + q) + 2 p q$, which are also very 
+	similar of $p$ and $q$ are small.
+Note that if $p$ and $q$ are not small, the old transition probability isn't
+	 guarenteed to be positive!
+Finally, the third entry changes from $p$ to $p(1 - q)$, which is very similar
+	if $q$ is small.
+
+\subsection{Result in the case $p = 0.2$, $q = 0.2$}
+
+For the case $p = 0.2$, $q = 0.2$, the corresponding matrices' eigenvectors and eigenvalues
+	are, for the old probabilities:
+
+\begin{align*}
+\lambda_1 & = 0.4 & v_1 & = \left[ 
+		\begin{matrix} 3.6772 \times 10^{15} \\ -7.3543 \times 10^{15} \\3.6673 \times 10^{15} 
+	\end{matrix} \right] \\
+\lambda_2 & = 0.8 & v_2 & = \left[
+		\begin{matrix} -1.5923 \times 10^{15} \\ 0.46875 \\ 1.5923 \times 10^{15}
+	\end{matrix} \right] \\
+\lambda_3 & = 1.0 & v_3 & = \left[
+		\begin{matrix} 1/3 \\ 1/3 \\ 1/3
+	\end{matrix} \right]
+\end{align*}
+
+and for the new probabilities:
+
+\begin{align*}
+\lambda_1 & = 0.4 & v_1 & = \left[ 
+		\begin{matrix} 2.5 \\ -4.0 \\ 2.5  
+	\end{matrix} \right] \\
+\lambda_2 & = 0.8 & v_2 & = \left[
+		\begin{matrix} 1.5923 \times 10^{15} \\ 0.33413 \\ - 1.5923 \times 10^{15}
+	\end{matrix} \right] \\
+\lambda_3 & = 1.0 & v_3 & = \left[
+		\begin{matrix} 1/3 \\ 1/3 \\ 1/3
+	\end{matrix} \right]
+\end{align*}
+
+Since the probability after a long run of trials is the eigenvector corresponding
+	to the eigenvalue 1, in both cases the states are equally likely. 
+
+\end{document}

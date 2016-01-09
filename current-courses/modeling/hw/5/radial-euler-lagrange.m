@@ -96,19 +96,27 @@ for i = 1:length(lambda_values)
 	plot(X(:,1) .* cos(T), X(:,1) .* sin(T));
 	plot(X(:,1) .* cos((1.25*pi - T)+1.25*pi), X(:,1) .* sin((1.25*pi - T)+1.25*pi));
 end
-hold off
+title('Time-Optimal Cell Phone Curves')
+xlabel('x')
+ylabel('y')
 axis([-2.5, 0.5, -2.5, 0.5])
+hold off
+print('time-optimal-curves.png')
 pause
 
 plot(lambda_values, center_start_values)
+title('Parameter Values for Given Miminum Radii')
+xlabel('lambda (must be <20)')
+ylabel('radius of closest approach to center')
+print('parameter-values.png')
 pause
 
-clf()
-hold on
-plot(lambda_values, - log(sqrt(2) - center_start_values)./log(20 - lambda_values))
-plot(lambda_values, log(sqrt(2)./(sqrt(2)-center_start_values))./(20 - lambda_values))
-hold off
-pause
+%	clf()
+%	hold on
+%	plot(lambda_values, - log(sqrt(2) - center_start_values)./log(20 - lambda_values))
+%	plot(lambda_values, log(sqrt(2)./(sqrt(2)-center_start_values))./(20 - lambda_values))
+%	hold off
+%	pause
 
 % lambda = fzero(@arclength_error, [-400, -24.0])
 
