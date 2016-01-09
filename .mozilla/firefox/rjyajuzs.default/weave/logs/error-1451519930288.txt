@@ -1,0 +1,31 @@
+1451519330261	Sync.ErrorHandler	DEBUG	Flushing file log.
+1451519330262	Sync.Service	DEBUG	Exception: Error: NS_ERROR_UNKNOWN_HOST (resource://services-sync/resource.js:393:10) JS Stack trace: Res_get@resource.js:413:5 < Sync11Service.prototype._fetchInfo@service.js:526:7 < sync@enginesync.js:77:9 < onNotify@service.js:1254:7 < WrappedNotify@util.js:141:15 < WrappedLock@util.js:96:9 < _lockedSync@service.js:1248:1 < sync/<@service.js:1239:7 < WrappedCatch@util.js:70:9 < sync@service.js:1227:5
+1451519330265	Sync.ErrorHandler	DEBUG	Log cleanup threshold time: 1450655330264
+1451519330266	Sync.ErrorHandler	DEBUG	No logs to clean up.
+1451519330267	Sync.BrowserIDManager	INFO	currentAuthState returning error.login.reason.network due to previous failure
+1451519330267	Sync.Status	DEBUG	Status.login: error.login.reason.network => error.login.reason.network
+1451519330267	Sync.Status	DEBUG	Status.service: error.sync.failed => error.login.failed
+1451519330267	Sync.BrowserIDManager	INFO	currentAuthState returning error.login.reason.network due to previous failure
+1451519330268	Sync.Status	DEBUG	Status.login: error.login.reason.network => error.login.reason.network
+1451519330268	Sync.Status	DEBUG	Status.service: error.login.failed => error.login.failed
+1451519330270	Sync.ErrorHandler	DEBUG	Log cleanup threshold time: 1450655330270
+1451519330271	Sync.ErrorHandler	DEBUG	No logs to clean up.
+1451519930262	Sync.Service	DEBUG	User-Agent: Iceweasel/31.8.0 FxSync/1.33.0.20150701023259.
+1451519930262	Sync.Service	INFO	Starting sync at 2015-12-30 18:58:50
+1451519930265	Sync.SyncScheduler	DEBUG	Clearing sync triggers and the global score.
+1451519930266	Sync.Status	INFO	Resetting Status.
+1451519930266	Sync.Status	DEBUG	Status.service: error.login.failed => success.status_ok
+1451519930268	Sync.BrowserIDManager	INFO	Fetching assertion and token from: https://token.services.mozilla.com/1.0/sync/1.5
+1451519930268	FirefoxAccounts	DEBUG	already verified
+1451519930270	Sync.BrowserIDManager	DEBUG	Getting an assertion
+1451519930270	FirefoxAccounts	DEBUG	enter getAssertion()
+1451519930274	FirefoxAccounts	DEBUG	getKeyPair: already have a keyPair
+1451519930275	FirefoxAccounts	DEBUG	 getCertificate already had one
+1451519930276	FirefoxAccounts	DEBUG	getAssertionFromCert
+1451519930278	FirefoxAccounts	DEBUG	getAssertionFromCert returning signed: true
+1451519930279	Sync.BrowserIDManager	DEBUG	Getting a token
+1451519930285	Sync.BrowserIDManager	ERROR	Non-authentication error in _fetchTokenForUser: Client error.
+1451519930286	Sync.Status	DEBUG	Status.login: success.login => error.login.reason.network
+1451519930286	Sync.Status	DEBUG	Status.service: success.status_ok => error.login.failed
+1451519930286	Sync.SyncScheduler	DEBUG	Clearing sync triggers and the global score.
+1451519930287	Sync.SyncScheduler	DEBUG	Next sync in 600000 ms.

@@ -1,0 +1,12 @@
+[General]
+PassiveResourceKeys=
+ResourceKeys=7TppU2NaOV
+Standard=7TppU2NaOV
+
+[Resource_7TppU2NaOV]
+FileFormat=vcard
+ResourceIdentifier=7TppU2NaOV
+ResourceIsActive=true
+ResourceIsReadOnly=false
+ResourceName=Default Address Book
+ResourceType=file

@@ -1,0 +1,651 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+
+\DeclareMathOperator\erf{erf}
+
+\begin{document}
+
+%	\begin{flushright}
+%	Chris Silvia
+%	(with help from Sascha Hernandez)
+%	\date
+%	\end{flushright}
+
+\section{Lottery}
+
+Suppose each week, $2000000$ lottery tickets are sold for \$1 apiece.
+If $4000$ of these tickets pay off \$30 each,
+	$500$ pay off \$800 each, one ticket pays off \$1200000,
+	and no ticket pays off more than one prize?
+
+\subsection{Expected Value of one ticket}
+
+Since no ticket pays off more than one prize, and each ticket is only
+	one option, the expected value of a ticket is:
+
+\begin{align*}
+E\left( \text{Ticket} \right)
+	& = \frac{
+		N_\text{no-prize tickets} 
+			0
+		+ N_\text{\$30-prize tickets}
+			30
+		+ N_\text{\$800-prize tickets} 800
+		+ N_\text{\$1200000-prize tickets} 1200000}{N_\text{tickets}} \\
+	& = \frac{0 + 120000 + 400000 + 1200000}{1995499}\\
+E\left( \text{Ticket} \right)
+	& = 0.86
+\end{align*}
+
+This lottery seems like a losing proposition.
+
+\subsection{Expected Value of Five Tickets}
+
+One might naively conclude that the expected value of five tickets
+	is $5 E\left( \text{Ticket} \right)$.
+However, that is not correct.
+The \$1,200,000 ticket goes into the expected value, but it can only
+	be one of the tickets.
+Therefore, the expected value will be less than $5 E\left( \text{Ticket} \right)$.
+
+\subsubsection{Expected Value of Five Tickets}
+
+To compute the expected value of five tickets, I computed the likelihood that each
+	possible combination of tickets could arise, and then multiplied it	by
+	the payoff of that combination.
+To my \emph{complete and utter shock}, the expected value for 5 tickets which I got 
+	is 4.3, exactly 5 times the expected value for one ticket by itself.
+I am completely astounded and I do not believe my result. 
+I have reimplemented this several times, once in haskell, and I keep getting the same
+	result over and over again.
+I don't believe it's true, but I'm not sure what to do at this point.
+
+%	To prepare for this calculation, I will first calculate the expected value
+%		of two tickets.
+%	
+%	\begin{align*}
+%	E\left( \text{Two Tickets} \right)
+%		& =	P\left( \text{Ticket 1 is worth \$ 0} \right)
+%			\left( 0 
+%				+ E\left( \text{Ticket 2} \mid \text{Ticket 1 is worth \$0} \right)\right)\\
+%		&	+ P\left( \text{Ticket 1 is worth \$ 30} \right)
+%			\left( \$30 
+%				+ E\left( \text{Ticket 2} \mid \text{Ticket 1 is worth \$30} \right)\right)\\
+%		&	+ P\left( \text{Ticket 1 is worth \$ 800} \right)
+%			\left( \$800
+%				+ E\left( \text{Ticket 2} \mid \text{Ticket 1 is worth \$800} \right)\right)\\
+%		&	+ P\left( \text{Ticket 1 is worth \$ 1,200,000} \right)
+%			\left( \$1,200,000
+%				+ E\left( \text{Ticket 2} \mid \text{Ticket 1 is worth \$1,200,000} \right)
+%			\right)\\
+%		& = \frac{1995499}{2000000} 
+%			\left( \frac{120000 + 400000 + 1200000}{1999999} \right)\\
+%		& + \frac{4000}{2000000} 
+%			\left( 30 + \frac{110070 + 400000 + 1200000}{1999999} \right)\\
+%		& + \frac{500}{2000000} 
+%			\left( 800 + \frac{120000 + 399500 + 1200000}{1999999} \right)\\
+%		& + \frac{1}{2000000} 
+%			\left( 1200000 + \frac{120000 + 400000}{1999999} \right)\\
+%		& = 0.85806 + 0.061710 + 0.20021 + 0.6 \\
+%		& = 1.71998
+%	\end{align*}
+%	
+%	This is very slightly smaller than $2 * E\left( \text{Ticket} \right) = 1.72$,
+%		as predicted.
+%	
+%	\subsubsection{Five Tickets}
+%	
+%	\paragraph{}
+%	\begin{tabular}{| l | l | l | l | l |}
+%	\hline
+%	\# \$1,200,000 & \# \$ 800 & \# \$ 30 & \# \$ 0 & Degeneracy \\
+%	\hline
+%	1 & 0 & 0 & 0 & 4 & ${1995499 \choose 4}\\
+%	1 & 0 & 0 & 1 & 3 & \\
+%	1 & 0 & 0 & 2 & 2 & \\
+%	1 & 0 & 0 & 3 & 1 & \\
+%	1 & 0 & 0 & 4 & 0 & \\
+%	1 & 0 & 1 & 0 & 3 & \\
+%	1 & 0 & 1 & 1 & 2 & \\
+%	1 & 0 & 1 & 2 & 1 & \\
+%	1 & 0 & 1 & 3 & 0 & \\
+%	1 & 0 & 0 & 1 & 3 & \\
+%	\end{tabular}
+
+\section{Aircraft Departure}
+
+\subsection{Problem Statement}
+
+To prepare an aircraft for departure, it takes a random amount of time
+	between 20 and 27 minutes.
+If the flight is scheduled to depart at 9:00 am and preparation begins at 8:37
+	am, find the probability that the plane is prepared for departure on
+	schedule.
+
+\subsection{Solution}
+
+Since time is a continuous variable, it makes sense to model the random
+	amount of time between 20 and 27 minutes as a probability distribution
+	on the interval $(20,27)$.
+This does not preclude the possibility that the time is discreet, this can 
+	be modeled by a series of dirac delta distributions at the integer points.
+A distribution $\mu(t)$ is therefore a valid probability distribution for flight
+	times if it is supported only on $(20,27)$ and is normalized.
+
+Given $\mu(t)$, the expected time that the loading takes is:
+
+\begin{align}
+\langle t \rangle & = \int_{20}^{27} t \mu(t) dt
+\end{align}
+
+If a flight is scheduled to depart at 9:00 am and preparation begins at 8:37
+	am, then the probability that the filght will be prepared for departure
+	in time is the probability that the preparations take fewer than 23 minutes.
+This is given by:
+
+\begin{align}
+P\left( \text{Prepared for Departure} \right)
+	& = \int_{20}^{23} \mu(t) dt
+\end{align}
+
+So far I have made no assumptions.
+
+\subsection{Example}
+There is no way of determining what the probability of being prepared for depature
+	is without knowing the probability distribution $\mu(t)$.
+Let's evaluate the probability with the constant distribution:
+\begin{align}
+\mu(t) & = \begin{cases} \frac{1}{7} & 20 < t < 27 \\
+	0 & \text{otherwise} \end{cases}
+\end{align}
+
+\begin{align}
+P\left( \text{Prepared for Departure} \right)
+	& = \int_{20}^{23} \frac{1}{7} dt \nonumber \\
+	& = \frac17 \left( t \right)^{t = 23}_{t = 20} \nonumber \\
+	& = \frac17 \left(23 - 20\right) \nonumber \\
+	& = \frac37
+\end{align}
+
+\section{Nigerian Con}
+
+\begin{itemize}
+\item The spammer sends the initial solicitation to $N = 10000000$ recipients.
+\item $x = 5\%$ are Very Gullible (VG) and the remaining $1-x = 95\%$ are Reasonably
+	Skeptical (RS).
+The spammer does not know which one is which.
+\item The spammer's cost of follow-up email exchange is $K = \$20$.
+\item If the follow-up email exchange is a success, the spammer gets 
+	a reward of $L = \$2000$.
+\item The spammer can send either Well-Written Solicitations (WWS)
+	or Badly Written Solicitations (BWS).
+\item The probability of initial response from each VG individual is $p_g = 0.01$
+	regardless of the type of solicitation.
+\item The probability of initial response from each RS individual is $q_w = 0.002$
+	if the spammer sends WWS and $q_b = 0.001$ if the spammer sends BWS.
+\item Once the recipient responds, the probability of successfully fooling
+	him is $r_1 = 0.1$ for VG responders and $r_2 = 0.005$ for RS.
+\end{itemize}
+
+\subsection{Expected Cost from Follow-Up Emails}
+
+Suppose we send well-written emails.
+
+\begin{align}
+E\left( \text{Responses} \mid \text{WWS} \right) 
+	& = x N p_g + (1 - x) N q_w \nonumber \\
+	& = 5000 + 19000 \nonumber \\
+	& = 24000 \nonumber \\
+E\left( \text{Follow-Up Cost} \mid \text{WWS} \right)
+	& = K \left( x N p_g + (1 - x) N q_w \right) \nonumber \\
+	& = K * 5000 + K * 19000 \nonumber \\
+	& = \$ 100000 + \$ 380000\nonumber\\
+	& = \$ 480000 \nonumber \\
+E\left( \text{Gross Revenue} \mid \text{WWS} \right)
+	& = E\left( \text{Gross Revenue from VG} \mid \text{WWS} \right)
+	+ E\left( \text{Gross Revenue from RS} \mid \text{WWS} \right) \nonumber \\
+	& = L \left( 
+		E\left( \text{Follow-Ups from RS} \mid \text{WWS} \right)
+		+ E\left( \text{Follow-Ups from VG} \mid \text{WWS} \right) \right) \nonumber \\
+	& = L \left( 
+		r_2 E\left( \text{Responses from RS} \mid \text{WWS} \right)
+		+ r_1 E\left( \text{Responses from VG} \mid \text{WWS} \right) \right) \nonumber \\
+	& = L \left( 
+		r_1 p_g x N
+		+ r_2 q_w (1-x) N  \right) \nonumber \\
+	& = L N \left( 5 \times 10^{-5} + 9.5 \times 10^{-6} \right)
+	& = \$ 1190000 \nonumber \\
+E\left( \text{Profit} \mid \text{WWS} \right)
+	& = E\left( \text{Gross Revenue} \mid \text{WWS} \right)
+	- E\left( \text{Follow-Up Cost} \mid \text{WWS} \right) \nonumber \\
+	& = N \left( L \left( 
+		r_1 p_g x
+		+ r_2 q_w (1-x)  \right) 
+	- K \left(x p_g + (1 - x) q_w \right) \right) \nonumber\\
+	& = \$ 1190000 - \$ 480000 \nonumber \\
+	& = \$ 710000 \nonumber \\
+\end{align}
+
+Most of the expense comes from sending emails to the RS individuals,
+	although they contribute only 15 \% of the revenue.
+
+\begin{align}
+E\left( \text{Responses} \mid \text{BWS} \right)
+	& = x N p_g + (1 - x) N q_b \nonumber \\
+	& = 5000 + 9500 \nonumber \\
+	& = 14500 \nonumber \\
+E\left( \text{Follow-Up Cost} \mid \text{BWS} \right) 
+	& = K \left(x N p_g + (1 - x) N q_b \right) \nonumber \\
+	& = K * 5000 + K * 9500 \nonumber \\
+	& = 100000 + 190000 \nonumber\\
+	& = \$ 290000 \nonumber\\ 
+E\left( \text{Gross Revenue} \mid \text{BWS} \right)
+	& = E\left( \text{Gross Revenue from VG} \mid \text{BWS} \right)
+	+ E\left( \text{Gross Revenue from RS} \mid \text{BWS} \right) \nonumber \\
+	& = L \left( 
+		E\left( \text{Follow-Ups from RS} \mid \text{BWS} \right)
+		+ E\left( \text{Follow-Ups from VG} \mid \text{BWS} \right) \right) \nonumber \\
+	& = L \left( 
+		r_2 E\left( \text{Responses from RS} \mid \text{BWS} \right)
+		+ r_1 E\left( \text{Responses from VG} \mid \text{BWS} \right) \right) \nonumber \\
+	& = L \left( 
+		r_1 p_g x N
+		+ r_2 q_w (1-x) N  \right) \nonumber \\
+E\left( \text{Gross Revenue} \mid \text{BWS} \right)
+	& = L N \left( r_1 p_g x + r_2 q_b (1-x) \right) \nonumber \\
+	& = L N \left( 5 \times 10^{-5} + 4.75 \times 10^{-6} \right) \nonumber \\
+	& = \$ 1095000 \nonumber \\
+E\left( \text{Profit} \mid \text{BWS} \right)
+	& = E\left( \text{Gross Revenue} \mid \text{BWS} \right)
+	- E\left( \text{Follow-Up Cost} \mid \text{BWS} \right) \nonumber \\
+	& = N \left( L \left( 
+		r_1 p_g x
+		+ r_2 q_b (1-x)  \right) 
+	- K \left(x p_g + (1 - x) q_b \right) \right) \nonumber\\
+	& = \$ 1095000 - \$ 290000 \nonumber \\
+	& = \$ 805000 \nonumber
+\end{align}
+
+Although the expected revenue doesn't change significantly,
+	the cost of sending follow-ups decreases, making this strategy
+	more profitable.
+
+\subsection{How does email cost affect strategy?}
+
+We have determined:
+
+\begin{align}
+E\left( \text{Profit} \mid \text{WWS} \right)
+	& = N \left( L \left( 
+		r_1 p_g x
+		+ r_2 q_w (1-x)  \right) 
+	- K \left(x p_g + (1 - x) q_w \right) \right) \nonumber \\
+E\left( \text{Profit} \mid \text{BWS} \right)
+	& = N \left( L \left( 
+		r_1 p_g x
+		+ r_2 q_b (1-x)  \right) 
+	- K \left(x p_g + (1 - x) q_b \right) \right) \nonumber
+\end{align}
+
+Therefore, the two strategies are equivalent if  
+	$E\left( \text{Profit} \mid \text{WWS} \right) = 
+	E\left( \text{Profit} \mid \text{BWS} \right)$,
+or:
+
+\begin{align}
+	N \left( L \left( 
+		r_1 p_g x
+		+ r_2 q_w (1-x)  \right) 
+	- K \left(x p_g + (1 - x) q_w \right) \right) \nonumber \\
+ = N \left( L \left( 
+		r_1 p_g x
+		+ r_2 q_b (1-x)  \right) 
+	- K \left(x p_g + (1 - x) q_b \right) \right) \nonumber \\
+	L \left( 
+		r_2 q_w (1-x)  \right) 
+	- K (1 - x) q_w
+& = L \left((1 - x) 
+		r_2 q_b  \right) 
+	- K \left((1 - x) q_b \right) \nonumber \\
+	L r_2 q_w
+	- K  q_w
+& = L r_2 q_b
+	- K  q_b  \nonumber \\
+K (q_b - q_w) & = L r_2 (q_b - q_w) \nonumber \\
+K & = L r_2\\
+K & = \$ 10 
+\end{align}
+
+As long as the exchanges cost more than $\$10$, one should send badly
+	written emails.
+If exchanges cost fewer than $\$10$, then well-written emails make sense.
+
+\section{Speech Problem}
+
+\subsection{Problem Statement}
+
+Suppose a politician is giving a speech, and wants to know how much
+	emphasis to put on one of her policy positions.
+We assume that the voters are split into two groups, Pro and Con, 
+	on that position.
+We further assume that the Candidate has supporters in both groups.
+The number of people in each group is
+
+\paragraph{}
+\begin{tabular}{|l|l|l|}
+\hline
+Pro? & Support Candidate? & \# Individuals\\
+\hline
+Yes & Yes & $r$ \\
+Yes & No & $n-r$ \\
+No & Yes & $s$ \\
+No & No & $m-s$ \\
+\hline
+\end{tabular}
+
+For each mention of the issue:
+\begin{itemize}
+\item Each Non-Supporter who supports the issue becomes a supporter
+	with probability $p$.
+\item Each Supporter who doesn't support the issue becomes a non-supporter
+	with probability $q$.
+\end{itemize}
+
+\subsection{How Many Times to Mention the Issue?}
+
+Suppose the candidate mentions the issue once.
+Then, she can expect to gain $ (n-r) p$ supporters,	
+	and lose $ q s $ supporters.
+
+Now, if she mentions the issue again, the number of supporters
+	has changed:
+
+\paragraph{}
+\begin{tabular}{|l|l|l|}
+\hline
+Pro? & Support Candidate? & \# Individuals\\
+\hline
+Yes & Yes & $r + (n - r) p$ \\
+Yes & No & $(n-r)(1-p)$ \\
+No & Yes & $s(1 - q)$ \\
+No & No & $m-s + q s$ \\
+\hline
+\end{tabular}
+
+\paragraph{}
+After mentioning the issue a second time, she can expect the numbers to be:
+
+\paragraph{}
+\begin{tabular}{|l|l|l|}
+\hline
+Pro? & Support Candidate? & \# Individuals\\
+\hline
+Yes & Yes & $r + (n - r) p + (n-r)(1-p)p$ \\
+Yes & No & $(n-r)(1-p) - (n-r)(1-p)p$ \\
+No & Yes & $s(1 - q) - s(1-q)q$ \\
+No & No & $m-s + q s + s(1-q)q$ \\
+\hline
+\end{tabular}
+
+\subsection{Generalization}
+
+\subsubsection{Determining Net Change in supporters from $k$ mentions}
+
+The probability of an individual being convinced after the $n$-th
+	mentioning of an issue is the probability that they are not
+	convinced the previous $n-1$ times times the probability that
+	they are convinced the $n$-th time.
+If the probabilities are the same each time, then if the probability
+	of being convinced each time is $p$, the probability of being
+	convinced the $n$-th time is $(1-p)^{n-1}p$.
+
+Therefore, if there are $(n-r)$ individuals who support the candidate,
+	and the candidate mentions the issue $k$ times,
+	the expected number of people who are convinced is the sum of the
+	expected number of people who are convinced each time.
+Therefore, the expected number of people to be convinced is:
+
+\begin{align*}
+E\left( \text{\# New Supporters} \mid \text{k mentions} \right)
+	& = (n - r) \left( p + (1 - p) p + (1 - p)^2 p + \dots + (1 - p)^{k-1} p \right)\\
+	& = (n - r) p \sum_{i=0}^{k-1} ( 1 - p )^i \\
+	& = (n - r) p \left( \frac{1 - (1 - p)^k}{1 - (1 - p)} \right) \\
+E\left( \text{\# New Supporters} \mid \text{k mentions} \right)
+	& = (n - r) \left( 1 - (1 - p)^k \right)\\
+E\left( \text{\# Lost Supporters} \mid \text{k mentions} \right)
+	& = s \left( 1 - (1 - q)^k \right)\\
+\end{align*}
+
+Therefore, if the candidate mentions the issue $k$ times, the expected
+	change in number of supporters is:
+
+\begin{align*}
+E\left( \text{\# Net Change in Supporters} \mid \text{k mentions} \right)
+	& =  (n - r) \left( 1 - (1 - p)^k \right)
+	- s \left( 1 - (1 - q)^k \right)
+\end{align*}
+
+This makes sense: if the candidate mentions the issue $0$ times, then she
+	will expect no change in supporters under this model.
+If the candidate mentions the issue an infinite number of times,
+	everybody who can be convinced will be, and therefore her support
+	will change by $(n-r) - s$.
+
+\subsubsection{Determining the Optimal Continuous Value for $k$}
+
+Let's assume that we can mention the issues a fractional number of times,	
+	so that we can use calculus to maximize yield.
+We will revert to integers later.
+
+\begin{align*}
+\frac{\partial 
+	E\left( \text{\# Net Change in Supporters} \mid \text{k mentions} \right)}
+{\partial k}
+	& =  (n - r) \log \left( \frac1{1-p} \right) (1 - p)^k
+	- s \log \left( \frac1{1-q} \right) (1 - q)^k \\
+\end{align*}
+
+If we set 
+$\frac{\partial 
+	E\left( \text{\# Net Change in Supporters} \mid \text{k mentions} \right)}
+{\partial k}$ = 0, then we get:
+
+\begin{align*}
+	(n - r) \log \left( \frac1{1-p} \right) (1 - p)^k
+	& =  s \log \left( \frac1{1-q} \right) (1 - q)^k \\
+	\log \left( (n - r) \log \left( \frac1{1-p} \right) \right)
+	+ k \log \left( 1 - p \right)
+	& =  
+	\log \left( s \log \left( \frac1{1-q} \right) \right)
+	+ k \log \left( 1 - q \right)\\
+	k & = \frac{ \log \left(
+		\frac s{n-r}
+		\frac{ \log \left( 1 - q \right) }
+			{ \log \left( 1 - p \right) } \right) } 
+	{ \log \left( \frac{1 - p}{1 - q} \right)}
+\end{align*}
+
+, assuming that $p \neq q$.
+
+Note that $k$ has to be a positive value, so therefore,
+	for this unique local extremum to be useful,
+	either
+
+\begin{align*}
+\frac s{n-r} \frac{ \log (1 - q)}{\log (1 - p)} & > 1\\
+\frac{1 - p}{1 - q} & > 1
+\end{align*}
+
+or 
+
+\begin{align*}
+\frac s{n-r} \frac{ \log (1 - q)}{\log (1 - p)} & < 1\\
+\frac{1 - p}{1 - q} & < 1
+\end{align*}
+
+If the unique local extremum exists, then if it is greater than
+	the boundary values, it is the optimum point within the interval.
+I could check the second derivative, but I think that it will 
+	be more tractable to just compare the expected change in support at the 
+	extremum of $k$ to the values at $0$ and $\infty$.
+
+%	Since there is a unique optimal continuous value for $k$, then it is the unique
+%		local extremum.
+%	To determine whether it is a maximium or a minimum, we take the second derivative:
+%	
+%	\begin{align*}
+%	\frac{\partial^2 
+%		E\left( \text{\# Net Change in Supporters} \mid \text{k mentions} \right)}
+%	{\partial k^2}
+%		& =  (n - r) \log^2 \left( \frac1{1-p} \right) (1 - p)^{k + 1}
+%		- s \log^2 \left( \frac1{1-q} \right) (1 - q)^{k + 1} \\
+%	\end{align*}
+%	
+%	And evaluate it at the local extremum:
+%	
+%	\begin{align*}
+%	\frac{\partial^2 
+%		E_k}
+%	{\partial k^2}
+%		& =  (n - r) \log^2 \left( \frac1{1-p} \right) 
+%			(1 - p)^{
+%				\frac{ \log \left( 
+%				\frac{ s \log \left(\frac1{1 - q}\right)}
+%				{(n - r) \log \left(\frac1{1-p}\right)} \right)}
+%				{ \log \left( \frac{1 - p}{1 - q} \right)}}
+%		- s \log^2 \left( \frac1{1-q} \right) (1 - q)^{k + 1} \\
+%	\end{align*}
+%	
+%	
+%	If $
+%	\frac{\partial^2 
+%		E\left( \text{\# Net Change in Supporters} \mid \text{k mentions} \right)}
+%	{\partial k^2}$ is negative, then the extremum is a local minimum.
+%	Since the function's derivative has a unique zero, this local minimum
+%		is the maximum value of th
+%	
+
+\subsection{Monte Carlo Simulation}
+
+I conducted a monte carlo simulation, which yielded the attached plots.
+The mean was slightly below the theoretical value, while the standard deviation 
+	was around 2.6
+
+\subsection{Variance}
+
+The expected number of new supporters given $k$ mentions is the sum of everybody who
+	does succumb to pressure, but is also the total number minus the expected
+	number of people who don't succumb to pressure.
+Recall that $\mathcal{N}(n p, n p (1 - p))$ approximates the sum of $n$ Bernoulli
+	random variables with probability $p$.
+
+If there are $k$ mentions of the issue, and a convertable issue-supporter is converted 
+	with probability
+	$p$, then each issue-supporter will not be converted with probability $(1 - p)^k$.
+There are $n - r$ issue-supporters who do not support the candidate.
+Therefore, in the limit of a large number of supporters, the number of unconverted
+	supporters will follow the following probability distribution:
+
+\begin{align}
+\text{Unconverted} 
+	& = \mathcal{N}\left((n-r)(1-p)^k, (n-r)(1-p)^k(1-(1-p)^k))\right)
+\end{align}
+
+Similarly, the number of non-alienated but alienable supporters will follow the
+	following probability distribution:
+
+\begin{align}
+\text{Unalienated}
+	& = \mathcal{N}\left(s(1-q)^k, s(1-q)^k(1-(1-q)^k))\right)
+\end{align}
+	
+The sum of two uncorrelated normal distributions is 
+	$\mathcal{N}(\mu_x, \sigma_x^2) + \mathcal{N}(\mu_y, \sigma_y^2)
+		= \mathcal{N}(\mu_x + \mu_y, \sigma_x^2 + \sigma_y^2)$.
+
+The number of non-supporters who are convinced is the total number of convincable non-
+	supporters minus
+	the non-alienated supporters.
+Since the total number of supporters is known, it's a ``random'' variable
+	of variance zero: $\mathcal{N}((n - r), 0)$,
+	and therefore the total number of non-supporters who are convinced 
+	(and alienatables who are alienated) is:
+
+\begin{align}
+\text{Converted} 
+	& = \mathcal{N} \left( (n-r)(1 - (1 - p)^k), (n - r)(1 - p)^k(1 - (1 - p)^k)\right)\\
+\text{Alienated}
+	& = \mathcal{N} \left( s(1 - (1 - q)^k), s(1 - q)^k(1 - (1 - q)^k)\right)
+\end{align}
+
+Therefore, by the same sum formula, the amount of change in supporters is given
+	by the following random variable:
+
+\begin{align}
+\text{Change in Support}
+	& = \mathcal{N} \left( (n-r)(1 - (1 - p)^k) - s(1 - (1 - q)^k),
+		(n - r)(1 - p)^k(1 - (1 - p)^k) + s(1 - q)(1 - (1 - q)^k) \right)
+\end{align}
+
+The variance of change in support is therefore:
+
+\begin{align}
+\sigma_s^2 & = 
+		(n - r)(1 - p)^k(1 - (1 - p)^k) + s(1 - q)^k(1 - (1 - q)^k)
+\end{align}
+
+\section{Problem 4}
+
+The sum of $n$ independant Bernoulli trials with probability $p$ is approximated
+	in the large-n limit by $\mathcal{N}(n p, n p (1 - p))$.
+Therefore, the gaussian is a good way of approximating many different bernoullit trials,
+	which might arise in a stochastic population model.
+In the population model, each time-step, every female produces offspring with
+	probability p.
+The total new offspring is the sum of all of the females' offspring.
+
+%	To sample the gaussian distribution, if I have a way of obtaining numbers
+%		uniformly spaced from zero to one, I can invert the CDF and apply it 
+%		to a random value from zero to one.
+%	
+%	The CDF of a gaussian distribution is given by:
+%	
+%	\begin{align}
+%	f(x) & = \frac12 \left[ 1 + \erf \left( \frac{x - \mu}{\sqrt2 \sigma} \right) \right] \\
+%	f^{-1}(x) & = \mu + \sqrt2 \sigma \erf^{-1} \left( 2 x - 1 \right) 
+%	\end{align}
+%	
+%	Therefore, to sample a gaussian distribution with mean $\mu$ and standard deviation $\sigma$,
+%		one should apply $f^{-1}$ to a uniform random sampling from zero to one.
+%	I found through numerical tests that this was faster than OCTAVE's sampling function.
+
+\paragraph{}
+\begin{tabular}{| l | l | l |}
+\hline
+Initial Population & Mean Bernoulli Runtime & Mean Gaussian Runtime \\
+\hline
+4 & 0.015499 sec & 0.020110 sec \\
+\hline
+10 & 0.021467 sec & 0.020323 sec \\
+\hline
+40 & 0.047958 sec & 0.019802 sec \\
+\hline 
+100 & 0.103264 sec & 0.019680 sec \\
+\hline
+\end{tabular}
+
+\paragraph{}
+From the runtimes, we see that for smaller runtimes, the bernoulli trials
+	are better, but for larger runtimes, the gaussian approximation is better.
+As the initial population grows, it becomes more and more difficult to compute
+	the bernoulli trials, getting more difficult approximately linearly, 
+	but the difficulty of computing the gaussian
+	approximation remains constant.
+
+From the plots, we can see that the smaller the initial population size,
+	the worse the agreement with the bernoulli trial will be.
+
+\end{document}

@@ -1,0 +1,7 @@
+#!/usr/bin/env runhaskell
+
+{-# LANGUAGE OverloadedStrings #-}
+
+import Turtle
+
+main = echo "Hello, World"

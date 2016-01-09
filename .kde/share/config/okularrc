@@ -1,0 +1,22 @@
+[Desktop Entry]
+FullScreen=false
+
+[KFileDialog Settings]
+Height 900=450
+Recent Files[$e]=CBO9781139058520A007.pdf,$HOME/college/modeling/hw/3/homework2.pdf,$HOME/college/modeling/hw/3/homework.pdf,$HOME/college/modeling/hw/3/Logistic_from_Bender.pdf,$HOME/college/qft/reading/4/r.pdf,$HOME/college/qft/hw/2/hw-2.pdf,$HOME/Downloads/hw1.pdf,$HOME/college/qft/homework/1/hw-1.pdf,$HOME/college/combo/pset1/pset1-answers.pdf,$HOME/college/combo/pset1/pset1-questions1.pdf,$HOME/college/combo/pset1/pset1-answers.log
+Recent URLs[$e]=$HOME/college/modeling/hw/3/,$HOME/college/modeling/hw/,$HOME/Downloads/,$HOME/college/qft/hw/2/,$HOME/college/qft/reading/4/,$HOME/college/modeling/,$HOME/college/
+Width 1600=800
+
+[MainWindow]
+Height 1050=1011
+Height 900=861
+State=AAAA/wAAAAD9AAAAAAAAA0QAAAPBAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+Width 1600=529
+Width 1680=836
+
+[Recent Files]
+File1[$e]=$HOME/college/qft/homework/1/hw-1.pdf
+File2[$e]=$HOME/current-courses/modeling/hw/8/working-age.pdf
+Name1[$e]=hw-1.pdf
+Name2[$e]=working-age.pdf

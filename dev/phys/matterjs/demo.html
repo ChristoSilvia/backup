@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>Matter.Js Demo</title>
+</head>
+<body>
+
+  <script src="matter-0.8.0.min.js" type="text/javascript"></script>
+
+  <h1><a href="https://github.com/liabru/matter-js/wiki/Getting-started">Matterjs</a> Demo</h1>
+
+  <p> See <a href="http://brm.io/game-physics-for-beginners/">here</a> for detailed tutorials on the physics.</p>
+
+  <div id="physics"></div>
+
+  <script>
+    // Create module aliases
+    var Engine = Matter.Engine,
+        World = Matter.World,
+        Bodies = Matter.Bodies;
+
+    // Create a matterjs engine.
+    var engine = Engine.create(document.getElementById("physics"));
+    
+    // Create two boxes and a ground
+    var boxA = Bodies.rectangle(400, 200, 80, 80)
+        boxB = Bodies.rectangle(450, 50, 80, 80)
+        ground = Bodies.rectangle(400, 610, 810, 60, {isStatic: true});
+
+    // Add to the world
+    World.add(engine.world, [boxA, boxB, ground]);
+
+    // Run the engine
+    Engine.run(engine);
+  </script>
+
+</body>
+</html>

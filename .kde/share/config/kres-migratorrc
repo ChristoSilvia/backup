@@ -1,0 +1,10 @@
+[Bridged]
+contactResources=
+
+[Migration]
+Version-calendar=3
+Version-contact=3
+
+[Resource 7TppU2NaOV]
+MigrationState=Complete
+ResourceIdentifier=akonadi_vcard_resource_0

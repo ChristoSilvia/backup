@@ -1,0 +1,11 @@
+1451519087801	Sync.ErrorHandler	DEBUG	Flushing file log.
+1451519087806	Sync.BrowserIDManager	ERROR	Failed to fetch a token for authentication: TokenServerClientNetworkError({"error":{}})
+1451519087809	Sync.BrowserIDManager	INFO	currentAuthState returning error.login.reason.network due to previous failure
+1451519087809	Sync.Status	DEBUG	Status.login: error.login.reason.network => error.login.reason.network
+1451519087809	Sync.Status	DEBUG	Status.service: error.login.failed => error.login.failed
+1451519087810	Sync.BrowserIDManager	INFO	currentAuthState returning error.login.reason.network due to previous failure
+1451519087810	Sync.Status	DEBUG	Status.login: error.login.reason.network => error.login.reason.network
+1451519087811	Sync.Status	DEBUG	Status.service: error.login.failed => error.login.failed
+1451519087813	Sync.Status	DEBUG	Status.sync: success.sync => error.login.reason.network
+1451519087813	Sync.Status	DEBUG	Status.service: error.login.failed => error.sync.failed
+1451519087814	Sync.SyncScheduler	DEBUG	Next sync in 600000 ms.

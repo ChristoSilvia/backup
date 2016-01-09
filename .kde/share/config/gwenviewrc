@@ -1,0 +1,45 @@
+[KFileDialog Settings]
+Height 900=450
+Width 1600=800
+
+[MainWindow]
+Height 1050=1030
+Height 900=861
+State=AAAA/wAAAAD9AAAAAAAAAxwAAAMrAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+Width 1600=796
+Width 1680=836
+
+[Print]
+PrintHeight=17.42
+
+[Recent Files]
+File1[$e]=$HOME/media/screenshots/Screenshot from 2014-08-06 17:19:27.png
+File10[$e]=$HOME/current-courses/modeling/hw/8/working-age.png
+File2[$e]=$HOME/media/screenshots/Screenshot from 2014-08-06 17:19:37.png
+File3[$e]=$HOME/media/screenshots/Screenshot from 2014-08-06 17:20:13.png
+File4[$e]=$HOME/media/screenshots/Screenshot from 2014-08-06 17:20:42.png
+File5[$e]=$HOME/media/screenshots/Screenshot from 2014-08-20 01:28:19.png
+File6[$e]=$HOME/media/screenshots/Screenshot from 2014-08-28 08:52:48.png
+File7[$e]=$HOME/media/screenshots/Screenshot from 2014-09-05 14:36:48.png
+File8[$e]=$HOME/media/screenshots/Screenshot from 2014-09-05 14:44:36.png
+File9[$e]=$HOME/media/screenshots/Screenshot from 2014-09-09 13:30:39.png
+Name1[$e]=Screenshot from 2014-08-06 17:19:27.png
+Name10[$e]=working-age.png
+Name2[$e]=Screenshot from 2014-08-06 17:19:37.png
+Name3[$e]=Screenshot from 2014-08-06 17:20:13.png
+Name4[$e]=Screenshot from 2014-08-06 17:20:42.png
+Name5[$e]=Screenshot from 2014-08-20 01:28:19.png
+Name6[$e]=Screenshot from 2014-08-28 08:52:48.png
+Name7[$e]=Screenshot from 2014-09-05 14:36:48.png
+Name8[$e]=Screenshot from 2014-09-05 14:44:36.png
+Name9[$e]=Screenshot from 2014-09-09 13:30:39.png
+
+[SideBar-BrowseMode]
+IsVisible=true
+
+[SideBar-FullScreenMode]
+IsVisible=false
+
+[SideBar-ViewMode]
+IsVisible=true

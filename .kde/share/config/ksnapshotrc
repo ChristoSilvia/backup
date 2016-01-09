@@ -1,0 +1,16 @@
+[GENERAL]
+delay=0
+filename[$e]=file://$HOME/media/screenshots/stephen1.png
+includeDecorations=true
+includePointer=false
+mode=0
+
+[KFileDialog Settings]
+Height 900=450
+Recent Files[$e]=$HOME/media/screenshots/stephen.png,$HOME/media/screenshots/stephen-good1.png,$HOME/media/screenshots/stephen-good.png
+Recent URLs[$e]=$HOME/media/screenshots/,$HOME/media/
+Width 1600=800
+
+[MainWindow]
+Height 900=499
+Width 1600=436

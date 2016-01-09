@@ -1,0 +1,19 @@
+# KDE Cookie File v2
+#
+# Host               Domain               Path         Exp.date   Prot Name                 Sec  Value
+[.arduino.cc]
+playground.arduino.cc ".arduino.cc"        "/"          1439347568    0 __utmt               4    1
+www.arduino.cc       ""                   "/"          1439354217    0 cisession            4    a%3A5%3A%7Bs%3A10%3A%22session_id%22%3Bs%3A32%3A%226d2580da14cf15ea9674027f00814520%22%3Bs%3A10%3A%22ip_address%22%3Bs%3A13%3A%2210.159.24.248%22%3Bs%3A10%3A%22user_agent%22%3Bs%3A101%3A%22Mozilla%2F5.0+%28X11%3B+Linux+x86_64%29+AppleWebKit%2F537.21+%28KHTML%2C+like+Gecko%29+konqueror%2F4.14.2+Safari%2F537.21%22%3Bs%3A13%3A%22last_activity%22%3Bi%3A1439347017%3Bs%3A9%3A%22user_data%22%3Bs%3A0%3A%22%22%3B%7D38081580f3de339c2737314f97903927
+playground.arduino.cc ".arduino.cc"        "/"          1502419096    0 __utma               4    93500365.58026504.1439346968.1439346968.1439346968.1
+playground.arduino.cc ".arduino.cc"        "/"          1439348896    0 __utmb               4    93500365.5.10.1439346968
+playground.arduino.cc ".arduino.cc"        "/"          1455115096    0 __utmz               4    93500365.1439346968.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+playground.arduino.cc ""                   "/"          1502505496    0 __atuvc              4    4%7C32
+playground.arduino.cc ""                   "/"          1439348896    0 __atuvs              4    55cab1172a9dae35003
+[.addthis.com]
+s7.addthis.com       ".addthis.com"       "/"          1439433368    0 uit                  4    1
+s7.addthis.com       ".addthis.com"       "/"          1502505496    0 uid                  4    55cab118b79f8251
+s7.addthis.com       ".addthis.com"       "/"          1502505496    0 uvc                  4    4%7C32
+s7.addthis.com       ".addthis.com"       "/"          1502505496    0 loc                  4    MjAwMDFOQVVTREMyMTg5MTAyMTUxMTg4NDBGVg==
+[.google.com]
+suggestqueries.google.com ".google.com"        "/"          1502419018    0 PREF                 4    ID=1111111111111111:FF=0:TM=1439347018:LM=1439347018:V=1:S=vGKDPZ8lv39O6rFC
+www.google.com       ".google.com"        "/"          1455158227    0 NID                  6    70=mHNPYz40AEakl0Ehz0KDwPTSCM3I5nV-6nH0AIhmxhqNi-AB35phTqaSGePPZOcxkmgSGmti6BavPlimFQ5dG9P0MsIj2IP9XT5j58R4kmPcRALcIcdVXavinmzMo2La

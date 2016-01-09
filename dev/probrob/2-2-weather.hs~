@@ -1,0 +1,17 @@
+import System.Random
+
+data Weather = Sunny | Cloudy | Rainy deriving (Eq, Show, Enum, Bounded)
+
+next :: Weather -> Double -> Weather
+next Sunny r | r < 0.8 = Sunny
+next Sunny r | r > 0.8 = Cloudy
+next Cloudy r | r < 0.4 = Sunny
+next Cloudy r | r < 0.8 = Cloudy
+next Cloudy r = Rainy
+next Rainy r | r < 0.2 = Sunny
+next Rainy r | r < 0.8 = Cloudy
+next Rainy r = Rainy
+
+weathers :: [Double] -> Weather -> [Weather]
+weathers (d:ds) w0 = let w1 = next w0 d
+                   in w1 : weathers ds w1

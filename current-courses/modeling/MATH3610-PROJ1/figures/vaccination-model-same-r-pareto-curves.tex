@@ -1,0 +1,25 @@
+\documentclass[tikz]{standalone}
+\usepackage{pgfplots}
+
+\pgfplotsset{compat=1.11}
+\pgfplotstableread[col sep = comma]{../data/multiple-pareto-fronts.csv}\mydata
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[
+		legend pos = south east,
+		xmin = 0,
+		xmax = 1,
+		ymin = 0,
+		ymax = 1,
+		ylabel = {Proportion Infected, Population 1},
+		xlabel = {Proportion Infected, Population 2}
+	]
+	\foreach \index in {1,...,20} {%
+		\pgfmathsetmacro\ione{2*\index-1}
+		\pgfmathsetmacro\itwo{2*\index}
+		\addplot[mark="x"] table[x index = {\ione}, y index = {\itwo}]{\mydata};
+	}
+	\end{axis}
+\end{tikzpicture}
+\paragraph{}
+\end{document}

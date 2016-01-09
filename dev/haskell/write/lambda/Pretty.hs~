@@ -1,0 +1,23 @@
+
+
+module Pretty (
+  ppexpr
+) where
+
+import Syntax
+
+import Text.PrettyPrint
+
+class Pretty p where
+  ppr :: Int -> p -> Doc
+
+parensIf :: Bool -> Doc -> Doc
+parensIf True = parens
+parensIf False = id
+
+instance Pretty Name where
+  ppr _ x = text x
+
+instance Pretty Expr where
+  ppr _ (Var x)
+  ppr _ (Lit (LInt a))

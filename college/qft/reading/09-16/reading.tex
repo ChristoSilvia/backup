@@ -1,0 +1,157 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+
+\begin{flushright}
+	Chris Silvia
+\end{flushright}
+
+\section{Interactions}
+
+\subsection{Commutation Relations}
+
+At any given time these commutation relations are satisfied.
+I can justify this by saying that the choice of a specific time
+	to be zero is arbitrary, and so for each time $t$, unless
+	the lagrangian is time dependent, we can choose to be zero,
+	where we know that the commutation relations are valid.
+Therefore even in an interacting theory, at every given time
+	the commutation relations hold.
+
+\subsection{Interacting Field}
+
+At any fixed time, the operators which create momentum and position eigenstates
+	are complete and can span the space of position eigenstates, so when
+	we integrate over them with our lorentz-invariant measure 
+	$\frac{d^p}{(2\pi)^3} \frac{1}{\sqrt{2 \omega_p}}$ we can express all of the 
+	states at any given time.
+
+\subsection{Arbitrary Time}
+
+I'm not sure if this is true.
+The operators $a_p$ are evolving with additional dynamics, not just the phase
+	changes in the free theory which are incorporated into the lorentz-invariant
+	expression for $\phi$.
+Therefore, there's no reason to believe that this is an expansion for the field
+	at arbitrary times in the future.
+I think that the operators need to be brought to the present somehow.
+This ``bringing to the present'' will necessarily change the form of the $a_p$ and
+	$a_p^\dagger$ operators, because a momentum eigenstate at $t=t_f$ will not
+	necessarily also be a momentum eigenstate at $t = 0$.
+
+\section{Time Ordering}
+
+The S-matrix computation is:
+
+$$ \left< f | S | i \right> = \sqrt{2^n \omega_1 \dots \omega_n}
+	\left< \Omega | a_{p_3}(\inf) \dots a_{p_n}(\inf) a_{p_1}^\dagger(-\inf)
+		a_{p_2}^\dagger(-\inf) | \Omega \right> $$
+
+This is already in time order.
+However, we can transform it into something equivalent.
+Consider:
+
+$$ \left< \Omega | T\{ \left( a_{p_3}(\inf) - a_{p_3}(-\inf) \right)
+		\dots \left( a_{p_n}(\inf) - a_{p_n}(-\inf) \right)
+	\left( a_{p_2}^\dagger(\inf) - a_{p_2}^\dagger(-\inf) \right)
+	\left( a_{p_1}^\dagger(\inf) - a_{p_1}^\dagger(-\inf) \right) \}
+	| \Omega \right> $$
+
+Since there are $n$ two-part terms, there are $2^n$ expanded products.
+Then, we apply the time-ordering operator, shifting the $(-\inf)$ terms
+	to the right and the $\inf$ terms to the left.
+
+Assume that none of the momenta are the same.
+This allows us to freely move the annihilation operators evaluated at the
+	same time around in the product.
+
+Now, if a term has an particle annihilation operator $a_{p_i}(-\inf)$
+	on the right, it annihilates with $| \Omega \rangle$.
+Therefore, any of the $2^n$ product terms which survive have no annihilation
+	operators on the right.
+Similarly, if there are any creation operators at $a_{p_j}^\dagger(\inf)$,
+	then annihilate with $\langle \Omega |$
+Therefore, the final product must have \emph{only} creation operators on
+	the right, in the $-\inf$ position, and \emph{only} annihilation operators
+	on the left, in the $\inf$ position.
+Therefore, of all of the $2^n$ terms in the product, only a single one survives:
+
+$$ \left< \Omega | a_{p_3}(\inf) \dots a_{p_n}(\inf) a_{p_1}^\dagger(-\inf)
+		a_{p_2}^\dagger(-inf) | \Omega \right> $$
+
+Since Schwartz already proved the following:
+
+$$ \sqrt{2 \omega_p} \left[ a_p(\inf) - a_p(-\inf) \right]
+	= i \int d^4x e^{i p x} ( \partial_\mu \partial^\mu + m^2) \phi(x) $$
+
+and the conjugate
+
+$$ \sqrt{2 \omega_p} \left[ a_p^\dagger(\inf) - a_p^\dagger(-\inf) \right]
+	= - i \int d^4x e^{-i p x} ( \partial_\mu \partial^\mu + m^2) \phi(x) $$
+
+We can use this expression to find some of the S-matrix elements.
+
+We can bring some of the leading terms inside the time ordering operations:
+
+$$ \left< \Omega | T\{ 
+			\left( \sqrt{2 \omega_{p_3}} 
+				\left[a_{p_3}(\inf) - a_{p_3}(-\inf) \right] \right)
+			\dots
+			\left( \sqrt{2 \omega_{p_n}} 
+				\left[a_{p_n}(\inf) - a_{p_n}(-\inf) \right] \right)
+			\left( \sqrt{2 \omega_{p_2}} 
+				\left[a_{p_2}^\dagger(\inf) - a_{p_2}^\dagger(-\inf) \right] \right)
+			\left( \sqrt{2 \omega_{p_2}} 
+				\left[a_{p_2}^\dagger(\inf) - a_{p_2}^\dagger(-\inf) \right] \right)
+		\}
+	| \Omega \right> $$
+
+Note that the integrals can be taken out of the time-ordering.
+Then we can apply the above formula to the expression, to obtain the LSZ reduction formula:
+
+$$ \langle p_3 \dots p_n | S | p_1 p_2 \rangle>
+	= \left[ i \int d^4x_1 e^{- i p_1 x_1}(\partial_\mu \partial^\mu_1 + m^2) \right]
+	\dots \left[ i \int d^4x_n e^{ i p_1 x_1}(\partial_\mu \partial^\mu_n + m^2) \right]
+	\langle \Omega | T\{\phi(x_1) \dots \phi(x_n) \} | \Omega \rangle $$
+
+
+\section{Feynmann Propagator}
+
+The feynmann propagator is non-zero for $x_1^0 > x_2^0$ because of the pole in the upper 
+	half-plane at $-\omega_k + i \epsilon$, and non-zero for $x_1^0 < x_2^0$ because of 
+	the pole in the lower half-plane at $\omega_k - i \epsilon$.
+When $x_1^0 > x_2^0$, the upper integration contour is used, and the lower integration contour
+	is used in the other case.
+
+\section{Least Clear}
+
+The reading seemed to miss the punch line.
+The reading vaguely alluded to the ``goodness'' of the pole in the LSZ operator
+	canceling with the pole in the feynmann propagator, but it didn't make much sense.
+The reading doesn't connect the whole thing to the differential cross section at the end,
+	which is why I thought we were doing this whole thing.
+The total cross section is still gotten from integration over $d\Pi_{\text{LIPS}}$,
+	which is how it makes sense for $\mathcal{M}$ to be a function of $p_1 \dots p_n$,
+	because those are integrated over the whole LIPS to get the total cross section $\sigma$.
+
+The feynmann propagator is calculated in the free theory, but it's only calculated between
+	two fields.
+We have so far only dealt with $2 \to n$ scattering, so I'm not sure what the interpretation
+	of $\langle 0 | T \{ \phi_0(x_1) \phi_0(x_2) \} | 0 \rangle $ is.
+Is it $1 \to 1$ scattering?
+Does it just represent the amplitude of a particle going from $x_1^\mu$ to $x_2^\mu$ in the
+	free theory?
+It's somewhat confusing to have this calculation in the free theory right after a discussion
+	of scattering.
+
+I assume that we will later compute the time-ordered products in the interacting theory.
+But so far, we haven't really connected what we're doing with the main observable, $\sigma$,
+	much less figured out how to compute it.
+
+Also, we still haven't discussed the $| \Omega \rangle$, besides the fact that you can hit 
+	it with annihilation operators at asymptotic times.
+
+\end{document}

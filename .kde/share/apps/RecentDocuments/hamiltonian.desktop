@@ -1,0 +1,6 @@
+[Desktop Entry]
+Icon=inode-directory
+Name=hamiltonian
+Type=Link
+URL[$e]=file://$HOME/college/variations/hamiltonian
+X-KDE-LastOpenedWith=dolphin

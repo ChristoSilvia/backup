@@ -1,0 +1,55 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+
+\begin{document}
+
+\section{Nigerian Con}
+
+\begin{itemize}
+\item The spammer sends the initial solicitation to $N = 10000000$ recipients.
+\item $x = 5\%$ are Very Gullible (VG) and the remaining $1-x = 95\%$ are Reasonably
+	Skeptical (RS).
+The spammer does not know which one is which.
+\item The spammer's cost of follow-up email exchange is $K = \$20$.
+\item If the follow-up email exchange is a success, the spammer gets 
+	a reward of $L = \$2000$.
+\item The spammer can send either Well-Written Solicitations (WWS)
+	or Badly Written Solicitations (BWS).
+\item The probability of initial response from each VG individual is $p_g = 0.01$
+	regardless of the type of solicitation.
+\item The probability of initial response from each RS individual is $q_w - 0.002$
+	if the spammer sends WWS and $q_b = 0.001$ if the spammer sends BWS.
+\item Once the recipient responds, the probability of successfully fooling
+	him is $r_1 = 0.1$ for VG responders and $r_2 = 0.005$ for RS.
+\end{itemize}
+
+\subsection{Expected Cost from Follow-Up Emails}
+
+\begin{align}
+E\left( \text{Responses} \mid \text{WWS} \right) 
+	& = x N p_g + (1 - x) N q_w \nonumber \\
+	& = 5000 + 19000 \nonumber \\
+	& = 24000 \nonumber \\
+E\left( \text{Follow-Up Cost} \mid \text{WWS} \right)
+	& = K \left( x N p_g + (1 - x) N q_w \right) \nonumber \\
+	& = K * 5000 + K * 19000 \nonumber \\
+	& = 100000 + 380000\nonumber\\
+	& = 480000 \nonumber \\
+E\left( \text{Gross Revenue} \mid \text{BWS} \right)
+	& = E\left( \text{Gross Revenue from VG} \mid \text{WWS} \right)
+	& + E\left( \text{Gross Revenue from RS} \mid \text{WWS} \right)
+E\left( \text{Responses} \mid \text{BWS} \right)
+	& = x N p_g + (1 - x) N q_b \nonumber \\
+	& = 5000 + 9500 \nonumber \\
+	& = 14500 \nonumber \\
+E\left( \text{Follow-Up Cost} \mid \text{BWS} \right) 
+	& = K \left(x N p_g + (1 - x) N q_b \right) \nonumber \\
+	& = K * 5000 + K * 9500 \nonumber \\
+	& = 100000 + 190000 \nonumber\\
+	& = 290000 \nonumber 
+\end{align}
+
+
+
+\end{document}

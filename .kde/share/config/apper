@@ -1,0 +1,23 @@
+[BrowseView]
+ShowApplicationVersions=true
+
+[FilterMenu]
+FilterNative=true
+FilterNewest=true
+HidePackages=false
+
+[MainUi]
+Height 900=549
+Width 1600=799
+
+[SessionInstaller]
+Height 900=280
+Width 1600=430
+
+[UpdateView]
+ShowSizes=true
+ShowVersions=true
+
+[requirementsDialog]
+Height 900=599
+Width 1600=600

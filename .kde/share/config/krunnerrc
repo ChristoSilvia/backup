@@ -1,0 +1,11 @@
+[EdgePositions]
+Offset=0.5
+
+[General]
+PastQueries=,XTerm,nm,r,Arduino IDE,sudo apt-get install firefox
+
+[Interface]
+Size=420,500
+
+[PlasmaRunnerManager]
+LaunchCounts=1 shell_w,1 shell_nm,1 services_arduino.desktop,1 shell_sudo apt-get install firefox,2 services_debian-xterm.desktop

@@ -1,0 +1,40 @@
+[General]
+Recent Urls[$e]=file://$HOME/Downloads/The Last of the Mohicans DDC (1992)/The.Last.of.the.Mohicans.DC.1992.720p.BrRip.x264.YIFY.mp4,file://$HOME/Downloads/Chicago (2002)/Chicago.2002.720p.x264.mkv,file://$HOME/college/variations/hamiltonian/arm-movie/arm.mp4,file://$HOME/college/variations/hamiltonian/arm-movie/arm-new.mp4
+TimeFormat=1
+Volume=1
+
+[MainWindow]
+Height 900=861
+State=AAAA/wAAAAD9AAAAAAAAAhEAAAMUAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+Width 1600=529
+
+[file:///home/chris/Downloads/The Last of the Mohicans DDC (1992)/The.Last.of.the.Mohicans.DC.1992.720p.BrRip.x264.YIFY.mp4]
+Brightness=0
+Contrast=0
+Date=24/08/2015
+Hue=0
+IsVideo=true
+Position=2295733
+Preferred Size=1596,788
+Saturation=0
+Subtitle=1
+
+[file:///home/chris/college/variations/hamiltonian/arm-movie/arm-new.mp4]
+Brightness=0
+Contrast=0
+Date=16/11/2015
+Hue=0
+IsVideo=true
+Position=820
+Preferred Size=529,788
+Saturation=0
+
+[file:///home/chris/college/variations/hamiltonian/arm-movie/arm.mp4]
+Brightness=0
+Contrast=0
+Date=16/11/2015
+Hue=0
+IsVideo=false
+Preferred Size=529,788
+Saturation=0

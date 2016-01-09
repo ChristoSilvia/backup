@@ -1,0 +1,218 @@
+<h2 id="problem-set-10-by-chris-silvia">Problem Set 10, by Chris Silvia</h2>
+<h4 id="problem-2.5">Problem 2.5</h4>
+<p>For an Einstein solid with each of the following values of <span class="math"><em>N</em></span> and <span class="math"><em>q</em></span>, list all of the possible microstates.</p>
+<p>The number of einstein microstates is the same as the number of ways to put <span class="math"><em>q</em></span> balls in <span class="math"><em>N</em></span> slots.</p>
+<p>0 0 0 | | 0 0 |</p>
+<p>There are <span class="math"><em>N</em> + <em>q</em> − 1</span> possible places to put things in general, and choices of where the slots are (<span class="math"><em>q</em></span> of them) uniquely determine the formula.</p>
+<p><br /><span class="math">$$
+\Omega(N,q) = {{q + N -1} \choose q}
+$$</span><br /></p>
+<pre><code>import numpy as np
+
+def fact(n):
+    i = 1
+    for j in range(1,n+1):
+        i *= j
+    return i
+
+def choose(n,k):
+    &quot;&quot;&quot;Computes n choose k&quot;&quot;&quot;
+    return fact(n)/(fact(n-k) * fact(k))
+
+def einstein_solid(N,q):
+    &quot;&quot;&quot;Number of states for an einstein solid 
+    with N oscillators and q units of energy. 
+    Returns an integer&quot;&quot;&quot;
+    return choose(q + N - 1,q)
+
+def einstein_solid_microstates(N,q):
+    &quot;&quot;&quot;Lists, explicitly, the microstates for an
+    einstein solid of N oscillators with q units of
+    energy.  THIS IS RECURSIVE, don&#39;t do big things&quot;&quot;&quot;
+    states = []
+    if N == 1:
+        return [[q]]
+    elif q == 0:
+        return [[0 for i in range(0,N)]]
+    elif q == 1:
+        for i in range(0,N):
+            states += [[ 1 if n == i else 0 for n in range(0,N)]]
+        return states
+    else:
+        for i in range(0,q+1):
+            states += [[i]+xtail for xtail in einstein_solid_microstates(N-1,q-i)]
+        return states
+        
+
+data = [(&quot;a&quot;,3,4),(&quot;b&quot;,3,5),(&quot;c&quot;,3,6),(&quot;d&quot;,4,2),(&quot;e&quot;,4,3)]
+
+for number,N,q in data:
+    print &quot;{0}: N={1} q={2} n_microstates={3}\nThe actual microstates:\n{4}&quot;.format(
+    number,N,q,einstein_solid(N,q),einstein_solid_microstates(N,q))
+
+a: N=3 q=4 n_microstates=15
+The actual microstates:
+[[0, 0, 4], [0, 1, 3], [0, 2, 2], [0, 3, 1], [0, 4, 0], [1, 0, 3], [1, 1, 2], [1, 2, 1], [1, 3, 0], [2, 0, 2], [2, 1, 1], [2, 2, 0], [3, 1, 0], [3, 0, 1], [4, 0, 0]]
+b: N=3 q=5 n_microstates=21
+The actual microstates:
+[[0, 0, 5], [0, 1, 4], [0, 2, 3], [0, 3, 2], [0, 4, 1], [0, 5, 0], [1, 0, 4], [1, 1, 3], [1, 2, 2], [1, 3, 1], [1, 4, 0], [2, 0, 3], [2, 1, 2], [2, 2, 1], [2, 3, 0], [3, 0, 2], [3, 1, 1], [3, 2, 0], [4, 1, 0], [4, 0, 1], [5, 0, 0]]
+c: N=3 q=6 n_microstates=28
+The actual microstates:
+[[0, 0, 6], [0, 1, 5], [0, 2, 4], [0, 3, 3], [0, 4, 2], [0, 5, 1], [0, 6, 0], [1, 0, 5], [1, 1, 4], [1, 2, 3], [1, 3, 2], [1, 4, 1], [1, 5, 0], [2, 0, 4], [2, 1, 3], [2, 2, 2], [2, 3, 1], [2, 4, 0], [3, 0, 3], [3, 1, 2], [3, 2, 1], [3, 3, 0], [4, 0, 2], [4, 1, 1], [4, 2, 0], [5, 1, 0], [5, 0, 1], [6, 0, 0]]
+d: N=4 q=2 n_microstates=10
+The actual microstates:
+[[0, 0, 0, 2], [0, 0, 1, 1], [0, 0, 2, 0], [0, 1, 1, 0], [0, 1, 0, 1], [0, 2, 0, 0], [1, 1, 0, 0], [1, 0, 1, 0], [1, 0, 0, 1], [2, 0, 0, 0]]
+e: N=4 q=3 n_microstates=20
+The actual microstates:
+[[0, 0, 0, 3], [0, 0, 1, 2], [0, 0, 2, 1], [0, 0, 3, 0], [0, 1, 0, 2], [0, 1, 1, 1], [0, 1, 2, 0], [0, 2, 1, 0], [0, 2, 0, 1], [0, 3, 0, 0], [1, 0, 0, 2], [1, 0, 1, 1], [1, 0, 2, 0], [1, 1, 1, 0], [1, 1, 0, 1], [1, 2, 0, 0], [2, 1, 0, 0], [2, 0, 1, 0], [2, 0, 0, 1], [3, 0, 0, 0]]</code></pre>
+<ol start="6" style="list-style-type: lower-alpha">
+<li><p>When <span class="math"><em>N</em> = 1</span>, there is exactly one way of putting all the energy into that one box.</p></li>
+<li><p>When <span class="math"><em>q</em> = 1</span>, there are <span class="math">$N \choose q$</span> ways of putting the one quantum of energy into each of the <span class="math"><em>N</em></span> oscillators.</p></li>
+</ol>
+<h4 id="problem-2.6">Problem 2.6</h4>
+<p>Want: multiplicity of an einstein solid with <span class="math"><em>N</em> = 30</span> and <span class="math"><em>q</em> = 30</span>.</p>
+<pre><code>print &quot;There are {0} states for an einstein solid with 30 oscillators and 30 units of energy&quot;.format(einstein_solid(30,30))
+
+There are 59132290782430712 states for an einstein solid with 30 oscillators and 30 units of energy</code></pre>
+<h4 id="problem-2.8">Problem 2.8</h4>
+<p>Consider a system of two einstein solids <span class="math"><em>A</em></span> and <span class="math"><em>B</em></span>, each containing 10 oscillators, with at total of 20 units of energy. The solids are weakly coupled and total energy is fixed.</p>
+<p>Macrostates can only be distinguished by how much total energy is in <span class="math"><em>A</em></span> and not <span class="math"><em>B</em></span>, or vice versa.</p>
+<pre><code>q = 20
+
+microstates = [ einstein_solid(10,qa)*einstein_solid(10,q-qa) for qa in range(0,20+1)]
+n_microstates = sum(microstates)
+normalized_microstates = [float(omega)/float(n_microstates) for omega in microstates]
+
+print &quot;a) There are {0} macrostates&quot;.format(len(microstates))
+print &quot;b) There are {0} microstates&quot;.format(sum(microstates))
+print &quot;c) The probability of all the energy in A is {0}&quot;.format(normalized_microstates[20])
+print &quot;d) The probability of finding half the energy in A is {0}&quot;.format(normalized_microstates[10])
+
+a) There are 21 macrostates
+b) There are 68923264410 microstates
+c) The probability of all the energy in A is 0.00014530659692
+d) The probability of finding half the energy in A is 0.123814432718</code></pre>
+<ol start="5" style="list-style-type: lower-alpha">
+<li>The system would exhibit irreversible behavior if the system starts out initially in a very unlikely state.</li>
+</ol>
+<h4 id="problem-2.10">Problem 2.10</h4>
+<p>This graph is interactions between an einstein solid <span class="math"><em>A</em></span> with <span class="math"><em>N</em><sub><em>A</em></sub> = 200</span> oscillators and an einstein solid <span class="math"><em>B</em></span> with <span class="math"><em>N</em><sub><em>B</em></sub> = 100</span> oscillators. There are 100 units of energy in total.</p>
+<pre><code>%matplotlib inline
+import numpy as np
+
+import matplotlib.pyplot as plt
+
+NA,NB = 200,100
+q = 100
+
+qadistribution = [ einstein_solid(NA,qa)*einstein_solid(NB,q-qa) for qa in range(0,100+1)]
+n_microstates = sum(qadistribution)
+normalized_qadistribution = [float(omega) / float(n_microstates) for omega in qadistribution]
+
+print &quot;The most probable state where qa = {1} has a probability of {0}&quot;.format(
+        max(normalized_qadistribution),np.argmax(normalized_qadistribution))
+print &quot;The least probable state where qa = {1} has a probability of {0}&quot;.format(
+        min(normalized_qadistribution),np.argmin(normalized_qadistribution))
+plt.title(&quot;Energy Probability Distribution&quot;)
+plt.xlabel(&quot;q_a&quot;)
+plt.ylabel(&quot;probability&quot;)
+plt.plot(range(0,101),normalized_qadistribution)
+
+The most probable state where qa = 67 has a probability of 0.073151397822
+The least probable state where qa = 0 has a probability of 2.69266665552e-38
+
+
+
+
+
+[&lt;matplotlib.lines.Line2D at 0xb012ec0c&gt;]</code></pre>
+<div class="figure">
+<img src="WavesPset10_files/WavesPset10_16_2.png" alt="png" /><p class="caption">png</p>
+</div>
+<h4 id="problem-2.22">Problem 2.22</h4>
+<p>The goal of this problem is to get an idea of the width of the peak of the multiplicity function of a system of two large einstein solids.</p>
+<p>The multiplicity of an einstein solid with <span class="math"><em>N</em></span> oscillators and <span class="math"><em>q</em></span> units of energy is <span class="math">${{N-q+1} \choose q}$</span>. So, two einstein solids, each with <span class="math"><em>N</em></span> oscillators and sharing <span class="math">2<em>N</em></span> units of energy. The only distinguishable thing is the total energy in each system, so there are <span class="math">2<em>N</em> + 1</span> total ways to distribute <span class="math">2<em>N</em></span> balls into two buckets.</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math">2<em>N</em> + 1</span></li>
+</ol>
+<p>By (2.18), the multiplicity of an einstein solid, for large <span class="math"><em>q</em></span> and <span class="math"><em>N</em></span>, is given by: <br /><span class="math">$$
+\Omega(N,q) \approx \frac{\left( \frac{q+N}{q} \right)^q \left( \frac{q+N}{N}
+\right)^N}{\sqrt{2 \pi q \left( \frac{q + N}{N} \right) }}
+$$</span><br /></p>
+<p>If we treat the combined system as a single einstein solid, the total number of microstates is given by the multiplicity of the two systems together, with the desired amount of energy, which is <span class="math">Ω(2<em>N</em>, 2<em>N</em>)</span>.</p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><br /><span class="math">$$
+TotalMicrostates
+=
+\Omega(2N,2N)
+\approx
+\frac{\left( \frac{2N+2N}{2N} \right)^2N \left( \frac{2N+2N}{2N}
+\right)^2N}{\sqrt{2 \pi (2N) \left( \frac{2N + 2N}{2N} \right) }}
+=
+\frac{2^{4N}}{\sqrt{8 \pi N}}
+$$</span><br /></li>
+</ol>
+<p>Of course the most likely macrostate is the one where the energy is shared equally between the two systems. The multiplicity of this happening is <span class="math">Ω(<em>N</em>, <em>N</em>) × Ω(<em>N</em>, <em>N</em>)</span></p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li><br /><span class="math">$$
+EqualSharingMultiplicity
+=
+\Omega(N,N)\Omega(N,N)
+\approx
+\left( \frac{\left( \frac{N+N}{N} \right)^N \left( \frac{N+N}{N}
+\right)^N}{\sqrt{2 \pi (N) \left( \frac{N + N}{N} \right) }} \right)^2
+=
+\left( \frac{ 2^{2N} }{\sqrt{4 \pi N}} \right)^2
+=
+\frac{2^{4N}}{4 \pi N}
+$$</span><br /></li>
+</ol>
+<p>This tells us that the graph is quite sharp. The total area under the graph is the total number of microstates, <span class="math">$\frac{2^{4N}}{\sqrt{8 \pi N}}$</span>. The maximum height of the graph is <span class="math">$\frac{2^{4N}}{4 \pi N}$</span>, though.</p>
+<p>If this was a rectangle, it would be:</p>
+<p><br /><span class="math">$$
+\frac{2^{4N}}{\sqrt{8 \pi N}} \left( \frac{2^{4N}}{4 \pi N} \right)^{-1}
+=
+\sqrt{2 \pi N}
+$$</span><br /></p>
+<pre><code>import numpy as np
+width = np.sqrt(2*np.pi*1e23)
+
+print &quot;For the case N=10^23, the width is {0}&quot;.format(width)
+print &quot;{0} of the graph have reasonable large probabilities&quot;.format(width/2e23)
+
+For the case N=10^23, the width is 7.92665459521e+11
+3.96332729761e-12 of the graph have reasonable large probabilities</code></pre>
+<h4 id="problem-2.26">Problem 2.26</h4>
+<p>Consider an ideal monotomic gas living in a two-dimensional universe, occupying an area <span class="math"><em>A</em></span> instead of a volume <span class="math"><em>V</em></span>. Find a formula for the multiplicity of the gas.</p>
+<p>Suppose the system has an area <span class="math"><em>A</em></span> and total energy <span class="math"><em>U</em></span>. There is only kinetic energy. Then, the momenta <span class="math"><em>p</em><sub><em>x</em></sub></span> and <span class="math"><em>p</em><sub><em>y</em></sub></span> are constrained such that <span class="math">$U = \frac{1}{2m} \left( p_x^2 + p_y^2 \right)$</span>.</p>
+<p>The momenta take up a &quot;momentum circle&quot;, with &quot;radius&quot; <span class="math">2<em>m</em><em>U</em></span>. The particles take up position space. The number of states should be proportional to the area and the circumference of the momentum circle. By heisenburg uncertainty principle, there constant of proportionality is <span class="math">$\frac{1}{h^2}$</span> since we're in two dimenstions. The total number of states for one particle is thus:</p>
+<p><br /><span class="math">$$
+\Omega(U)
+=
+\frac{A C_p}{h^2}
+$$</span><br /></p>
+<p>where <span class="math"><em>C</em><sub><em>p</em></sub></span> denotes the circumfrence of the momentum circle. When we have <span class="math"><em>N</em></span> particles, we exponentiate the states. Supposing they are distingushable, <br /><span class="math">$$
+\Omega_{distinguishable}(U,N)
+=
+\frac{A^N}{h^{2N}} \times {\text{Area of momentum hypersurface}}
+$$</span><br /></p>
+<p>There are <span class="math"><em>N</em>!</span> ways to exchange <span class="math"><em>N</em></span> particles, and each one of the same, so in the case of identical particles: <br /><span class="math">$$
+\Omega(U,N)
+=
+\frac{1}{N!} \frac{A^N}{h^{2N}}  \times {\text{Area of momentum hypersurface}}
+$$</span><br /></p>
+<p>The momentum hypersurface if a <span class="math">2<em>N</em></span>-dimensional hypersurface. &quot;area&quot;(d) = <span class="math">$\frac{2 \pi^{d/2}}{(d/2 - 1)!} r^{d-1}$</span>, so, when <span class="math"><em>d</em> = 2<em>N</em></span> and <span class="math"><em>r</em> = 2<em>m</em><em>U</em></span>:</p>
+<p><br /><span class="math">$$
+\Omega(U,N)
+=
+\frac{1}{N!} \frac{A^N}{h^{2N}}  \times {\text{Area of momentum hypersurface}}
+=
+\frac{1}{N!} \frac{A^N}{h^{2N}} \frac{2 \pi^{N}}{(N - 1)!} {\sqrt{2mU}}^{2N-1}
+=
+\frac{1}{N!} \frac{A^N}{h^{2N}} \frac{2 \pi^{N}}{N!} {2mU}^{N}
+$$</span><br /></p>
+<h4 id="problem-7">Problem 7</h4>
+<p><br /><span class="math">$$
+S_{ideal}(U,V,N) = N k_b \left( \log \left( \frac{V}{N} \left( \frac{4 \pi m
+U}{3 N h^2} \right)^{3/2} \right) + 5/2 \right)
+$$</span><br /></p>

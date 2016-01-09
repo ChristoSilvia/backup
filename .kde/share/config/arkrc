@@ -1,0 +1,10 @@
+[MainWindow]
+Height 900=861
+State=AAAA/wAAAAD9AAAAAAAAAhEAAAMUAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+Width 1600=529
+splitterSizes=351,175
+
+[Recent Files]
+File1[$e]=$HOME/Downloads/sublime_text_3_build_3083_x64.tar.bz2
+Name1[$e]=sublime_text_3_build_3083_x64.tar.bz2

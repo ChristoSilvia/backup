@@ -1,0 +1,6 @@
+[Desktop Entry]
+Icon=inode-directory
+Name=rockets
+Type=Link
+URL[$e]=file://$HOME/college/rockets
+X-KDE-LastOpenedWith=dolphin

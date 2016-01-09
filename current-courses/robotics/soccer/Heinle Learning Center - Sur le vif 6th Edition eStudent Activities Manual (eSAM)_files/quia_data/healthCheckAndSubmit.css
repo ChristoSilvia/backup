@@ -1,0 +1,107 @@
+#healthChkErrorDlgNoClose .yui-panel,
+#healthChkErrorDlg .yui-panel {
+  background-color: #FFF;
+}
+
+#healthChkErrorDlgNoClose .bd,
+#healthChkErrorDlg .bd {
+  color: #000000;
+  font: normal 12px verdana, arial, helvetica, sans-serif;
+}
+
+#healthChkErrorDlgNoClose .hd .headerTable td,
+#healthChkErrorDlg .hd .headerTable td{
+  font: bold 14px verdana, arial, helvetica, sans-serif;
+  color: #FFFFFF;
+}
+
+#healthChkErrorDlgNoClose .headerdiv,
+#healthChkErrorDlg .headerdiv {
+  width: 100%;
+  height: 40px;
+}
+
+#healthChkErrorDlgNoClose .headerTable,
+#healthChkErrorDlg .headerTable {
+  width: 100%;
+  height: 100%;
+}
+
+#healthChkErrorDlgNoClose .headerTable td,
+#healthChkErrorDlg .headerTable td {
+  vertical-align: middle;
+}
+#healthChkErrorDlgNoClose .bd, 
+#healthChkErrorDlgNoClose .hd, 
+#healthChkErrorDlgNoClose .ft, 
+#healthChkErrorDlg .hd,
+#healthChkErrorDlg .bd, 
+#healthChkErrorDlg .ft {
+  border-style: none;
+}
+
+#healthChkErrorDlgNoClose .bd, 
+#healthChkErrorDlg .bd {
+  background-color: #FFFFFF;
+  padding-left: 15px;
+  padding-top: 20px;
+}
+
+#healthChkErrorDlgNoClose .ft,
+#healthChkErrorDlg .ft {
+  background-color: #FFFFFF;
+  padding-left: 12px;
+  padding-bottom: 20px;
+}
+#healthChkErrorDlgNoClose .hd,
+#healthChkErrorDlg .hd {
+  background: #FF8800 url('/static/quia/images/gradientOrange.gif') repeat-x scroll left top;
+  padding-left: 10px;
+  padding-right: 0px;
+}
+
+#healthChkErrorDlgNoClose #warnImg,
+#healthChkErrorDlg #warnImg {
+  position: absolute;
+  right: 20;
+  top: 5;
+}
+
+#healthChkErrorDlgNoClose #gradientImg,
+#healthChkErrorDlg #gradientImg {
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  top: 0;
+}
+.centro #healthChkErrorDlg .hd,
+.centro #healthChkErrorDlgNoClose .hd {
+  background: #849772;
+}
+.georgetown #healthChkErrorDlg .hd,
+.georgetown #healthChkErrorDlgNoClose .hd {
+  background: #F26522;
+}
+.hlc #healthChkErrorDlg .hd,
+.hlc #healthChkErrorDlgNoClose .hd {
+  background: #1B4673;
+}
+.chengtsui #healthChkErrorDlg .hd,
+.chengtsui #healthChkErrorDlgNoClose .hd {
+  background: #4E4C4B;
+}
+.estudio #healthChkErrorDlg .hd,
+.estudio #healthChkErrorDlgNoClose .hd {
+  background: #425FAD;
+}
+.customdemo #healthChkErrorDlg .hd,
+.customdemo #healthChkErrorDlgNoClose .hd {
+  background: #018501;
+}
+
+#healthCheckErrorDetails {
+  color: #a0a0a0;
+  position: absolute;
+  bottom: 25px;
+  right: 20px;
+}

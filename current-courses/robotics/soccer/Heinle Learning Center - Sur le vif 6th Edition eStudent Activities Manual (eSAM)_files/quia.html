@@ -1,0 +1,267 @@
+<!-- class quia.activities.ex.EXPlayExercisePage -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<!-- BEGIN HEADER SECTION -->
+<link href="quia_data/quia.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="quia_data/container.css" type="text/css">
+<link rel="stylesheet" href="quia_data/button.css" type="text/css">
+<link rel="stylesheet" href="quia_data/healthCheckAndSubmit.css" type="text/css">
+<link href="quia_data/ex.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.default {  font-family: Arial, Helvetica, sans-serif; color: #000000; font-weight: normal}
+ .color-red { background-color: #F5CFD2}
+ .color-green { background-color: #CFE9C7}
+div#timer_layer {
+  position: absolute;
+  white-space: nowrap;
+  right: 5px;
+  z-index: 50;
+  background-color: #eaf0f5;
+  border: 1px solid #015d92;
+  padding: 5px;
+  text-align: center;
+}
+div#timer_layer span.time_left_container {
+  color: #015894;
+  font-weight: bold;
+}
+div#timer_layer span.time_left_container span.time_left {
+  font-size: 16px;
+}
+div#timer_layer div.explain {
+  color: #616161;
+  font-size: 9px;
+}
+-->
+</style>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>S: I. Cendrillon</title>
+<link rel="stylesheet" href="Heinle%20Learning%20Center%20-%20Sur%20le%20vif%206th%20Edition%20eStudent%20Activities%20Manual%20%28eSAM%29_files/qbmedia.css" type="text/css">
+<script type="text/javascript" src="Heinle%20Learning%20Center%20-%20Sur%20le%20vif%206th%20Edition%20eStudent%20Activities%20Manual%20%28eSAM%29_files/jquery-1.js"></script>
+<script type="text/javascript" src="Heinle%20Learning%20Center%20-%20Sur%20le%20vif%206th%20Edition%20eStudent%20Activities%20Manual%20%28eSAM%29_files/jquery-ui-1.js"></script>
+<script type="text/javascript" src="Heinle%20Learning%20Center%20-%20Sur%20le%20vif%206th%20Edition%20eStudent%20Activities%20Manual%20%28eSAM%29_files/jquery.js"></script>
+<script type="text/javascript" src="Heinle%20Learning%20Center%20-%20Sur%20le%20vif%206th%20Edition%20eStudent%20Activities%20Manual%20%28eSAM%29_files/handleMedia.js"></script>
+
+
+<!---------- BEGIN CUSTOM HEADER TEXT -------------->
+<link href="Heinle%20Learning%20Center%20-%20Sur%20le%20vif%206th%20Edition%20eStudent%20Activities%20Manual%20%28eSAM%29_files/surlevif6.css" rel="stylesheet" type="text/css">
+<link href="Heinle%20Learning%20Center%20-%20Sur%20le%20vif%206th%20Edition%20eStudent%20Activities%20Manual%20%28eSAM%29_files/layout.css" rel="stylesheet" type="text/css">
+<script src="Heinle%20Learning%20Center%20-%20Sur%20le%20vif%206th%20Edition%20eStudent%20Activities%20Manual%20%28eSAM%29_files/lock_model.js" type="text/javascript"></script>
+<script src="Heinle%20Learning%20Center%20-%20Sur%20le%20vif%206th%20Edition%20eStudent%20Activities%20Manual%20%28eSAM%29_files/copyrights.js" type="text/javascript"></script>
+<script src="Heinle%20Learning%20Center%20-%20Sur%20le%20vif%206th%20Edition%20eStudent%20Activities%20Manual%20%28eSAM%29_files/textarea.js" type="text/javascript"></script>
+<!-------------------------------------------------->
+
+<meta name="google" value="notranslate">
+
+<script type="text/javascript" src="quia_data/yahoo-dom-event.js"></script>
+<script type="text/javascript" src="quia_data/element-min.js"></script>
+<script type="text/javascript" src="quia_data/button-min.js"></script>
+<script type="text/javascript" src="quia_data/connection-min.js"></script>
+<script type="text/javascript" src="quia_data/container-min.js"></script>
+<script type="text/javascript" src="Heinle%20Learning%20Center%20-%20Sur%20le%20vif%206th%20Edition%20eStudent%20Activities%20Manual%20%28eSAM%29_files/utilities.js"></script>
+<script type="text/javascript" src="quia_data/json.js"></script>
+<script type="text/javascript" src="Heinle%20Learning%20Center%20-%20Sur%20le%20vif%206th%20Edition%20eStudent%20Activities%20Manual%20%28eSAM%29_files/quia_20090514.js"></script>
+<script type="text/javascript" src="quia_data/healthCheckAndSubmit.js"></script>
+<script type="text/javascript">
+function isDivEventSupported(name) {
+  var elem = document.createElement('div');
+  var eventSupported = false;
+  var evName = 'on' + name;
+
+  eventSupported = (evName in elem);
+  if (!eventSupported) { 
+    elem.setAttribute(evName, 'return;');
+    eventSupported = typeof elem[evName] == 'function';
+  }
+  elem = null;
+  return eventSupported;
+}
+
+setTimeout(function() {
+  var docBody = document.body;
+  var lastX = 0;
+  var lastY = 0;
+  var currTId = -1;
+  if (!docBody || !docBody.addEventListener) {
+    return;
+  }
+  var supportTouch = isDivEventSupported('touchstart')
+    || isDivEventSupported('touchmove') 
+    || isDivEventSupported('touchend');
+  if (!supportTouch) { return; } 
+  var elem = parent.document.getElementById('yui-main');
+  docBody.addEventListener('touchstart', function(touchevent) {
+    if (currTId != -1) { return; }
+    currTId = touchevent.changedTouches[0].identifier;
+    lastX = touchevent.changedTouches[0].pageX;
+    lastY = touchevent.changedTouches[0].pageY;
+  });
+  docBody.addEventListener('touchmove', function(touchevent) {
+    touchevent.preventDefault();
+    var touch;
+    for (var i = 0; i < touchevent.changedTouches.length; i++) {      var ev = touchevent.changedTouches[i];      if (ev.identifier == currTId) { touch = ev;}
+    }
+    if (!touch && currTId == -1) {
+      touch = touchevent.changedTouches[0];
+      currTId = touch.identifier;
+      lastX = touch.pageX;
+      lastY = touch.pageY;
+    }
+    if (!touch) {
+      return;
+    }
+    var currX = touch.pageX;
+    var currY = touch.pageY;
+    elem.scrollLeft -= (currX - lastX);
+    elem.scrollTop -= (currY - lastY);
+    lastX = currX;
+    lastY = currY;
+  });
+  docBody.addEventListener('touchend', function(touchevent) {
+    for (var i= 0; i< touchevent.changedTouches.length; i++) {
+      if (touchevent.changedTouches[i].identifier == currTId) {
+        currTId = -1;
+      }
+    }
+  });
+}, 1000);
+</script>
+<script type="text/javascript" src="quia_data/AccentBarUtils.js"></script>
+<script type="text/javascript" src="quia_data/x_core.js"></script>
+<script type="text/javascript" src="quia_data/x_event.js"></script>
+<script type="text/javascript" src="quia_data/x_drag.js"></script>
+<script type="text/javascript">
+var isQuiaBookActivity = true;
+var MIN_X_POS = 0;
+var MAX_X_POS = 0;
+var rollDirection = ROLL_DIRECTION_LEFT;
+var isDockToTop = true;
+setTimeout("activeAccentBar()", 1000);
+(function() {
+  var Ev = YAHOO.util.Event;
+  var keyP = function(e) {
+    var t = Ev.getTarget(e);
+    if (t && t.type === 'text' && !handleEnter(t, e)) {
+      Ev.preventDefault(e)
+    }
+  };
+  Ev.addListener(document, 'keypress', keyP);
+  addLoadEvent(function() {
+    var els = document.quiaForm.elements,
+        i = 0,
+        n = els.length;
+    for ( ; i < n; i++) {
+      Ev.addListener(els[i], 'keypress', keyP);
+    }
+  });
+  addLoadEvent(function() {
+    addHealthChecks(false, 
+                    "Warning",
+                    "Your activity <b>has not</b> been submitted.<br/>Please check your internet connection and try again.", 
+"Your test <b>has not</b> been submitted.<br/>Please check your internet connection.<br/><br/>The test will automatically try to submit again. Do not close your browser window.");
+  });
+}());
+tagWhereYFromJava = 'whereY';
+function runOnLoadFunctions(fieldName) {
+var whereY = -1;
+getWhereYandScroll(fieldName, whereY);
+}
+
+function runOnSubmitFunctions(curForm) {
+  saveScrollCoordinates(curForm);
+}
+</script>
+<!-- END HEADER SECTION -->
+</head>
+<body class="default notranslate" alink="#0000cc" bgcolor="#FFFFFF" link="#0000cc" text="#000000" vlink="#0000cc"><iframe style="position: absolute; visibility: visible; background-color: transparent; border-width: 0px; width: 2em; height: 2em; left: 0px; top: -27px;" role="presentation" tabindex="-1" title="Text Resize Monitor" id="_yuiResizeMonitor"></iframe><br><br><div id="accentbar" style="position: fixed; visibility: visible; top: 0px; left: 0px; z-index: 300;">
+<table id="tblFloatAccentBar" border="1" bordercolor="#CCCCCC" cellpadding="3" cellspacing="0">
+  <tbody><tr>
+    <td id="tdInfoIcon" class="fstTd" onmouseover="showInfo()" onmouseout="hideInfo()" align="center" bgcolor="#FFFFFF" valign="middle" width="14"><img src="quia_data/info_icon_no_bg.gif" align="absmiddle"><div id="info" style="visibility:hidden; position:absolute; top:38px; width:270px; z-index:300;" class="pop-text">
+  <table bgcolor="#333333" border="0" cellpadding="3" cellspacing="1" width="100%">
+    <tbody><tr>
+      <td class="quia_standard_small" "="" bgcolor="#FFFF99"><b>S: 7-1-2I: </b>S: I. Cendrillon<br>
+<b>Points:</b> 16<br><b>Grading type:</b> Graded<br>
+<b>Assigned:</b> Yes<br>
+</td>
+    </tr>
+  </tbody></table>
+  </div>
+</td>
+<td id="tdBtns" bgcolor="#F2F2F2" nowrap="nowrap">
+<button type="button" onclick="puttext('à')" class="quia_accent_button"><center>à</center></button>&nbsp;<button type="button" onclick="puttext('â')" class="quia_accent_button"><center>â</center></button>&nbsp;<button type="button" onclick="puttext('ç')" class="quia_accent_button"><center>ç</center></button>&nbsp;<button type="button" onclick="puttext('é')" class="quia_accent_button"><center>é</center></button>&nbsp;<button type="button" onclick="puttext('è')" class="quia_accent_button"><center>è</center></button>&nbsp;<button type="button" onclick="puttext('ê')" class="quia_accent_button"><center>ê</center></button>&nbsp;<button type="button" onclick="puttext('ë')" class="quia_accent_button"><center>ë</center></button>&nbsp;<button type="button" onclick="puttext('î')" class="quia_accent_button"><center>î</center></button>&nbsp;<button type="button" onclick="puttext('ï')" class="quia_accent_button"><center>ï</center></button>&nbsp;<button type="button" onclick="puttext('ô')" class="quia_accent_button"><center>ô</center></button>&nbsp;<button type="button" onclick="puttext('ù')" class="quia_accent_button"><center>ù</center></button>&nbsp;<button type="button" onclick="puttext('û')" class="quia_accent_button"><center>û</center></button>&nbsp;<button type="button" onclick="puttext('ü')" class="quia_accent_button"><center>ü</center></button>&nbsp;<button type="button" onclick="puttext('À')" class="quia_accent_button"><center>À</center></button>&nbsp;<button type="button" onclick="puttext('Â')" class="quia_accent_button"><center>Â</center></button>&nbsp;<button type="button" onclick="puttext('Ç')" class="quia_accent_button"><center>Ç</center></button>&nbsp;<button type="button" onclick="puttext('É')" class="quia_accent_button"><center>É</center></button>&nbsp;<button type="button" onclick="puttext('È')" class="quia_accent_button"><center>È</center></button>&nbsp;<button type="button" onclick="puttext('Ê')" class="quia_accent_button"><center>Ê</center></button>&nbsp;<button type="button" onclick="puttext('Ë')" class="quia_accent_button"><center>Ë</center></button>&nbsp;<button type="button" onclick="puttext('Î')" class="quia_accent_button"><center>Î</center></button>&nbsp;<button type="button" onclick="puttext('Ï')" class="quia_accent_button"><center>Ï</center></button>&nbsp;<button type="button" onclick="puttext('Ô')" class="quia_accent_button"><center>Ô</center></button>&nbsp;<button type="button" onclick="puttext('Ù')" class="quia_accent_button"><center>Ù</center></button>&nbsp;<button type="button" onclick="puttext('Û')" class="quia_accent_button"><center>Û</center></button>&nbsp;<button type="button" onclick="puttext('Ü')" class="quia_accent_button"><center>Ü</center></button></td>
+  </tr>
+</tbody></table>
+</div>
+<table border="0" cellpadding="0" cellspacing="0" width="600"><tbody><tr><td>
+<form name="quiaForm" method="POST" action="/servlets/quia.activities.common.ActivityPlayer?AP_rand=839614035&amp;AP_activityType=17&amp;AP_urlId=1705146&amp;AP_continuePlay=true&amp;AP_stateKey=4e6997bb645022646a52dddb64e7cfec_ihxsxd1f_360f" id="exPlayPageForm">
+<input name="SessionId" value="null" type="hidden">
+<input name="urlId" value="1705146" type="hidden">
+<input name="courseObjectId" value="2497139" type="hidden"><input name="classId" value="2575895" type="hidden"><input name="tActIframeC" value="yui-main" type="hidden"><input name="bookPageId" value="2129198" type="hidden"><input name="bookCustomizationId" value="248688148" type="hidden"><input name="c_registrarId" value="29442420" type="hidden"><input name="mode" value="0" type="hidden"><input name="takeStateSessionId" value="3453ac8ec6109305aa44c0a7f29663ef_ihxshto7_33cd" type="hidden"><input value="Submit answers" name="submit_done" style="display: none;"></form></td></tr><tr><td><table border="0" cellpadding="0" cellspacing="0" width="600">
+<tbody><tr><td class="exParagraphContainerTd" align="left" valign="top" width="50%">
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Untitled Document</title>
+<link href="Heinle%20Learning%20Center%20-%20Sur%20le%20vif%206th%20Edition%20eStudent%20Activities%20Manual%20%28eSAM%29_files/surlevif6.css" rel="stylesheet" type="text/css">
+<link href="Heinle%20Learning%20Center%20-%20Sur%20le%20vif%206th%20Edition%20eStudent%20Activities%20Manual%20%28eSAM%29_files/layout.css" rel="stylesheet" type="text/css">
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="580">
+  <tbody><tr>
+    <td class="ch-title" width="30">&nbsp;</td>
+    <td class="ch-num">CHAPITRE 7</td>
+    <td class="ch-title">Traditions</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="ch-num">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</tbody></table>
+<table cellpadding="0" cellspacing="0" width="580">
+  <tbody><tr>
+    <td class="header">Structures<span class="header-sub2-num">IV.</span><span class="header-sub2">Usage of the Subjunctive</span></td>
+  </tr>
+</tbody></table>
+<table border="0" cellpadding="0" cellspacing="0" width="580">
+  <tbody><tr>
+    <td><span class="header-sub1">EntraInement</span></td>
+  </tr>
+</tbody></table>
+<br>
+<table cellpadding="0" cellspacing="0" width="580">
+  <tbody><tr>
+    <td class="inst"><span class="inst-letter">I</span> <span class="act-title">Cendrillon.</span>Vous connaissez certainement l’histoire de <i>Cendrillon</i>,
+ la belle jeune fille qui avait perdu sa pantoufle au bal. Voici une 
+version de son histoire. Mettez les verbes entre parenthèses aux temps 
+(l’histoire est racontée <b>au passé</b>) et aux modes (<b>indicatif, conditionnel</b> ou <b>subjonctif présent</b> ou <b>passé</b>) convenables.</td>
+  </tr>
+</tbody></table>
+<br>
+<table cellpadding="3" cellspacing="0" width="580">
+  <tbody><tr>
+    <td class="text175">Il <input name="ex_0_guess" onselect="setTextField(this);" onclick="setTextField(this);" onkeyup="setTextField(this);" ondblclick="setTextField(this);" onfocus="setTextField(this);" value="était" size="16" type="text"> (être) une fois une demoiselle qui <input name="ex_1_guess" onselect="setTextField(this);" onclick="setTextField(this);" onkeyup="setTextField(this);" ondblclick="setTextField(this);" onfocus="setTextField(this);" value="vivait" size="16" type="text"> (vivre) près d’un énorme château. Sa marâtre <input name="ex_2_guess" onselect="setTextField(this);" onclick="setTextField(this);" onkeyup="setTextField(this);" ondblclick="setTextField(this);" onfocus="setTextField(this);" value="voulait" size="16" type="text"> (vouloir) que sa belle-fille, Cendrillon, <input name="ex_3_guess" onselect="setTextField(this);" onclick="setTextField(this);" onkeyup="setTextField(this);" ondblclick="setTextField(this);" onfocus="setTextField(this);" value="fasse" size="16" type="text"> (faire) toutes les tâches domestiques.<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;Un jour, un page <input name="ex_4_guess" onselect="setTextField(this);" onclick="setTextField(this);" onkeyup="setTextField(this);" ondblclick="setTextField(this);" onfocus="setTextField(this);" value="a annoncé" size="16" type="text"> (annoncer) qu’il y <input name="ex_5_guess" onselect="setTextField(this);" onclick="setTextField(this);" onkeyup="setTextField(this);" ondblclick="setTextField(this);" onfocus="setTextField(this);" value="a" size="16" type="text"> (avoir) bientôt un bal au château, afin que le prince <input name="ex_6_guess" onselect="setTextField(this);" onclick="setTextField(this);" onkeyup="setTextField(this);" ondblclick="setTextField(this);" onfocus="setTextField(this);" value="puisse" size="16" type="text"> (pouvoir) <input name="ex_7_guess" onselect="setTextField(this);" onclick="setTextField(this);" onkeyup="setTextField(this);" ondblclick="setTextField(this);" onfocus="setTextField(this);" value="choisir" size="16" type="text"> (choisir) son épouse parmi les invitées. La demoiselle <input name="ex_8_guess" onselect="setTextField(this);" onclick="setTextField(this);" onkeyup="setTextField(this);" ondblclick="setTextField(this);" onfocus="setTextField(this);" value="n'était pas" size="16" type="text"> (ne pas être) contente qu’on <input name="ex_9_guess" onselect="setTextField(this);" onclick="setTextField(this);" onkeyup="setTextField(this);" ondblclick="setTextField(this);" onfocus="setTextField(this);" value="inviter" size="16" type="text"> (inviter) ses belles-sœurs au bal et qu’elle <input name="ex_10_guess" onselect="setTextField(this);" onclick="setTextField(this);" onkeyup="setTextField(this);" ondblclick="setTextField(this);" onfocus="setTextField(this);" value="devienne" size="16" type="text"> (devoir) rester à la maison. Mais après le départ de ses sœurs, une fée <input name="ex_11_guess" onselect="setTextField(this);" onclick="setTextField(this);" onkeyup="setTextField(this);" ondblclick="setTextField(this);" onfocus="setTextField(this);" value="est venue" size="16" type="text"> (venir) pour <nobr>l’<input name="ex_12_guess" onselect="setTextField(this);" onclick="setTextField(this);" onkeyup="setTextField(this);" ondblclick="setTextField(this);" onfocus="setTextField(this);" value="aider" size="16" type="text"></nobr> (aider). La bonne fée lui <input name="ex_13_guess" onselect="setTextField(this);" onclick="setTextField(this);" onkeyup="setTextField(this);" ondblclick="setTextField(this);" onfocus="setTextField(this);" value="a donné" size="16" type="text"> (donner) un carrosse et une jolie robe pour qu’elle <input name="ex_14_guess" onselect="setTextField(this);" onclick="setTextField(this);" onkeyup="setTextField(this);" ondblclick="setTextField(this);" onfocus="setTextField(this);" value="puisse" size="16" type="text"> (pouvoir) aller au bal. La demoiselle <input name="ex_15_guess" onselect="setTextField(this);" onclick="setTextField(this);" onkeyup="setTextField(this);" ondblclick="setTextField(this);" onfocus="setTextField(this);" value="était" size="16" type="text"> (être) très contente d’y <input name="ex_16_guess" onselect="setTextField(this);" onclick="setTextField(this);" onkeyup="setTextField(this);" ondblclick="setTextField(this);" onfocus="setTextField(this);" value="assisté" size="16" type="text"> (assister).<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;Cendrillon et le prince <input name="ex_17_guess" onselect="setTextField(this);" onclick="setTextField(this);" onkeyup="setTextField(this);" ondblclick="setTextField(this);" onfocus="setTextField(this);" value="dansait" size="16" type="text"> (danser) toute la soirée, mais il <input name="ex_18_guess" onselect="setTextField(this);" onclick="setTextField(this);" onkeyup="setTextField(this);" ondblclick="setTextField(this);" onfocus="setTextField(this);" value="fallait" size="16" type="text"> (falloir) qu’elle <input name="ex_19_guess" onselect="setTextField(this);" onclick="setTextField(this);" onkeyup="setTextField(this);" ondblclick="setTextField(this);" onfocus="setTextField(this);" value="est partie" size="16" type="text"> (partir) avant qu’il <input name="ex_20_guess" onselect="setTextField(this);" onclick="setTextField(this);" onkeyup="setTextField(this);" ondblclick="setTextField(this);" onfocus="setTextField(this);" value="était" size="16" type="text"> (être) minuit.<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;Le prince, qui <input name="ex_21_guess" onselect="setTextField(this);" onclick="setTextField(this);" onkeyup="setTextField(this);" ondblclick="setTextField(this);" onfocus="setTextField(this);" value="ne savait pas" size="16" type="text"> (ne pas savoir) le nom de la jolie demoiselle, <input name="ex_22_guess" onselect="setTextField(this);" onclick="setTextField(this);" onkeyup="setTextField(this);" ondblclick="setTextField(this);" onfocus="setTextField(this);" value="soit" size="16" type="text"> (être) heureux qu’elle <input name="ex_23_guess" onselect="setTextField(this);" onclick="setTextField(this);" onkeyup="setTextField(this);" ondblclick="setTextField(this);" onfocus="setTextField(this);" value="a laissé" size="16" type="text"> (laisser) une pantoufle en partant.<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;Le prince <input name="ex_24_guess" onselect="setTextField(this);" onclick="setTextField(this);" onkeyup="setTextField(this);" ondblclick="setTextField(this);" onfocus="setTextField(this);" value="cherchait" size="16" type="text"> (chercher) partout la demoiselle, la chaussure en main, parce qu’il <input name="ex_25_guess" onselect="setTextField(this);" onclick="setTextField(this);" onkeyup="setTextField(this);" ondblclick="setTextField(this);" onfocus="setTextField(this);" value="s'est prommis" size="16" type="text"> (se promettre) de l’épouser à condition de la <input name="ex_26_guess" onselect="setTextField(this);" onclick="setTextField(this);" onkeyup="setTextField(this);" ondblclick="setTextField(this);" onfocus="setTextField(this);" value="retrouver" size="16" type="text"> (retrouver). Quand il <input name="ex_27_guess" onselect="setTextField(this);" onclick="setTextField(this);" onkeyup="setTextField(this);" ondblclick="setTextField(this);" onfocus="setTextField(this);" value="est arrivé" size="16" type="text"> (arriver) chez Cendrillon, elle <input name="ex_28_guess" onselect="setTextField(this);" onclick="setTextField(this);" onkeyup="setTextField(this);" ondblclick="setTextField(this);" onfocus="setTextField(this);" value="a essayé" size="16" type="text"> (essayer) la chaussure qui lui <input name="ex_29_guess" onselect="setTextField(this);" onclick="setTextField(this);" onkeyup="setTextField(this);" ondblclick="setTextField(this);" onfocus="setTextField(this);" value="va" size="16" type="text"> (aller) parfaitement. Ils <input name="ex_30_guess" onselect="setTextField(this);" onclick="setTextField(this);" onkeyup="setTextField(this);" ondblclick="setTextField(this);" onfocus="setTextField(this);" value="se sont marié" size="16" type="text"> (se marier) au mois de juin et ils <input name="ex_31_guess" onselect="setTextField(this);" onclick="setTextField(this);" onkeyup="setTextField(this);" ondblclick="setTextField(this);" onfocus="setTextField(this);" value="allait" size="16" type="text"> (aller) à Disneyland Paris pour leur lune de miel.</td>
+  </tr>
+</tbody></table>
+
+</td></tr><tr><td align="left" valign="top" width="50%">
+<br>
+<input name="SessionId" value="null" type="hidden">
+<input name="urlId" value="1705146" type="hidden">
+<!-- BEGIN SUBMIT SECTION -->
+<br>
+<input disabled="disabled" name="submit_done" value="Submit answers" onclick="if(window.disableAllSubmitButtons){return disableAllSubmitButtons(this, event)}" class="quia_web_button" id="exActivitySubmitButton" type="submit"><br clear="all">
+<!-- END SUBMIT SECTION -->
+</td></tr>
+</tbody></table>
+
+</td></tr></tbody></table><script type="text/javascript" src="Heinle%20Learning%20Center%20-%20Sur%20le%20vif%206th%20Edition%20eStudent%20Activities%20Manual%20%28eSAM%29_files/alttxt.js"></script>
+
+
+<div style="z-index: 2; visibility: hidden;" class="yui-module yui-overlay navtext yui-overlay-hidden" id="navtxt"></div></body></html>

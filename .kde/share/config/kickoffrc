@@ -1,0 +1,11 @@
+[Favorites]
+FavoriteURLs=/usr/share/applications/kde4/konqbrowser.desktop,/usr/share/applications/kde4/KMail2.desktop,/usr/share/applications/kde4/systemsettings.desktop,/usr/share/applications/kde4/dolphin.desktop,/usr/share/applications/iceweasel.desktop,/usr/share/applications/debian-xterm.desktop,/usr/share/applications/arduino.desktop
+
+[KRunner]
+loadAll=false
+
+[KRunner][PlasmaRunnerManager]
+pluginWhiteList=places,shell,services,bookmarks,recentdocuments,locations
+
+[RecentlyUsed]
+Applications=arduino.desktop,libreoffice-calc.desktop,debian-xterm.desktop,iceweasel.desktop,wicd.desktop
