@@ -1,0 +1,104 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+
+\begin{flushright}
+Chris Silvia
+
+Phys 7651
+
+9/13/2015
+\end{flushright}
+
+\section{a}
+
+Suppose an accelerator delivers a luminosity of $100 fb^{-1}$
+	over the past year.
+In that year, they saw $2500$ events which produced and $X$ particle.
+
+Luminosity is defined as:
+
+\begin{align}
+dN & = L \times d\sigma
+\end{align}
+
+The total number of events is given by $\int dN$.
+Therefore, the total cross-section is:
+
+$$ \sigma = \int d\sigma = \int \frac{dN}{L} = \frac{2500}{100 fb^{-1}} = 25 fb $$
+
+For reference, a femptobarn is $1 \times 10^{-43} m^2$.
+
+\section{b}
+
+How do we know that $\delta^{(4)}( \sum p_i^\mu - \sum p_j^\mu )$ is lorentz-
+	invariant?
+
+Consider an arbitrary lorentz transformation $\Lambda^\nu_\mu$.
+Suppose we shift to a different frame, transforming all of the variables
+	in the above expression.
+
+\begin{align*}
+\delta^{(4)}( \sum p_i^\mu - \sum p_j^\mu ) & \to  
+	\delta^{(4)}\left( \sum \Lambda_\mu^\nu p_i^\mu - \sum \Lambda_\mu^\nu p_j^\mu \right) \\
+& \to  \delta^{(4)}\left( \Lambda_\mu^\nu \left( \sum p_i^\mu - \sum p_j^\mu \right) \right) 
+\end{align*}
+
+Since the matrix $\Lambda_\mu^\nu$ is a lorentz transformation,
+	it is invertible.
+Therefore $  \Lambda_\mu^\nu ( \sum p_i^\mu - \sum p_j^\mu ) = 0$
+	implies $ \sum p_i^\mu - \sum p_j^\mu = 0$, since $\Lambda_\mu^\nu$
+	has no kernel.
+Similarly, $  \Lambda_\mu^\nu ( \sum p_i^\mu - \sum p_j^\mu ) \neq 0$
+	implies $ \sum p_i^\mu - \sum p_j^\mu \neq 0$.
+The functions agree pointwise.
+
+Therefore, since for all lorentz transformations $\Lambda_\mu^\nu$,
+$$\delta^{(4)}( \sum p_i^\mu - \sum p_j^\mu ) = 
+	\delta^{(4)}( \Lambda_\mu^\nu ( \sum p_i^\mu - \sum p_j^\mu )) $$
+	$\delta^{(4)}( \sum p_i^\mu - \sum p_j^\mu )$
+	is lorentz-invariant.
+
+\section{c}
+
+The differential cross section for $2 \to n$ particle scattering
+	is given by (Schwartz 5.22):
+
+$$ d\sigma =
+	\frac{1}{(2 E_1) (2 E_2) \mid \vec{v_1} - \vec{v_2} \mid}
+	\mid \mathcal{M} \mid^2
+	d\Pi_{\text{LIPS}}
+$$
+
+where $d\Pi_{\text{LIPS}}$ is given by:
+
+$$ d\Pi_{\text{LIPS}} := (2 \pi)^4 \delta^{(4)}(\Sigma p) 
+	\Pi_j  \frac{d^3 p_j}{(2 \pi)^3} 
+		\frac{1}{2 E_j}
+$$
+
+I'm trying to answer the question, what are the units of $\mid \mathcal{M} \mid$?
+The units of $d\sigma$ should be area, or $-2$.
+The units of $\frac{1}{(2 E_1) (2 E_2) \mid \vec{v_1} - \vec{v_2} \mid}$
+	are $-2$, since the velocity has energy dimension $0$.
+Therefore, we expect the energy dimension of $\mid \mathcal{M} \mid^2$
+	to cancel out the energy dimension of $d\Pi_{\text{LIPS}}$.
+
+Using the relation $\delta^4(0) = \frac{T V}{(2 \pi)^4}$,
+	we can see that the deltafunction has energy dimension $-4$.
+The energy dimension of momentum and energy are both $1$,
+	so the energy dimension of $d\Pi_{\text{LIPS}}$
+	is $2 n - 4$, since an energy dimension of $2$
+	is added for each particle in the product.
+
+Therefore, the energy dimension of $\mid \mathcal{M} \mid^2$
+	is $4 - 2 n$.
+For 2 particles scattering to 2 particles, the scattering amplitude is unitless.
+
+
+
+
+\end{document}
