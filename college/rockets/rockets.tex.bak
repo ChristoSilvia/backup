@@ -1,0 +1,63 @@
+\documentclass{article}
+
+\usepackage{graphicx}
+
+\begin{document}
+
+\title{All About Suicide Burns}
+
+\begin{figure}[h]
+\includegraphics[width=0.8\textwidth]{falcon_9_barge_crash.jpg}
+\caption{Unsuccessful Attempt at a Suicide Burn Landing by Spacex}
+\end{figure}
+
+Landing rockets is difficult, as evinced by the recent failures and 
+	celebrated successes of SpaceX in landing an orbital first stage.
+It is also a necessary part of a cost-effective re-usable rocket system.
+The primary role of the first stage of an orbital rocket is to give as much
+	speed and altitude as possible to the second stage, so that it can achieve
+	orbit.
+The first stage is therefore traveling extremely fast after releasing the second stage,
+	so fast that experiments with parachute recovery have all ended in failure.
+SpaceX and Blue Origin have recently tried a new approach:
+	they use the rocket engines already on board the second stage to slow the
+	rocket down for a soft landing.
+
+If one is trying to land a rocket, one must first apply thrust to cancel out 
+	any horizontal velocity with respect to the surface one is landing on.
+Then, one needs to orient the rocket with its engine facing downwards, in the same
+	position that it launched in, except moving the opposite direction.
+Finally, one must fire the engines in order to slow down the rocket, so that
+	it comes to a stop just as its landing legs begin to touch the ground.
+
+One strategy for landing rockets is to wait as long as possible to fire the
+	engines, firing them at the last possible moment and at full thrust.
+This method, known as a ``suicide burn'' uses the least fuel, although it 
+	is difficult to control for errors, since there is a very small margin for error.
+It can be necessary since it is difficult to design rocket engines which
+	can throttle to less than half of their maximum thrust, and therefore 
+	many rockets (such as SpaceX's
+	Falcon 9) are unable to hover, because they can't apply 
+	a \emph{small} enough force.
+In this case, a suicide burn is the only option.
+
+I will discuss techniques for planning suicide burns for two scenarios.
+In both scenarios, the gravity is assumed to be of constant strength.
+This is a valid approximation when close to the surface of a planet.
+Since our rockets typically fire below 10km altitude for earth landings,
+	we can safely use this approximation, which greatly simplifies
+	calculations because the gravitational acceleration is now constant.
+In the first scenario, the rocket applies a set force to itself with the engine,
+	and its mass is fixed (i.e., no propellant is consumed).
+This approximation is valid for slow landings, or landings which do not 
+	consume an appreciable fraction of the mass of the entire rocket
+	in fuel.
+The second scenario takes into account the use of the fuel, and is therefore
+	valid for faster landings.
+I will discuss the differences between the predictions of the two models.
+For each model, I will discuss how to determine the altitude at which
+	to begin the deceleration burn.
+
+\end{document}
+
+ 
