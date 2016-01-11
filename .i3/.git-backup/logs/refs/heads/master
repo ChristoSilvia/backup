@@ -1,0 +1,9 @@
+0000000000000000000000000000000000000000 05c12a5412e5410d0535a4f552d7c98bbf11f65b Christopher Silvia <chris@shannon.home> 1439343812 -0400	commit (initial): initial commit
+05c12a5412e5410d0535a4f552d7c98bbf11f65b 1bd785a3c6ee333406484b4e64d4980f701c909e root <root@shannon.home> 1441145242 -0400	commit: initial commit
+1bd785a3c6ee333406484b4e64d4980f701c909e 92c26cb63c2de3e7046fa6f7d4fa7db6f6f29d53 Christopher Silvia <christopher.silvia@gmail.com> 1441145305 -0400	commit: disabled launch of nm-applet
+92c26cb63c2de3e7046fa6f7d4fa7db6f6f29d53 d5ff0ebb36594a9bd4f0bb291378d6902dc87fc2 Christopher Silvia <christopher.silvia@gmail.com> 1444957307 -0400	commit: Added config options to make exit dialog window
+d5ff0ebb36594a9bd4f0bb291378d6902dc87fc2 eeb5772060e20cfe3d94a2ce26f2a353b7afb6d9 Christopher Silvia <christopher.silvia@gmail.com> 1444957334 -0400	commit: Shell Script to manage exit menu
+eeb5772060e20cfe3d94a2ce26f2a353b7afb6d9 91f340885953f0e890042be6b44849124718c1f3 Christopher Silvia <christopher.silvia@gmail.com> 1444957465 -0400	commit: Changed resize to happen with mod for arrow actions
+91f340885953f0e890042be6b44849124718c1f3 7d4ebefe34b4c8160b8771e241d5a8994c132085 Christopher Silvia <christopher.silvia@gmail.com> 1444957757 -0400	commit: Arrow keys now need mod pressed
+7d4ebefe34b4c8160b8771e241d5a8994c132085 24bb00ce6c4a6d0f84e7ef23dfa50584bb59274f Christopher Silvia <christopher.silvia@gmail.com> 1444958046 -0400	commit: Moved statusbar to top
+24bb00ce6c4a6d0f84e7ef23dfa50584bb59274f 48d90e731853580a5899a87db07bddc81eb8f439 Christopher Silvia <christopher.silvia@gmail.com> 1444958674 -0400	commit: Moved bar back to bottom
