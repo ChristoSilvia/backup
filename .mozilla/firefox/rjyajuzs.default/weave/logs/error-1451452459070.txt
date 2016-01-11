@@ -1,5 +1,0 @@
-1451452459063	Sync.ErrorHandler	DEBUG	Flushing file log.
-1451452459066	Sync.BrowserIDManager	ERROR	Background fetch for key bundle failed: [object Object]
-1451452459066	Sync.BrowserIDManager	ERROR	Could not authenticate: [object Object]
-1451452459068	Sync.SyncScheduler	DEBUG	Clearing sync triggers and the global score.
-1451452459069	Sync.SyncScheduler	DEBUG	Next sync in 600000 ms.
