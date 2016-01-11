@@ -163,37 +163,37 @@ $
 			\frac { \frac {v_0}
 
 # File marks:
-'0  1  14  ~/.git/COMMIT_EDITMSG
-'1  2  7  ~/.gitignore
-'2  1  7  ~/.gitignore
+'0  1  20  ~/.git/COMMIT_EDITMSG
+'1  1  7  ~/.gitignore
+'2  3  7  ~/.gitignore
 '3  1  0  ~/dev/monitor_command.txt
 '4  1  0  ~/dev/ca_name.txt
 '5  1  0  ~/college/dev
-'6  55  6  ~/.gitignore
-'7  8  6  ~/.gitignore
+'6  56  6  ~/.gitignore
+'7  9  6  ~/.gitignore
 '8  7  0  ~/.gitconfig
 '9  8  0  ~/college/functional
 
 # Jumplist (newest first):
--'  1  14  ~/.git/COMMIT_EDITMSG
--'  2  7  ~/.gitignore
--'  1  0  ~/.gitignore
+-'  1  20  ~/.git/COMMIT_EDITMSG
+-'  1  7  ~/.gitignore
+-'  3  7  ~/.gitignore
 -'  1  0  ~/dev/monitor_command.txt
 -'  1  0  ~/dev/ca_name.txt
 -'  1  0  ~/college/dev
--'  55  6  ~/.gitignore
--'  45  5  ~/.gitignore
--'  42  0  ~/.gitignore
--'  27  0  ~/.gitignore
--'  8  6  ~/.gitignore
+-'  56  6  ~/.gitignore
+-'  46  5  ~/.gitignore
+-'  43  0  ~/.gitignore
+-'  28  0  ~/.gitignore
+-'  9  6  ~/.gitignore
 -'  7  0  ~/.gitconfig
 -'  1  0  ~/.gitconfig
 -'  8  0  ~/college/functional
 -'  1  0  ~/college/invariance/Christoffel.hs
 -'  7  0  ~/college/textbook/gr/misconceptions.tex
 -'  1  0  ~/college/textbook/gr/misconceptions.tex
--'  7  8  ~/.gitignore
--'  6  5  ~/.gitignore
+-'  8  8  ~/.gitignore
+-'  7  5  ~/.gitignore
 -'  233  2  ~/college/rockets/rockets.tex
 -'  206  68  ~/college/rockets/rockets.tex
 -'  168  31  ~/college/rockets/rockets.tex
@@ -276,38 +276,39 @@ $
 # History of marks within files (newest to oldest):
 
 > ~/.git/COMMIT_EDITMSG
-	"	1	14
-	^	1	15
-	.	1	14
+	"	1	20
+	^	1	21
+	.	1	20
 	+	2	69
-	+	1	14
+	+	1	20
 
 > ~/.gitignore
-	"	2	7
-	^	2	8
-	.	2	7
+	"	1	7
+	^	1	8
+	.	1	7
 	+	1	11
-	+	6	6
-	+	7	9
-	+	8	7
-	+	56	0
-	+	56	0
-	+	15	6
-	+	19	7
-	+	20	11
+	+	7	6
+	+	8	9
+	+	9	7
+	+	57	0
+	+	57	0
+	+	16	6
+	+	20	7
 	+	21	11
-	+	21	16
-	+	26	6
-	+	27	16
-	+	32	6
-	+	42	11
-	+	42	10
-	+	45	10
-	+	45	7
-	+	56	0
-	+	55	6
+	+	22	11
+	+	22	16
+	+	27	6
+	+	28	16
+	+	33	6
+	+	43	11
+	+	43	10
+	+	46	10
+	+	46	7
+	+	57	0
+	+	56	6
 	+	1	19
-	+	2	7
+	+	3	7
+	+	1	7
 
 > /usr/share/vim/vim74/doc/help.txt
 	"	1	0
