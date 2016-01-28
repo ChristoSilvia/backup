@@ -1,0 +1,41 @@
+The TREND REU expereience will help me further my
+	career and academic interests by providing me with 
+	problems and solutions.
+
+I will obtain experience finding problems to solve.
+
+The submarine project interests me the most, because I have
+	enjoyed working with continuous optimization problems	
+	before in my class, mathematical modeling.
+I have solved them with the help of the calculus of variations.
+
+===
+
+Prof. Paley's research will further my academic interests because I am interested
+	in learning about control and sampling theory.
+When I was implementing a robotic soccer playing program for a computer science
+	class at cornell, my favorite part of the project was developing a kalman
+	filter to estimate the position and velocity of a soccer ball, 
+	based on only position observations.
+I learned the importance of quantifying uncertainty: 
+	the soccer ball would often bounce in ways that were difficult to predict, and 
+	would often disappear from view altogether when the other team posessed it.
+Initially, the kalman filter had difficulty dealing with either situation.
+Instead of making a more complicated model of the ball's physics, or interaction
+	with the opponent, I instead decided to increase the uncertainty in the ball's
+	position whenever it was near the walls, or obscured from view.
+I was then able to use an extremely simple linear motion model for the ball and
+	achieve very good results.
+I would have loved to further refine my filter, but unfortuneately the semester
+	ended.
+Working in Professor Paley's lab will give me oppertunities to investigate two
+	things which interest me greatly: attempting to quanitfy uncertainty,
+	and attempting to make plans based on quantified uncertainty.
+
+Working in Prof. Paley's lab will give me experience working on projects which are
+	immediately applicable to the real world.
+This will be challenging and rewarding: challenging, because real-world problems
+	have many complicating factors which will arise during work,
+	and rewarding because it will be easy to see the impact of the lab's progress
+	in improving ocean measurement.
+

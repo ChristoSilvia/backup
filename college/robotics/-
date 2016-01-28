@@ -1,0 +1,11 @@
+--2015-09-03 20:15:33--  https://raw.githubusercontent.com/ros/rosdistro/master/ros.key
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 199.27.76.133
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|199.27.76.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1162 (1.1K) [application/octet-stream]
+Saving to: ‘ros.key’
+
+     0K .                                                     100% 12.8M=0s
+
+2015-09-03 20:15:33 (12.8 MB/s) - ‘ros.key’ saved [1162/1162]
+

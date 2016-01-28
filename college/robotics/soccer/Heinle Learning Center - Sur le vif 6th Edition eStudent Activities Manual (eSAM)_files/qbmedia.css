@@ -1,0 +1,452 @@
+/*
+ * Skin for jPlayer Plugin (jQuery JavaScript Library)
+ * http://www.happyworm.com/jquery/jplayer
+ *
+ * Skin Name: Quia Books
+ *
+ * Author: Erik Curtis
+ * Date: 9/25/2010
+ */
+
+body#qwAudioWin {
+  margin:0;
+  padding:0;
+}
+
+#dvAudioLk,
+#dvAudioObjectEmbed,
+#qwAudioWin div.jp-single-player {
+  font:normal 11px verdana, arial, helvetica, sans-serif;
+  margin:10px 15px;
+  *margin:5px;
+  width:220px;
+}
+
+#qwAudioWin div.jp-single-player {
+  margin:20px 15px;
+  *margin:20px 5px;
+}
+
+#dvAudioLk p {
+  text-align:center;
+}
+
+div.jp-single-player {
+  color: #666;
+}
+
+/* set the font-size really small so IE doesn't automatically size boxes large than we specify */
+div.jp-single-player div {
+  font-size: 1px;
+  line-height: 1;
+}
+
+div.jp-interface {
+  background-color:#eee;
+  height: 31px;
+  position: relative;
+  width:270px;
+}
+
+#qwAudioWin div.jp-interface,
+#qwAudioWin div.jp-single-player {
+  width:220px;
+}
+
+div.jp-interface ul.jp-controls {
+  list-style-type:none;
+  padding:0;
+  margin: 0;
+}
+div.jp-interface ul.jp-controls li {
+  position: absolute;
+}
+div.jp-interface ul.jp-controls a {
+  position: absolute;
+  overflow:hidden;
+  text-indent:-9999px;
+}
+
+a.jp-play,
+a.jp-pause,
+a.jp-stop {
+  background: #E2E1E1;
+  border: 1px solid #717171;
+  height: 23px;
+  top: 3px;
+  width: 23px;
+
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+
+a.jp-play span,
+a.jp-pause span,
+a.jp-stop span {
+  background: transparent url("../images/audio_sprite.png") 0 0 no-repeat;
+  height: 100%;
+  display: block;
+  width: 100%;
+
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+
+a.jp-play:hover,
+a.jp-pause:hover,
+a.jp-stop:hover {
+  border-color: #303030;
+}
+
+a.jp-play,
+a.jp-pause {
+  left: 5px;
+}
+a.jp-pause {
+  display: none;
+}
+a.jp-stop {
+  left: 35px;
+}
+
+a.jp-play span {
+	background-position: 3px 3px;
+}
+a.jp-play:hover span {
+  background-position: 3px -13px;
+}
+a.jp-pause span {
+  background-position: -13px 3px;
+}
+a.jp-pause:hover span {
+  background-position: -13px -13px;
+}
+a.jp-stop span {
+  background-position: -29px 3px;
+}
+a.jp-stop:hover span {
+  background-position: -29px -13px;
+}
+
+div.jp-bars {
+  height:23px;
+  left:75px;
+  position: absolute;
+  top:3px;
+  width:180px;
+}
+
+#qwAudioWin div.jp-bars {
+  width:140px;
+}
+
+div.jp-slider-bar {
+  background-color: #fff;
+  border: 1px solid #717171;
+  height: 10px;
+  margin-top: 5px;
+  width: 100%;
+
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+
+div.jp-slider-bar .ui-slider-range {
+	background-color: #c3c3c3;
+  height: 100%;
+  width: 0;
+
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+
+div.jp-slider-bar a.ui-slider-handle {
+  background: #E2E1E1;
+  border: 1px solid #717171;
+  height: 23px;
+  left: 0;
+  margin-left: -8px;
+  outline: none;
+  position: absolute;
+  top: 0;
+  width: 13px;
+
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+div.jp-slider-bar a.ui-slider-handle:hover {
+  border-color: #303030;
+}
+
+div.jp-load-bar {
+  background-color: #d2d2d2;
+  border: 1px solid #717171;
+  height: 2px;
+  margin-top: -1px;
+  width: 100%;
+
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+
+div.jp-load-bar .ui-progressbar-value {
+  background-color: #717171;
+  height: 2px;
+  width: 0;
+}
+
+/*
+ * Make some adjustments for the border-box-model in IE 
+ */
+
+.bbmodel a.jp-play span,
+.bbmodel a.jp-pause span,
+.bbmodel a.jp-stop span {
+  margin: -1px;
+}
+
+/************************************************************************************************
+ * CSS for the small version of the player
+ ************************************************************************************************/
+
+a.jp-player-sm {
+  text-decoration: none;
+}
+
+a.jp-player-sm span {
+  text-decoration: underline;
+}
+
+a.jp-player-sm img {
+  background: #EAEAEA url(../images/audio_sprite.png) no-repeat -48px 0;
+  border: 1px solid #717171;
+  height: 16px;
+  margin-right: 5px;
+  vertical-align: middle;
+  width: 16px;
+
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+
+a.jp-player-sm:hover img {
+  background-position: -48px -16px;
+  border-color: #303030;
+}
+
+a.jp-player-sm img.jp-playing {
+  background: #EAEAEA url(../images/audio_icon_play.gif) no-repeat -1px -1px;
+}
+
+a.jp-player-sm:hover img.jp-playing {
+  background-position: -1px -1px;
+}
+
+/************************************************************************************************
+ * Centro skin
+ ************************************************************************************************/
+
+.centro a.jp-play,
+.centro a.jp-pause,
+.centro a.jp-stop {
+  border-color: #6fa841;
+}
+
+.centro a.jp-play:hover,
+.centro a.jp-pause:hover,
+.centro a.jp-stop:hover {
+  border-color: #2d632b;
+}
+
+.centro a.jp-play:hover span {
+  background-position: 3px -29px;
+}
+.centro a.jp-pause:hover span {
+  background-position: -13px -29px;
+}
+.centro a.jp-stop:hover span {
+  background-position: -29px -29px;
+}
+
+.centro div.jp-slider-bar .ui-slider-range {
+	background-color: #b7d3a0;
+}
+
+.centro div.jp-slider-bar a.ui-slider-handle {
+  border-color: #6fa841;
+}
+
+.centro div.jp-slider-bar a.ui-slider-handle:hover {
+  border-color: #2d632b;
+}
+
+.centro div.jp-load-bar .ui-progressbar-value {
+    background-color: #6fa841;
+}
+
+.centro a.jp-player-sm img {
+  border-color: #6fa841;
+}
+
+.centro a.jp-player-sm:hover img {
+  background-position: -48px -32px;
+  border-color: #2d632b;
+}
+
+.centro a.jp-player-sm:hover img.jp-playing {
+  background-position: -1px -1px;
+}
+
+/************************************************************************************************
+ * HLC skin
+ ************************************************************************************************/
+
+.hlc a.jp-play,
+.hlc a.jp-pause,
+.hlc a.jp-stop {
+  border-color: #3ab5ec;
+}
+
+.hlc a.jp-play:hover,
+.hlc a.jp-pause:hover,
+.hlc a.jp-stop:hover {
+  border-color: #1e8bbb;
+}
+
+.hlc a.jp-play:hover span {
+  background-position: 3px -45px;
+}
+.hlc a.jp-pause:hover span {
+  background-position: -13px -45px;
+}
+.hlc a.jp-stop:hover span {
+  background-position: -29px -45px;
+}
+
+.hlc div.jp-slider-bar .ui-slider-range {
+	background-color: #9cdaf5;
+}
+
+.hlc div.jp-slider-bar a.ui-slider-handle {
+  border-color: #3ab5ec;
+}
+
+.hlc div.jp-slider-bar a.ui-slider-handle:hover {
+  border-color: #1e8bbb;
+}
+
+.hlc div.jp-load-bar .ui-progressbar-value {
+    background-color: #3ab5ec;
+}
+
+.hlc a.jp-player-sm img {
+  border-color: #3ab5ec;
+}
+
+.hlc a.jp-player-sm:hover img {
+  background-position: -48px -48px;
+  border-color: #1e8bbb;
+}
+
+.hlc a.jp-player-sm:hover img.jp-playing {
+  background-position: -1px -1px;
+}
+
+/************************************************************************************************
+ * Georgetown skin
+ ************************************************************************************************/
+
+.georgetown div.jp-interface {
+  background-color: #fbdfd1;
+  border: 1px solid #f8c9b3;
+}
+.georgetown div.jp-load-bar .ui-progressbar-value {
+  background-color: #F26522;
+}
+
+.georgetown div.jp-load-bar {
+  background-color: #fbf1ec;
+  border: 1px solid #ceab9b;
+}
+
+.georgetown div.jp-slider-bar .ui-slider-range {
+  background-color: #efb59b;
+}
+.georgetown div.jp-slider-bar {
+  border: 1px solid #ceab9b;
+}
+
+.georgetown a.jp-play,
+.georgetown a.jp-pause,
+.georgetown a.jp-stop {
+  border-color: #f26522;
+  background-color: #fbf1ec;
+}
+
+.georgetown div.jp-slider-bar a.ui-slider-handle {
+  border-color: #f26522;
+  background-color: #fbf1ec;
+}
+
+
+.georgetown a.jp-play span {
+  background-position: 3px -71px;
+}
+.georgetown a.jp-pause span {
+  background-position: -13px -71px;
+}
+.georgetown a.jp-stop span {
+  background-position: -29px -71px;
+}
+
+
+.georgetown a.jp-play:hover span {
+  background-position: 3px -87px;
+}
+.georgetown a.jp-pause:hover span {
+  background-position: -13px -87px;
+}
+.georgetown a.jp-stop:hover span {
+  background-position: -29px -87px;
+}
+
+
+.georgetown a.jp-player-sm img {
+  height: 17px;
+  width: 17px;
+  background: #EAEAEA url(../images/gtAudioSpeakerIcon.gif) no-repeat 0px 0px;
+  border: none;
+}
+
+.georgetown a.jp-player-sm:hover img {
+  border: none;
+
+}
+
+.georgetown a.jp-player-sm img.jp-playing {
+  background: #EAEAEA url(../images/gtAudioPlayIcon.gif) no-repeat 0px 0px;
+  border: none;
+}
+
+/************************************************************************************************
+ * Video embed styles
+ ************************************************************************************************/
+div.qbv {
+  height: 412px;
+  width: 486px;
+}
+
+.navtext div.qbv {
+  background:url(/static/quia/books/shareIt/images/videoIcon.gif) 0 0 no-repeat;
+  border:0;
+  height:12px;
+  width:23px;
+}
+
