@@ -1,0 +1,113 @@
+I was excited to see an opening for a software
+	development engineer, and I hope to be 
+	contacted for an interview.
+I would like to itern at Aerojet Rocketdyne because I
+	am interested in a career in aerospace engineering,
+	and I would enjoy applying the programming and 
+	mathematical modeling skills that I have learned
+	at Cornell to improve the efficiency of 
+	aerospace products.
+
+I am currently a mathematics and physics major at
+	Cornell University, concentrating in computer
+	science and applied math.
+At Cornell, I have taken a variety of classes, 
+	including a robotics class with Prof. Ross A. Knepper.
+This class focused on a programming robotic manipulator,
+	a Baxter built by Rethink Robotics.
+I worked on a team of three students to develop a
+	pick-and-place manipulation system, 
+	a system which drew on a whiteboard with a marker,
+	and a system which played "soccer" by blocking
+	and shooting a ping pong ball with a simple gripper.
+From working on this team, I learned how to take
+	a significant problem and break it down into
+	smaller parts, and then collaborate with
+	team members on completing these smaller parts
+	and making sure that they work together in concert.
+I wrote the control and error-handling logic of the
+	pick-and-place system, 
+	the error-correction, path-planning and kinematics
+		for the whiteboard drawer,
+	and the blocking and kalman filtering code for the
+		soccer playing robot.
+On all of these robotic systems, I implemented systems
+	to determine how to best achieve a desired joint
+	velocity by controlling the velocities of individual
+	joints.
+Since the joints had an extra degree of freedom, 
+	I used linear algebra and numerical integration
+	to alter arm movements to ensure that the end-effector
+	was kept in the most maneuverable region
+	of the configuration space.
+These systems were distributed, concurrent systems which
+	ran in several distinct processes and communicated
+	via service calls and message passing,
+	using the Robot Operating System (ROS).
+Our final project was one of the best-performing in the
+	class, and I am now working in a research course
+	with Prof. Knepper to create mobile robot manipulators.
+In implementing robotic manipulators, I have gained 
+	experience implementing and debugging software
+	which powers a physical system which I hope to apply
+	as an intern at Aerojet Rocketdyne. 
+
+I've been interested in spaceflight almost as long as
+	I can remember.
+When Mars Pathfinder landed, I became fascinated with
+	it and with spaceflight.
+I learned all about spacecraft then.
+I became interested in model rockets, and especially with
+	scale models of real rockets.
+Later, I worked on my high school's FIRST robotics team,
+	serving as the chief of mechanical design for 
+	three years.
+When I first attended Cornell, I was fascinated
+	physics and mathematical modeling classes.
+I also became interested in commercial spaceflight:
+	I've been following SpaceX and Blue Origin's 
+	recent attempts at building reusable rockets,
+	as well as SpaceX and Orbital ATK/ULA missions
+	to the ISS.
+After SpaceX's recent propulsive landing, I made
+	a mathematical model to plan propulsive landings,
+	as well as a mathematical model which uses
+	optimal control theory to plan an ascent 
+	trajectory which maximizes the energy delivery
+	of a launch vehicle with a fixed burn time and 
+	thrust.
+This system made use of ideas from the calculus of 
+	variations, specifically hamiltonian dynamics
+	and constrained maximization using costates.
+It was also necessary to solve a system of three
+	nonlinear equations to solve the boundary-value
+	problem of achieving a certain speed at a desired
+	altitude.
+I hope to be able to work on programming and mathematical
+	modeling at Aerojet Rocketdyne, so that I can 
+	work on interesting problems which will enhance
+	our spaceflight capabilities and hopefully 
+	open up a new frontier for commerce and habitation.
+
+I can offer experienced numerical programming skills
+	in the Python, Matlab, Julia, and Octave Environments,
+	as well as proficiency with programming in C++.
+I am currently taking a course on computational physics
+	using C++, from which I will learn a variety of 
+	numerical techniques, as well as object-oriented
+	features to enable easy code reuse.
+I am proficient at mechanical design using Autodesk 
+	Inventor.
+I used it to design my high school's FIRST Robotics 
+	Competition robot for the three years I was the
+	lead designer.
+
+I am confident that I can offer problem-solving skills
+	as a software development intern.
+Feel free to contact me at (240)-515-5838,
+	or email me at cps232@cornell.edu.
+I look forward to learning more about engineering
+	at Aerojet Rocketdyne.
+
+Sincerely,
+Christopher Silvia
